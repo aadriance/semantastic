@@ -1,0 +1,17 @@
+version: "3"
+
+tasks:
+  dev:
+    desc: "Start Hugo development server with live reload"
+    cmds:
+      - hugo server -s hugo --buildDrafts --buildFuture --disableFastRender
+
+  build:
+    desc: "Build production site to docs/"
+    cmds:
+      - hugo -s hugo --minify
+
+  clean:
+    desc: "Remove generated docs/ directory"
+    cmds:
+      - rm -rf docs/

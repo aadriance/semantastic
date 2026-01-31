@@ -1,0 +1,26 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'Semantastic CSS'
+publishDir = '../docs'
+disableKinds = ['taxonomy', 'term']
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[server]
+  [[server.headers]]
+    for = "/**"
+    [server.headers.values]
+      Content-Security-Policy = "default-src 'self' 'unsafe-inline'; img-src 'self' data:"
+
+# Module mounts to include CSS from /src directory
+[module]
+  [[module.mounts]]
+    source = "../src"
+    target = "static/css"
+
+  [[module.mounts]]
+    source = "static"
+    target = "static"

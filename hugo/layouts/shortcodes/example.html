@@ -1,0 +1,21 @@
+{{- $name := .Get "name" -}}
+{{- $content := .Inner -}}
+<ui-tabs data-variant="underline">
+  <input type="radio" name="{{ $name }}-example" id="{{ $name }}-preview" checked>
+  <label for="{{ $name }}-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;{{ with .Get " previewBg" }} background: {{ . }};{{
+      end }}">
+      {{ $content | safeHTML }}
+    </layout-box>
+  </div>
+
+  <input type="radio" name="{{ $name }}-example" id="{{ $name }}-code">
+  <label for="{{ $name }}-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>{{ htmlEscape $content | safeHTML }}</code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>

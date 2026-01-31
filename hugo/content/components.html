@@ -1,0 +1,1226 @@
+---
+title: "Components"
+weight: 6
+includeComponents: true
+inlineStyles: |
+  .styled-details {
+    border: 2px solid var(--color-border);
+    border-radius: 6px;
+    padding: var(--space-s);
+    background: var(--color-surface);
+  }
+  .styled-details summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-primary);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .styled-details summary::-webkit-details-marker {
+    display: none;
+  }
+  .styled-details summary::before {
+    content: '▶';
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  .styled-details[open] summary::before {
+    transform: rotate(90deg);
+  }
+  .styled-details[open] {
+    background: var(--color-canvas);
+  }
+  .styled-details > *:not(summary) {
+    margin-block-start: var(--space-s);
+    padding-inline-start: 1.5rem;
+  }
+  #popover-backdrop::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+  }
+  #popover-backdrop {
+    max-inline-size: 500px;
+  }
+---
+
+<layout-stack>
+
+  <div>
+    <ui-label data-intent="secondary">Pure CSS</ui-label>
+    <h1>Components</h1>
+    <p style="font-size: 1.25rem; color: var(--color-text-muted);">
+      Interactive components built with CSS only — no JavaScript required.
+    </p>
+    <p>
+      Accessible, keyboard-navigable, and configurable with custom properties.
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- TABS -->
+  <section>
+    <layout-stack style="--space: var(--space-m)">
+      <h2><code>&lt;ui-tabs&gt;</code> — Tab Navigation</h2>
+      <p>
+        Pure CSS tabs using radio inputs and labels. Three variants: default
+        (bordered), pills, and underline. Implemented as a custom element for cleaner markup.
+      </p>
+
+      <h3>Structure</h3>
+      <layout-box>
+        <pre
+
+        ><code>&lt;ui-tabs&gt;
+  &lt;input type="radio" name="demo" id="tab1" checked&gt;
+  &lt;label for="tab1"&gt;Tab 1&lt;/label&gt;
+  &lt;div data-content&gt;Content 1&lt;/div&gt;
+
+  &lt;input type="radio" name="demo" id="tab2"&gt;
+  &lt;label for="tab2"&gt;Tab 2&lt;/label&gt;
+  &lt;div data-content&gt;Content 2&lt;/div&gt;
+&lt;/ui-tabs&gt;</code></pre>
+      </layout-box>
+
+      <ui-label>Properties</ui-label>
+      <layout-cluster style="--space: var(--space-xs)">
+        <ui-badge>--tab-bg <span>transparent</span></ui-badge>
+        <ui-badge>--tab-bg-active <span>var(--color-primary)</span></ui-badge>
+        <ui-badge>--tab-color <span>#666</span></ui-badge>
+        <ui-badge>--tab-color-active <span>var(--color-canvas)</span></ui-badge>
+        <ui-badge>--tab-border-color <span>var(--color-border)</span></ui-badge>
+        <ui-badge>--tab-border-width <span>2px</span></ui-badge>
+        <ui-badge>--tab-padding <span>0.75rem 1.5rem</span></ui-badge>
+        <ui-badge>--tab-radius <span>6px 6px 0 0</span></ui-badge>
+      </layout-cluster>
+
+      <h3>Default Tabs</h3>
+      {{< example name="tabs-default" >}}
+<ui-tabs>
+  <input type="radio" name="demo-default" id="default-tab1" checked />
+  <label for="default-tab1">Overview</label>
+  <div data-content>
+    <layout-stack style="--space: var(--space-s)">
+      <h4>Overview</h4>
+      <p>
+        This is the overview panel. Tabs use radio inputs under the hood,
+        so only one can be active at a time.
+      </p>
+      <p>
+        The active tab has a border that connects to the content panel.
+      </p>
+    </layout-stack>
+  </div>
+
+  <input type="radio" name="demo-default" id="default-tab2" />
+  <label for="default-tab2">Features</label>
+  <div data-content>
+    <layout-stack style="--space: var(--space-s)">
+      <h4>Features</h4>
+      <ul>
+        <li>Pure CSS — no JavaScript required</li>
+        <li>Keyboard accessible</li>
+        <li>Fully customizable with CSS custom properties</li>
+        <li>Three built-in variants</li>
+      </ul>
+    </layout-stack>
+  </div>
+
+  <input type="radio" name="demo-default" id="default-tab3" />
+  <label for="default-tab3">Code</label>
+  <div data-content>
+    <layout-stack style="--space: var(--space-s)">
+      <h4>Code</h4>
+      <p>
+        The implementation uses the <code>:checked</code> pseudo-class and
+        adjacent sibling selectors to show/hide content panels.
+      </p>
+      <p>
+        All radio inputs share the same <code>name</code> attribute to
+        ensure mutual exclusivity.
+      </p>
+    </layout-stack>
+  </div>
+</ui-tabs>
+      {{< /example >}}
+
+      <h3>Pills Variant</h3>
+      <p>Add <code>data-variant="pills"</code> for rounded, button-style tabs.</p>
+      {{< example name="tabs-pills" >}}
+<ui-tabs data-variant="pills">
+  <input type="radio" name="demo-pills" id="pills-tab1" checked />
+  <label for="pills-tab1">React</label>
+  <div data-content>
+    <layout-stack style="--space: var(--space-s)">
+      <h4>React</h4>
+      <p>A JavaScript library for building user interfaces.</p>
+      <code>npm install react react-dom</code>
+    </layout-stack>
+  </div>
+
+  <input type="radio" name="demo-pills" id="pills-tab2" />
+  <label for="pills-tab2">Vue</label>
+  <div data-content>
+    <layout-stack style="--space: var(--space-s)">
+      <h4>Vue</h4>
+      <p>The Progressive JavaScript Framework.</p>
+      <code>npm install vue</code>
+    </layout-stack>
+  </div>
+
+  <input type="radio" name="demo-pills" id="pills-tab3" />
+  <label for="pills-tab3">Svelte</label>
+  <div data-content>
+    <layout-stack style="--space: var(--space-s)">
+      <h4>Svelte</h4>
+      <p>Cybernetically enhanced web apps.</p>
+      <code>npm install svelte</code>
+    </layout-stack>
+  </div>
+</ui-tabs>
+      {{< /example >}}
+
+      <h3>Underline Variant</h3>
+      <p>
+        Add <code>data-variant="underline"</code> for minimalist tabs with an
+        underline indicator.
+      </p>
+      {{< example name="tabs-underline" >}}
+<ui-tabs data-variant="underline">
+  <input type="radio" name="demo-underline" id="underline-tab1" checked />
+  <label for="underline-tab1">Dashboard</label>
+  <div data-content>
+    <layout-stack style="--space: var(--space-s)">
+      <h4>Dashboard</h4>
+      <p>
+        Welcome to your dashboard. Here you can see an overview of your
+        activity.
+      </p>
+    </layout-stack>
+  </div>
+
+  <input type="radio" name="demo-underline" id="underline-tab2" />
+  <label for="underline-tab2">Analytics</label>
+  <div data-content>
+    <layout-stack style="--space: var(--space-s)">
+      <h4>Analytics</h4>
+      <p>View detailed analytics and insights about your data.</p>
+    </layout-stack>
+  </div>
+
+  <input type="radio" name="demo-underline" id="underline-tab3" />
+  <label for="underline-tab3">Settings</label>
+  <div data-content>
+    <layout-stack style="--space: var(--space-s)">
+      <h4>Settings</h4>
+      <p>Configure your preferences and account settings.</p>
+    </layout-stack>
+  </div>
+</ui-tabs>
+      {{< /example >}}
+
+      <h3>Custom Styling</h3>
+      <p>Use CSS custom properties to customize colors and spacing.</p>
+      {{< example name="tabs-custom" >}}
+<ui-tabs
+  style="
+    --tab-bg-active: #ee6c4d;
+    --tab-color-active: #fff;
+    --tab-border-color: #ee6c4d;
+    --tab-border-width: 3px;
+    --tab-padding: 1rem 2rem;
+  "
+>
+  <input type="radio" name="demo-custom" id="custom-tab1" checked />
+  <label for="custom-tab1">Design</label>
+  <div data-content>
+    <p>Custom orange theme with thicker borders and larger padding.</p>
+  </div>
+
+  <input type="radio" name="demo-custom" id="custom-tab2" />
+  <label for="custom-tab2">Development</label>
+  <div data-content>
+    <p>
+      All styling is controlled via CSS custom properties for easy
+      theming.
+    </p>
+  </div>
+</ui-tabs>
+      {{< /example >}}
+    </layout-stack>
+  </section>
+
+  <hr>
+
+  <!-- FLYOUT -->
+  <section>
+    <layout-stack style="--space: var(--space-m)">
+      <h2><code>&lt;ui-flyout&gt;</code> — Slide-in Drawer</h2>
+      <p>
+        A slide-in drawer/sidebar using the Popover API. Slides in from any of
+        the four cardinal directions: left (default), right, top, or bottom.
+        Implemented as a custom element for semantic markup.
+      </p>
+
+      <h3>Structure</h3>
+      <layout-box>
+        <pre
+
+        ><code>&lt;button popovertarget="my-flyout"&gt;Open Menu&lt;/button&gt;
+
+&lt;ui-flyout id="my-flyout" popover&gt;
+  &lt;!-- Flyout content --&gt;
+&lt;/ui-flyout&gt;
+
+&lt;!-- With direction --&gt;
+&lt;ui-flyout id="my-flyout" popover
+     data-direction="right"&gt;
+  &lt;!-- Content --&gt;
+&lt;/ui-flyout&gt;</code></pre>
+      </layout-box>
+
+      <ui-label>Properties</ui-label>
+      <layout-cluster style="--space: var(--space-xs)">
+        <ui-badge>--flyout-width <span>300px</span></ui-badge>
+        <ui-badge>--flyout-height <span>300px</span></ui-badge>
+        <ui-badge>--flyout-bg <span>#fff</span></ui-badge>
+        <ui-badge>--flyout-shadow <span>0 0 20px rgba(0,0,0,0.3)</span></ui-badge>
+      </layout-cluster>
+
+      <ui-label>Directions</ui-label>
+      <layout-cluster style="--space: var(--space-xs)">
+        <ui-badge>data-direction="left" <span>default</span></ui-badge>
+        <ui-badge>data-direction="right"</ui-badge>
+        <ui-badge>data-direction="top"</ui-badge>
+        <ui-badge>data-direction="bottom"</ui-badge>
+      </layout-cluster>
+
+      <h3>Left Flyout (Default)</h3>
+      {{< example name="flyout-left" >}}
+<button
+  popovertarget="flyout-left"
+  style="
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+  "
+>
+  Open Left Menu
+</button>
+
+<ui-flyout id="flyout-left" popover>
+  <layout-stack
+    style="--space: var(--space-m); padding: var(--space-l)"
+  >
+    <h3 style="margin: 0; color: var(--color-primary)">
+      Navigation Menu
+    </h3>
+    <nav>
+      <layout-stack style="--space: var(--space-xs)">
+        <a
+          href="#"
+          style="color: #1a1a2e; text-decoration: none; padding: 0.5rem"
+          >Home</a
+        >
+        <a
+          href="#"
+          style="color: #1a1a2e; text-decoration: none; padding: 0.5rem"
+          >About</a
+        >
+        <a
+          href="#"
+          style="color: #1a1a2e; text-decoration: none; padding: 0.5rem"
+          >Services</a
+        >
+        <a
+          href="#"
+          style="color: #1a1a2e; text-decoration: none; padding: 0.5rem"
+          >Contact</a
+        >
+      </layout-stack>
+    </nav>
+    <button
+      popovertarget="flyout-left"
+      style="
+        background: #ee6c4d;
+        color: var(--color-canvas);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-block-start: auto;
+      "
+    >
+      Close
+    </button>
+  </layout-stack>
+</ui-flyout>
+      {{< /example >}}
+
+      <h3>Right Flyout</h3>
+      {{< example name="flyout-right" >}}
+<button
+  popovertarget="flyout-right"
+  style="
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+  "
+>
+  Open Right Panel
+</button>
+
+<ui-flyout
+  id="flyout-right"
+  popover
+  data-direction="right"
+  style="--flyout-width: 350px"
+>
+  <layout-stack
+    style="--space: var(--space-m); padding: var(--space-l)"
+  >
+    <h3 style="margin: 0; color: var(--color-primary)">Settings</h3>
+    <layout-stack style="--space: var(--space-s)">
+      <label style="display: flex; align-items: center; gap: 0.5rem">
+        <input type="checkbox" />
+        <span>Enable notifications</span>
+      </label>
+      <label style="display: flex; align-items: center; gap: 0.5rem">
+        <input type="checkbox" checked />
+        <span>Dark mode</span>
+      </label>
+      <label style="display: flex; align-items: center; gap: 0.5rem">
+        <input type="checkbox" />
+        <span>Auto-save</span>
+      </label>
+    </layout-stack>
+    <button
+      popovertarget="flyout-right"
+      style="
+        background: #ee6c4d;
+        color: var(--color-canvas);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        cursor: pointer;
+      "
+    >
+      Close
+    </button>
+  </layout-stack>
+</ui-flyout>
+      {{< /example >}}
+
+      <h3>Top Flyout</h3>
+      {{< example name="flyout-top" >}}
+<button
+  popovertarget="flyout-top"
+  style="
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+  "
+>
+  Open Top Banner
+</button>
+
+<ui-flyout
+  id="flyout-top"
+  popover
+  data-direction="top"
+  style="--flyout-height: 200px; --flyout-bg: #1a1a2e"
+>
+  <layout-center style="--measure: 60ch">
+    <layout-stack
+      style="
+        --space: var(--space-s);
+        padding: var(--space-l);
+        text-align: center;
+      "
+    >
+      <h3 style="margin: 0; color: var(--color-canvas)">
+        Important Announcement
+      </h3>
+      <p style="margin: 0; color: var(--color-secondary)">
+        This is a notification banner that slides down from the top of
+        the screen.
+      </p>
+      <button
+        popovertarget="flyout-top"
+        style="
+          background: #ee6c4d;
+          color: var(--color-canvas);
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          cursor: pointer;
+        "
+      >
+        Dismiss
+      </button>
+    </layout-stack>
+  </layout-center>
+</ui-flyout>
+      {{< /example >}}
+
+      <h3>Bottom Flyout</h3>
+      {{< example name="flyout-bottom" >}}
+<button
+  popovertarget="flyout-bottom"
+  style="
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+  "
+>
+  Open Bottom Sheet
+</button>
+
+<ui-flyout
+  id="flyout-bottom"
+  popover
+  data-direction="bottom"
+  style="--flyout-height: 250px"
+>
+  <layout-center style="--measure: 60ch">
+    <layout-stack
+      style="--space: var(--space-m); padding: var(--space-l)"
+    >
+      <h3
+        style="
+          margin: 0;
+          color: var(--color-primary);
+          text-align: center;
+        "
+      >
+        Cookie Consent
+      </h3>
+      <p style="margin: 0; text-align: center">
+        We use cookies to enhance your browsing experience. By
+        continuing to use this site, you agree to our use of cookies.
+      </p>
+      <layout-cluster
+        style="--space: var(--space-s); --justify: center"
+      >
+        <button
+          style="
+            background: var(--color-primary);
+            color: var(--color-canvas);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+          "
+        >
+          Accept
+        </button>
+        <button
+          popovertarget="flyout-bottom"
+          style="
+            background: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+          "
+        >
+          Decline
+        </button>
+      </layout-cluster>
+    </layout-stack>
+  </layout-center>
+</ui-flyout>
+      {{< /example >}}
+    </layout-stack>
+  </section>
+
+  <hr>
+
+  <!-- TOOLTIP -->
+  <section>
+    <layout-stack style="--space: var(--space-m)">
+      <h2 id="tooltip">Tooltip</h2>
+
+      <p>
+        Pure CSS tooltips that appear on hover. Add the
+        <code>has-tooltip</code> class and <code>data-tooltip</code> attribute to any element to show helpful text.
+      </p>
+
+      <layout-box>
+        <h3>Structure</h3>
+        <pre><code>&lt;button
+  class="has-tooltip"
+  data-tooltip="Helpful tooltip text"
+  data-position="top"&gt;
+  Hover me
+&lt;/button&gt;</code></pre>
+      </layout-box>
+
+      <ui-label>Properties</ui-label>
+      <layout-cluster style="--space: var(--space-xs)">
+        <ui-badge>--tooltip-bg <span>#313247</span></ui-badge>
+        <ui-badge>--tooltip-color <span>#fff</span></ui-badge>
+        <ui-badge>--tooltip-padding <span>10px 15px</span></ui-badge>
+        <ui-badge>--tooltip-radius <span>10px</span></ui-badge>
+        <ui-badge>--tooltip-font-size <span>1rem</span></ui-badge>
+        <ui-badge>--tooltip-max-width <span>250px</span></ui-badge>
+        <ui-badge>--tooltip-offset <span>10px</span></ui-badge>
+        <ui-badge>--tooltip-arrow-size <span>15px</span></ui-badge>
+      </layout-cluster>
+
+      <h3>Tooltip Positions</h3>
+      <p>
+        Tooltips can appear in four directions using the
+        <code>data-position</code> attribute.
+      </p>
+
+      {{< example name="tooltip-positions" >}}
+<layout-cluster style="--space: var(--space-l); --justify: center">
+  <button
+    class="has-tooltip"
+    data-tooltip="Tooltip appears above"
+    data-position="top"
+  >
+    Top
+  </button>
+
+  <button
+    class="has-tooltip"
+    data-tooltip="Tooltip appears below"
+    data-position="bottom"
+  >
+    Bottom
+  </button>
+
+  <button
+    class="has-tooltip"
+    data-tooltip="Tooltip appears to the left"
+    data-position="left"
+  >
+    Left
+  </button>
+
+  <button
+    class="has-tooltip"
+    data-tooltip="Tooltip appears to the right"
+    data-position="right"
+  >
+    Right
+  </button>
+</layout-cluster>
+      {{< /example >}}
+
+      <h3>Tooltip in Context</h3>
+      <p>Tooltips work on any element - buttons, links, icons, etc.</p>
+
+      {{< example name="tooltip-context" >}}
+<p style="max-inline-size: 60ch; margin: 0">
+  This is some text with helpful
+  <button
+    class="has-tooltip"
+    data-tooltip="Additional context about this term"
+    data-position="top"
+    style="
+      background: transparent;
+      border: none;
+      color: var(--color-primary);
+      text-decoration: underline;
+      cursor: help;
+      padding: 0;
+      font-size: inherit;
+    "
+  >
+    tooltips
+  </button>
+  that appear when you hover. You can also add them to
+  <span
+    class="has-tooltip"
+    data-tooltip="Click to learn more"
+    data-position="bottom"
+    style="
+      color: #ee6c4d;
+      font-weight: bold;
+      cursor: pointer;
+      border-bottom: 2px dotted currentColor;
+    "
+  >
+    important terms
+  </span>
+  in your content.
+</p>
+      {{< /example >}}
+
+      <h3>Custom Styling</h3>
+      <p>Customize tooltip appearance with CSS custom properties.</p>
+
+      {{< example name="tooltip-custom" >}}
+<layout-cluster style="--space: var(--space-m); --justify: center">
+  <!-- Warning style tooltip -->
+  <button
+    class="has-tooltip"
+    data-tooltip="⚠️ This action cannot be undone"
+    data-position="top"
+    style="
+      --tooltip-bg: #dc2626;
+      --tooltip-radius: 6px;
+      --tooltip-font-size: 0.875rem;
+      background: #ef4444;
+      color: var(--color-canvas);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    "
+  >
+    Delete
+  </button>
+
+  <!-- Info style tooltip -->
+  <button
+    class="has-tooltip"
+    data-tooltip="💡 Pro tip: Use keyboard shortcuts for faster editing"
+    data-position="bottom"
+    style="
+      --tooltip-bg: #eff6ff;
+      --tooltip-color: #1e40af;
+      --tooltip-padding: 12px 16px;
+      --tooltip-radius: 8px;
+      --tooltip-max-width: 300px;
+      background: #3b82f6;
+      color: var(--color-canvas);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    "
+  >
+    Help
+  </button>
+</layout-cluster>
+      {{< /example >}}
+    </layout-stack>
+  </section>
+
+  <hr>
+
+  <!-- VANILLA HTML COMPONENTS -->
+  <section>
+    <layout-stack style="--space: var(--space-m)">
+      <h2>Vanilla HTML Components</h2>
+      <p>
+        Native HTML elements that work without any JavaScript or custom CSS.
+        These semantic elements provide built-in interactivity and
+        accessibility.
+      </p>
+
+      <h3>
+        Accordion with <code>&lt;details&gt;</code> and
+        <code>&lt;summary&gt;</code>
+      </h3>
+      <p>
+        The <code>&lt;details&gt;</code> element creates a disclosure widget
+        that can be toggled open and closed. No JavaScript required.
+      </p>
+
+      <layout-box>
+        <pre
+
+        ><code>&lt;details&gt;
+  &lt;summary&gt;What is Semantastic?&lt;/summary&gt;
+  &lt;p&gt;A CSS toolkit with layout primitives and components.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+      </layout-box>
+
+      <h3>Basic Example</h3>
+      {{< example name="details-basic" >}}
+<layout-stack style="--space: var(--space-s)">
+  <details>
+    <summary>What is Semantastic?</summary>
+    <p>
+      Semantastic is a CSS toolkit featuring design tokens, composable
+      layout primitives, CSS patterns, and pure CSS components. It
+      emphasizes semantic HTML and CSS custom properties over classes
+      and JavaScript.
+    </p>
+  </details>
+
+  <details>
+    <summary>How do I use the layout primitives?</summary>
+    <p>
+      Layout primitives are custom HTML elements like
+      <code>&lt;layout-stack&gt;</code> and
+      <code>&lt;layout-grid&gt;</code>. Just use them as tags in your
+      HTML and configure them with CSS custom properties via inline
+      styles or classes.
+    </p>
+  </details>
+
+  <details>
+    <summary>Do I need to register custom elements?</summary>
+    <p>
+      No! The layout primitives work with pure CSS using element
+      selectors. There's no JavaScript custom element registration
+      required.
+    </p>
+  </details>
+
+  <details open>
+    <summary>Can details be open by default?</summary>
+    <p>
+      Yes! Add the <code>open</code> attribute to have a details element
+      expanded by default, like this one.
+    </p>
+  </details>
+</layout-stack>
+      {{< /example >}}
+
+      <h3>Nested Accordion</h3>
+      <p>Details elements can be nested to create hierarchical content.</p>
+      {{< example name="details-nested" >}}
+<details>
+  <summary>CSS Files</summary>
+  <layout-stack
+    style="
+      --space: var(--space-s);
+      padding-inline-start: var(--space-m);
+    "
+  >
+    <details>
+      <summary>tokens.css</summary>
+      <p>
+        Design tokens including spacing scale, measure, ratios, and
+        borders.
+      </p>
+    </details>
+    <details>
+      <summary>layout.css</summary>
+      <p>
+        12 composable layout primitives: stack, box, center, cluster,
+        sidebar, switcher, cover, grid, frame, reel, imposter, and icon.
+      </p>
+    </details>
+    <details>
+      <summary>patterns.css</summary>
+      <p>
+        7 CSS background patterns: dots, checkerboard, diagonal lines,
+        cross-hatch, horizontal lines, vertical lines, and grid.
+      </p>
+    </details>
+    <details>
+      <summary>components.css</summary>
+      <p>
+        Pure CSS interactive components like tabs (with default, pills,
+        and underline variants).
+      </p>
+    </details>
+  </layout-stack>
+</details>
+      {{< /example >}}
+
+      <h3>Styled Accordion</h3>
+      <p>Add custom styling while preserving native functionality.</p>
+      {{< example name="details-styled" >}}
+<layout-stack style="--space: var(--space-s)">
+  <details class="styled-details">
+    <summary>Why use semantic HTML?</summary>
+    <p>
+      Semantic HTML improves accessibility, SEO, and code
+      maintainability. Native elements like
+      <code>&lt;details&gt;</code> come with built-in keyboard
+      navigation and screen reader support.
+    </p>
+  </details>
+
+  <details class="styled-details" open>
+    <summary>Benefits of native components</summary>
+    <ul style="margin: 0">
+      <li>No JavaScript dependencies</li>
+      <li>Built-in accessibility</li>
+      <li>Better performance</li>
+      <li>Future-proof</li>
+      <li>Progressive enhancement</li>
+    </ul>
+  </details>
+
+  <details class="styled-details">
+    <summary>Other native interactive elements</summary>
+    <p>
+      HTML5 includes other native interactive elements like
+      <code>&lt;dialog&gt;</code> for modals,
+      <code>&lt;input type="color"&gt;</code> for color pickers, and
+      <code>&lt;input type="range"&gt;</code> for sliders.
+    </p>
+  </details>
+</layout-stack>
+      {{< /example >}}
+    </layout-stack>
+  </section>
+
+  <hr>
+
+  <!-- POPOVERS -->
+  <section>
+    <layout-stack style="--space: var(--space-m)">
+      <h2>Popover with <code>popover</code> attribute</h2>
+      <p>
+        The Popover API provides a native way to create popovers, tooltips, and
+        menus without JavaScript. Use the <code>popover</code> attribute and
+        <code>popovertarget</code> to connect triggers to popovers.
+      </p>
+
+      <layout-box>
+        <pre
+
+        ><code>&lt;button popovertarget="my-popover"&gt;Open Popover&lt;/button&gt;
+
+&lt;div id="my-popover" popover&gt;
+  &lt;p&gt;This is a popover!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </layout-box>
+
+      <h3>Basic Popover</h3>
+      <p>
+        Click the button to toggle the popover. Click outside or press Escape to
+        dismiss.
+      </p>
+      {{< example name="popover-basic" >}}
+<button
+  popovertarget="popover-basic"
+  style="
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+  "
+>
+  Open Popover
+</button>
+
+<div
+  id="popover-basic"
+  popover
+  style="
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    padding: var(--space-m);
+    background: var(--color-canvas);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  "
+>
+  <layout-stack style="--space: var(--space-s)">
+    <h4 style="margin: 0; color: var(--color-primary)">
+      Hello from Popover!
+    </h4>
+    <p style="margin: 0">
+      This is a native HTML popover. It automatically handles:
+    </p>
+    <ul style="margin: 0; padding-inline-start: 1.5rem">
+      <li>Focus management</li>
+      <li>Escape key to close</li>
+      <li>Click outside to dismiss</li>
+      <li>Top layer rendering</li>
+    </ul>
+  </layout-stack>
+</div>
+      {{< /example >}}
+
+      <h3>Manual Popover</h3>
+      <p>
+        Use <code>popover="manual"</code> to require explicit close actions.
+        This won't auto-dismiss on outside clicks.
+      </p>
+      {{< example name="popover-manual" >}}
+<layout-cluster style="--space: var(--space-s)">
+  <button
+    popovertarget="popover-manual"
+    popovertargetaction="show"
+    style="
+      background: var(--color-primary);
+      color: var(--color-canvas);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+    "
+  >
+    Show Manual Popover
+  </button>
+</layout-cluster>
+
+<div
+  id="popover-manual"
+  popover="manual"
+  style="
+    border: 2px solid #ee6c4d;
+    border-radius: 8px;
+    padding: var(--space-m);
+    background: var(--color-canvas);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  "
+>
+  <layout-stack style="--space: var(--space-s)">
+    <h4 style="margin: 0; color: #ee6c4d">Manual Popover</h4>
+    <p style="margin: 0">
+      This popover won't close when clicking outside. You must click the
+      close button.
+    </p>
+    <button
+      popovertarget="popover-manual"
+      popovertargetaction="hide"
+      style="
+        background: #ee6c4d;
+        color: var(--color-canvas);
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+      "
+    >
+      Close
+    </button>
+  </layout-stack>
+</div>
+      {{< /example >}}
+
+      <h3>Popover with Custom Size</h3>
+      <p>
+        Popovers render in the top layer, centered in the viewport. Control
+        their size with inline styles.
+      </p>
+      {{< example name="popover-sized" >}}
+<button
+  popovertarget="popover-sized"
+  style="
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+  "
+>
+  Open Confirmation
+</button>
+
+<div
+  id="popover-sized"
+  popover
+  style="
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-l);
+    background: var(--color-canvas);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    max-inline-size: 400px;
+  "
+>
+  <layout-stack style="--space: var(--space-m)">
+    <h4 style="margin: 0; color: var(--color-primary)">
+      Confirm Action
+    </h4>
+    <p style="margin: 0">
+      Are you sure you want to proceed? This will apply your changes.
+    </p>
+    <layout-cluster style="--space: var(--space-s); --justify: flex-end">
+      <button
+        popovertarget="popover-sized"
+        popovertargetaction="hide"
+        style="
+          background: transparent;
+          color: var(--color-primary);
+          border: 2px solid var(--color-primary);
+          padding: 0.5rem 1rem;
+          border-radius: 6px;
+          cursor: pointer;
+        "
+      >
+        Cancel
+      </button>
+      <button
+        popovertarget="popover-sized"
+        popovertargetaction="hide"
+        style="
+          background: var(--color-primary);
+          color: var(--color-canvas);
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 6px;
+          cursor: pointer;
+        "
+      >
+        Confirm
+      </button>
+    </layout-cluster>
+  </layout-stack>
+</div>
+      {{< /example >}}
+
+      <h3>Popover States</h3>
+      <p>
+        Use <code>popovertargetaction</code> to control show/hide/toggle
+        behavior.
+      </p>
+      {{< example name="popover-states" >}}
+<layout-cluster style="--space: var(--space-s)">
+  <button
+    popovertarget="popover-actions"
+    popovertargetaction="show"
+    style="
+      background: var(--color-primary);
+      color: var(--color-canvas);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    "
+  >
+    Show
+  </button>
+  <button
+    popovertarget="popover-actions"
+    popovertargetaction="hide"
+    style="
+      background: #ee6c4d;
+      color: var(--color-canvas);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    "
+  >
+    Hide
+  </button>
+  <button
+    popovertarget="popover-actions"
+    popovertargetaction="toggle"
+    style="
+      background: #98c1d9;
+      color: #1a1a2e;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    "
+  >
+    Toggle
+  </button>
+</layout-cluster>
+
+<div
+  id="popover-actions"
+  popover
+  style="
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    padding: var(--space-m);
+    background: var(--color-canvas);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  "
+>
+  <p style="margin: 0">
+    Use the buttons above to control this popover with different
+    actions: show, hide, or toggle.
+  </p>
+</div>
+      {{< /example >}}
+
+      <h3>Popover with Backdrop</h3>
+      <p>
+        Use the <code>::backdrop</code> pseudo-element to dim the page content
+        while a popover is open, creating a modal-like effect.
+      </p>
+      {{< example name="popover-backdrop" >}}
+<button
+  popovertarget="popover-backdrop"
+  style="
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+  "
+>
+  Open Modal Popover
+</button>
+
+<div
+  id="popover-backdrop"
+  popover
+  style="
+    border: 2px solid var(--color-primary);
+    border-radius: 12px;
+    padding: var(--space-l);
+    background: var(--color-canvas);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  "
+>
+  <layout-stack style="--space: var(--space-m)">
+    <h4
+      style="margin: 0; color: var(--color-primary); font-size: 1.5rem"
+    >
+      Modal-like Popover
+    </h4>
+    <p style="margin: 0">
+      When this popover is open, the page content behind it is dimmed
+      and blurred using the <code>::backdrop</code> pseudo-element.
+    </p>
+    <layout-stack style="--space: var(--space-xs)">
+      <p style="margin: 0; font-weight: 600">CSS used:</p>
+      <pre
+        style="
+          background: var(--color-surface);
+          padding: var(--space-s);
+          border-radius: 4px;
+          margin: 0;
+          overflow-x: auto;
+        "
+      ><code>#popover-backdrop::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}</code></pre>
+    </layout-stack>
+    <p style="margin: 0; font-size: 0.9rem; color: #666">
+      Click outside, press Escape, or use the button below to close.
+    </p>
+    <button
+      popovertarget="popover-backdrop"
+      popovertargetaction="hide"
+      style="
+        background: #ee6c4d;
+        color: var(--color-canvas);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        cursor: pointer;
+      "
+    >
+      Close Modal
+    </button>
+  </layout-stack>
+</div>
+      {{< /example >}}
+    </layout-stack>
+  </section>
+
+</layout-stack>

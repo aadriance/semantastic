@@ -1,0 +1,518 @@
+---
+title: "Layouts"
+weight: 4
+---
+
+<layout-stack>
+
+  <div>
+    <ui-label data-intent="secondary">Every Thing in The Right Place</ui-label>
+    <h1>Layout Primatives</h1>
+    <p style="font-size: 1.25rem; color: var(--color-text-muted);">
+      Custom tags inspired by <em>Every Layout</em>.
+    </p>
+    <p>
+      A collection of custom tags for layout elements to control the flow of your page. Based on <a
+        href="https://every-layout.dev/">Every Layout</a> the goal is to accept that your website is not a poster and
+      instead build primitives that make sure your sites content flows correctly regardless of device size.
+    </p>
+    <p>
+      Custom tags are used because div soup is bad. HTML allows you to name your own tags, so why not leverage it? often
+      you'll see <code>class="foo"</code> instead. But what if Bar is a class as well? <code>class="foo bar"</code> may
+      indeed be nonsensical. As such enforcing the layouts as distinct elements creates the nicest experience in my
+      opinion.
+    </p>
+
+    <ui-notice data-intent="secondary">
+      <p>
+        I won't reiterate all the content of Every Layout. So go get <a href="https://every-layout.dev/">Every
+          Layout</a> for real. Totally worth it.
+      </p>
+    </ui-notice>
+  </div>
+
+  <section>
+    <h2> Stack </h2>
+    <p>
+      Applies consistent spacing between sibling elements using the owl selector <code>&gt; * + *</code> to make sure
+      there isn't dead spacing at the end.
+    </p>
+    <ui-label>Properties</ui-label>
+    <layout-cluster style="--space: var(--space-xs)">
+      <ui-badge><code class="has-tooltip" data-tooltip="room between stacked items">--space</code></ui-badge>
+    </layout-cluster>
+    <br />
+    <h3>Basic Example</h3>
+    {{< example name="stack-basic">}}
+      <layout-stack style="--space: var(--space-s);">
+        <ui-card>First item — no top margin</ui-card>
+        <ui-card>Second item</ui-card>
+        <ui-card>Third item</ui-card>
+        <ui-card>Fourth item</ui-card>
+      </layout-stack>
+      {{< /example>}}
+
+        <h3>Nested stacks with different spacing</h3>
+        {{< example name="stack-nested">}}
+          <layout-stack style="--space: var(--space-xl);">
+            <layout-stack
+              style="--space: var(--space-2xs); background: var(--color-surface-hover); padding: var(--space-s); border-radius: 6px;">
+              <ui-card>Tight group A.1</ui-card>
+              <ui-card>Tight group A.2</ui-card>
+            </layout-stack>
+            <layout-stack
+              style="--space: var(--space-2xs); background: var(--color-surface-hover); padding: var(--space-s); border-radius: 6px;">
+              <ui-card>Tight group B.1</ui-card>
+              <ui-card>Tight group B.2</ui-card>
+            </layout-stack>
+          </layout-stack>
+          {{< /example>}}
+  </section>
+
+  <layout-stack style="--space: var(--space-m);">
+    <h2>Box</h2>
+    <p>Adds padding and an optional border. All children inherit color.</p>
+    <ui-label>Properties</ui-label>
+    <layout-cluster style="--space: var(--space-xs)">
+      <ui-badge class="has-tooltip" data-tooltip="Space between content and border">--padding</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Thickness of the border">--border-width</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Color of the border">--border-color</ui-badge>
+    </layout-cluster>
+
+    {{< example name="box">}}
+      <layout-stack style="--space: var(--space-s)">
+        <layout-box style="--padding: var(--space-l); --border-color: var(--color-primary); --border-width: 2px;">
+          <layout-stack style="--space: var(--space-s);">
+            <h3>A boxed section</h3>
+            <p>The box provides consistent internal spacing and a visible boundary. Useful for cards, callouts, and
+              panels.</p>
+          </layout-stack>
+        </layout-box>
+
+        <layout-box
+          style="--padding: var(--space-m); --border-width: 5px; --border-color: var(--color-warning); background: var(--color-warning-subtle);">
+          <p>A warning box with thick border and custom background.</p>
+        </layout-box>
+      </layout-stack>
+      {{< /example>}}
+  </layout-stack>
+
+  <hr>
+
+  <!-- CENTER -->
+  <layout-stack style="--space: var(--space-m);">
+    <h2>Center</h2>
+    <p>Centers content with a max inline-size and gutter padding on small screens.</p>
+    <ui-label>Properties</ui-label>
+    <layout-cluster style="--space: var(--space-xs)">
+      <ui-badge class="has-tooltip" data-tooltip="Maximum width of centered content">--measure</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Minimum padding on small screens">--gutter</ui-badge>
+    </layout-cluster>
+
+    {{< example name="center">}}
+      <div style="background: var(--color-surface); padding: var(--space-m); border-radius: 6px;">
+        <layout-center
+          style="--measure: 35ch; background: var(--color-canvas); padding-block: var(--space-s); border-radius: 4px;">
+          <p style="text-align: center;">Narrow centered block (35ch measure)</p>
+        </layout-center>
+      </div>
+      {{< /example>}}
+  </layout-stack>
+
+  <hr>
+
+  <!-- CLUSTER -->
+  <layout-stack style="--space: var(--space-m);">
+    <h2>Cluster</h2>
+    <p>Wrapping horizontal group with configurable gap and alignment.</p>
+    <ui-label>Properties</ui-label>
+    <layout-cluster style="--space: var(--space-xs)">
+      <ui-badge class="has-tooltip" data-tooltip="Gap between items">--space</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Horizontal alignment of items">--justify</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Vertical alignment of items">--align</ui-badge>
+    </layout-cluster>
+
+    <h3>Tags</h3>
+    {{< example name="cluster-tags">}}
+      <layout-cluster style="--space: var(--space-xs);">
+        <span class="swatch">CSS</span>
+        <span class="swatch">Layout</span>
+        <span class="swatch">Custom Elements</span>
+        <span class="swatch">Flexbox</span>
+        <span class="swatch">Grid</span>
+        <span class="swatch">Responsive</span>
+        <span class="swatch">No JS</span>
+      </layout-cluster>
+      {{< /example>}}
+
+        <h3>Right-aligned actions</h3>
+        {{< example name="cluster-actions">}}
+          <layout-cluster style="--space: var(--space-s); --justify: flex-end;">
+            <span class="swatch--dark swatch">Cancel</span>
+            <span class="swatch--warm swatch">Save</span>
+          </layout-cluster>
+          {{< /example>}}
+  </layout-stack>
+
+  <hr>
+
+  <!-- SIDEBAR -->
+  <layout-stack style="--space: var(--space-m);">
+    <h2>Sidebar</h2>
+    <p>Two-column layout that stacks on narrow containers. The first child is the sidebar, the second grows to fill.</p>
+    <ui-label>Properties</ui-label>
+    <layout-cluster style="--space: var(--space-xs)">
+      <ui-badge class="has-tooltip" data-tooltip="Preferred width of the sidebar">--sidebar-width</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Minimum main content width before stacking">--min-width</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Gap between sidebar and main content">--gutter</ui-badge>
+    </layout-cluster>
+
+    {{< example name="sidebar">}}
+      <layout-sidebar style="--sidebar-width: 14rem; --gutter: var(--space-m);">
+        <layout-box style="--border-color: var(--color-primary);">
+          <layout-stack style="--space: var(--space-xs);">
+            <h3>Sidebar</h3>
+            <p>Navigation, filters, or supplementary content.</p>
+          </layout-stack>
+        </layout-box>
+        <layout-box style="--border-color: var(--color-secondary);">
+          <layout-stack style="--space: var(--space-xs);">
+            <h3>Main Content</h3>
+            <p>This area grows to fill available space. When the container becomes too narrow, the sidebar stacks above.
+            </p>
+            <p>Resize the browser window to see the intrinsic switching behavior — no media queries involved.</p>
+          </layout-stack>
+        </layout-box>
+      </layout-sidebar>
+      {{< /example>}}
+  </layout-stack>
+
+  <hr>
+
+  <!-- SWITCHER -->
+  <layout-stack style="--space: var(--space-m);">
+    <h2>Switcher</h2>
+    <p>Equal-width columns that switch to a vertical stack when the container is narrower than <code>--threshold</code>.
+    </p>
+    <ui-label>Properties</ui-label>
+    <layout-cluster style="--space: var(--space-xs)">
+      <ui-badge class="has-tooltip" data-tooltip="Container width to switch from row to column">--threshold</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Gap between items">--gutter</ui-badge>
+    </layout-cluster>
+
+    {{< example name="switcher">}}
+      <layout-switcher style="--threshold: 30rem; --gutter: var(--space-s);">
+        <div class="swatch--dark swatch">Plan A</div>
+        <div class="swatch--mid swatch">Plan B</div>
+        <div class="swatch--warm swatch">Plan C</div>
+      </layout-switcher>
+      {{< /example>}}
+  </layout-stack>
+
+  <hr>
+
+  <!-- COVER -->
+  <layout-stack style="--space: var(--space-m);">
+    <h2>Cover</h2>
+    <p>A flexbox column that vertically centers the <code>[data-centered]</code> child between optional header and
+      footer.</p>
+    <ui-label>Properties</ui-label>
+    <layout-cluster style="--space: var(--space-xs)">
+      <ui-badge class="has-tooltip" data-tooltip="Minimum height of the cover">--min-height</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Internal padding">--padding</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Gap between children">--space</ui-badge>
+    </layout-cluster>
+
+    {{< example name="cover">}}
+      <layout-cover style="--min-height: 40vh; --padding: var(--space-l); background: #1a1a2e; border-radius: 8px;">
+        <header style="color: #98c1d9;">Header</header>
+        <div data-centered>
+          <layout-stack style="--space: var(--space-xs);">
+            <h3 style="color: #fff; text-align: center; font-size: 1.5rem;">Hero Section</h3>
+            <p style="color: #98c1d9; text-align: center;">This content is vertically centered between header and
+              footer.</p>
+          </layout-stack>
+        </div>
+        <footer style="color: #98c1d9; text-align: end;">Footer</footer>
+      </layout-cover>
+      {{< /example>}}
+  </layout-stack>
+
+  <hr>
+
+  <!-- GRID -->
+  <layout-stack style="--space: var(--space-m);">
+    <h2>Grid</h2>
+    <p>CSS Grid with <code>auto-fit</code> and <code>minmax</code>. Columns wrap automatically — no breakpoints needed.
+    </p>
+    <ui-label>Properties</ui-label>
+    <layout-cluster style="--space: var(--space-xs)">
+      <ui-badge class="has-tooltip" data-tooltip="Minimum column width before wrapping">--min-width</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Gap between grid items">--gutter</ui-badge>
+    </layout-cluster>
+
+    {{< example name="grid">}}
+      <layout-grid style="--min-width: 12rem; --gutter: var(--space-s);">
+        <layout-box style="--border-color: var(--color-primary);">
+          <layout-stack style="--space: var(--space-2xs);">
+            <h3>Card 1</h3>
+            <p>Grid items size themselves.</p>
+          </layout-stack>
+        </layout-box>
+        <layout-box style="--border-color: var(--color-primary);">
+          <layout-stack style="--space: var(--space-2xs);">
+            <h3>Card 2</h3>
+            <p>Equal column widths.</p>
+          </layout-stack>
+        </layout-box>
+        <layout-box style="--border-color: var(--color-primary);">
+          <layout-stack style="--space: var(--space-2xs);">
+            <h3>Card 3</h3>
+            <p>Wraps when needed.</p>
+          </layout-stack>
+        </layout-box>
+        <layout-box style="--border-color: var(--color-primary);">
+          <layout-stack style="--space: var(--space-2xs);">
+            <h3>Card 4</h3>
+            <p>No media queries.</p>
+          </layout-stack>
+        </layout-box>
+        <layout-box style="--border-color: var(--color-primary);">
+          <layout-stack style="--space: var(--space-2xs);">
+            <h3>Card 5</h3>
+            <p>Intrinsically responsive.</p>
+          </layout-stack>
+        </layout-box>
+        <layout-box style="--border-color: var(--color-primary);">
+          <layout-stack style="--space: var(--space-2xs);">
+            <h3>Card 6</h3>
+            <p>Just works.</p>
+          </layout-stack>
+        </layout-box>
+      </layout-grid>
+      {{< /example>}}
+  </layout-stack>
+
+  <hr>
+
+  <!-- FRAME -->
+  <layout-stack style="--space: var(--space-m);">
+    <h2>Frame</h2>
+    <p>Maintains a fixed aspect ratio and crops overflow content with <code>object-fit: cover</code>.</p>
+    <ui-label>Properties</ui-label>
+    <layout-cluster style="--space: var(--space-xs)">
+      <ui-badge class="has-tooltip" data-tooltip="Aspect ratio of the frame">--ratio</ui-badge>
+    </layout-cluster>
+
+    {{< example name="frame">}}
+      <layout-grid style="--min-width: 14rem; --gutter: var(--space-s);">
+        <layout-stack style="--space: var(--space-2xs);">
+          <layout-frame style="--ratio: 16/9; border-radius: 6px;">
+            <div class="pattern-tile" data-pattern-type="dots"
+              style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-primary);">
+            </div>
+          </layout-frame>
+          <p style="text-align: center; font-size: 0.85rem; color: #666;">16 : 9</p>
+        </layout-stack>
+        <layout-stack style="--space: var(--space-2xs);">
+          <layout-frame style="--ratio: 1/1; border-radius: 6px;">
+            <div class="pattern-tile" data-pattern-type="checkerboard"
+              style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-success);"></div>
+          </layout-frame>
+          <p style="text-align: center; font-size: 0.85rem; color: #666;">1 : 1</p>
+        </layout-stack>
+        <layout-stack style="--space: var(--space-2xs);">
+          <layout-frame style="--ratio: 4/3; border-radius: 6px;">
+            <div class="pattern-tile" data-pattern-type="diagonal-lines"
+              style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-secondary);"></div>
+          </layout-frame>
+          <p style="text-align: center; font-size: 0.85rem; color: #666;">4 : 3</p>
+        </layout-stack>
+      </layout-grid>
+      {{< /example>}}
+  </layout-stack>
+
+  <hr>
+
+  <!-- REEL -->
+  <layout-stack style="--space: var(--space-m);">
+    <h2>Reel</h2>
+    <p>A horizontal scrolling track with optional scroll-snap via <code>data-snap</code>.</p>
+    <ui-label>Properties</ui-label>
+    <layout-cluster style="--space: var(--space-xs)">
+      <ui-badge class="has-tooltip" data-tooltip="Width of each item">--item-width</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Gap between items">--space</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Height of the reel">--height</ui-badge>
+      <ui-badge class="has-tooltip" data-tooltip="Padding at the edges">--gutter</ui-badge>
+    </layout-cluster>
+
+    {{< example name="reel">}}
+      <layout-reel style="--item-width: 16rem; --space: var(--space-s);" data-snap>
+        <layout-frame style="--ratio: 3/2; border-radius: 6px;">
+          <div class="pattern-tile" data-pattern-type="checkerboard"
+            style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-primary);">
+          </div>
+        </layout-frame>
+        <layout-frame style="--ratio: 3/2; border-radius: 6px;">
+          <div class="pattern-tile" data-pattern-type="dots"
+            style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-warning);"></div>
+        </layout-frame>
+        <layout-frame style="--ratio: 3/2; border-radius: 6px;">
+          <div class="pattern-tile" data-pattern-type="grid"
+            style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-success);">
+          </div>
+        </layout-frame>
+        <layout-frame style="--ratio: 3/2; border-radius: 6px;">
+          <div class="pattern-tile" data-pattern-type="cross-hatch"
+            style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-secondary);"></div>
+        </layout-frame>
+        <layout-frame style="--ratio: 3/2; border-radius: 6px;">
+          <div class="pattern-tile" data-pattern-type="vertical-lines"
+            style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-error);"></div>
+        </layout-frame>
+        <layout-frame style="--ratio: 3/2; border-radius: 6px;">
+          <div class="pattern-tile" data-pattern-type="horizontal-lines"
+            style="inline-size: 100%; block-size: 100%; --pattern-fill: #98c1d9;"></div>
+        </layout-frame>
+      </layout-reel>
+      {{< /example>}}
+  </layout-stack>
+
+  <hr>
+
+  <!-- IMPOSTER -->
+  <layout-stack style="--space: var(--space-m);">
+    <h2>Imposter</h2>
+    <p>Absolutely centers an element within a positioned parent. Add <code>data-fixed</code> for viewport-fixed
+      positioning.</p>
+    <ui-label>Properties</ui-label>
+    <layout-cluster style="--space: var(--space-xs)">
+      <ui-badge class="has-tooltip" data-tooltip="Positioning scheme (absolute or fixed)">--position</ui-badge>
+    </layout-cluster>
+
+    {{< example name="imposter">}}
+      <div style="position: relative; block-size: 16rem; background: #1a1a2e; border-radius: 8px; overflow: hidden;">
+        <layout-imposter>
+          <layout-box
+            style="--padding: var(--space-l); --border-color: #98c1d9; background: var(--color-canvas); border-radius: 8px; text-align: center;">
+            <layout-stack style="--space: var(--space-xs);">
+              <h3>Modal Dialog</h3>
+              <p>Centered in the container using <code>translate(-50%, -50%)</code>.</p>
+            </layout-stack>
+          </layout-box>
+        </layout-imposter>
+      </div>
+      {{< /example>}}
+  </layout-stack>
+
+  <hr>
+
+  <!-- ICON -->
+  <layout-stack style="--space: var(--space-m);">
+    <h2>Icon</h2>
+    <p>Sizes to <code>1em</code> so the icon scales with the surrounding text.</p>
+    <ui-label>Properties</ui-label>
+    <layout-cluster style="--space: var(--space-xs)">
+      <ui-badge><em>none — scales with font-size</em></ui-badge>
+    </layout-cluster>
+
+    {{< example name="icon">}}
+      <layout-stack style="--space: var(--space-s);">
+        <p style="font-size: 1rem;">
+          <layout-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4l3 3" />
+            </svg></layout-icon>
+          Normal text with clock icon
+        </p>
+        <p style="font-size: 1.5rem;">
+          <layout-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+            </svg></layout-icon>
+          Larger text — icon scales automatically
+        </p>
+        <p style="font-size: 2rem;">
+          <layout-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg></layout-icon>
+          Even larger — still aligned
+        </p>
+      </layout-stack>
+      {{< /example>}}
+  </layout-stack>
+
+  <hr>
+
+  <!-- COMPOSITION -->
+  <layout-stack style="--space: var(--space-m);">
+    <ui-label data-intent="secondary">Composition</ui-label>
+    <h2>Primitives Compose Together</h2>
+    <p>The real power is nesting these elements. Here is a page-like layout using most primitives together:</p>
+
+    <layout-sidebar style="--sidebar-width: 16rem; --gutter: var(--space-m);">
+      <layout-stack style="--space: var(--space-s);">
+        <layout-box style="--border-color: var(--color-primary);">
+          <h3>Navigation</h3>
+        </layout-box>
+        <layout-stack style="--space: var(--space-2xs);">
+          <div class="swatch">Dashboard</div>
+          <div class="swatch--mid swatch">Projects</div>
+          <div class="swatch">Settings</div>
+          <div class="swatch">Help</div>
+        </layout-stack>
+      </layout-stack>
+      <layout-stack style="--space: var(--space-m);">
+        <layout-cluster style="--space: var(--space-xs); --justify: space-between; --align: center;">
+          <h3>Projects</h3>
+          <span class="swatch--warm swatch">+ New</span>
+        </layout-cluster>
+        <layout-grid style="--min-width: 12rem; --gutter: var(--space-s);">
+          <layout-box style="--border-color: var(--color-border);">
+            <layout-stack style="--space: var(--space-2xs);">
+              <layout-frame style="--ratio: 2/1; border-radius: 4px;">
+                <div data-pattern-type="checkerboard"
+                  style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-primary); --pattern-size: 20px;">
+                </div>
+              </layout-frame>
+              <h3>Project Alpha</h3>
+              <layout-cluster style="--space: var(--space-3xs);">
+                <span class="swatch">CSS</span>
+                <span class="swatch">Layout</span>
+              </layout-cluster>
+            </layout-stack>
+          </layout-box>
+          <layout-box style="--border-color: var(--color-border);">
+            <layout-stack style="--space: var(--space-2xs);">
+              <layout-frame style="--ratio: 2/1; border-radius: 4px;">
+                <div data-pattern-type="vertical-lines"
+                  style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-success);"></div>
+              </layout-frame>
+              <h3>Project Beta</h3>
+              <layout-cluster style="--space: var(--space-3xs);">
+                <span class="swatch">HTML</span>
+                <span class="swatch">Custom Elements</span>
+              </layout-cluster>
+            </layout-stack>
+          </layout-box>
+          <layout-box style="--border-color: var(--color-border);">
+            <layout-stack style="--space: var(--space-2xs);">
+              <layout-frame style="--ratio: 2/1; border-radius: 4px;">
+                <div data-pattern-type="dots"
+                  style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-warning); --pattern-size: 15px;">
+                </div>
+              </layout-frame>
+              <h3>Project Gamma</h3>
+              <layout-cluster style="--space: var(--space-3xs);">
+                <span class="swatch">Design</span>
+                <span class="swatch">Tokens</span>
+              </layout-cluster>
+            </layout-stack>
+          </layout-box>
+        </layout-grid>
+      </layout-stack>
+    </layout-sidebar>
+  </layout-stack>
+
+</layout-stack>

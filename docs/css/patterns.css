@@ -1,0 +1,412 @@
+/* ===================================================
+   SVG Background Patterns
+   Apply via utility class: <div class="pattern-dots">
+   Configure with custom properties on the element.
+   =================================================== */
+
+/* Base: any element with a pattern class gets sized as a block */
+[class*="pattern-"] {
+  background-repeat: repeat;
+  background-position: center;
+}
+
+/* ----------------------------------------------------------
+   Dots
+   A grid of circles using radial-gradient (fully dynamic).
+   --pattern-size     cell size (default 20px)
+   --pattern-dot      dot radius (default 2px)
+   --pattern-fill     dot color (default #888)
+   ---------------------------------------------------------- */
+.pattern-dots {
+  --_size: var(--pattern-size, 20px);
+  --_dot: var(--pattern-dot, 2px);
+  --_fill: var(--pattern-fill, var(--color-pattern-default, #888));
+  background-image: radial-gradient(circle,
+      var(--_fill) var(--_dot),
+      transparent var(--_dot));
+  background-size: var(--_size) var(--_size);
+}
+
+/* ----------------------------------------------------------
+   Checkerboard
+   Alternating squares.
+   --pattern-size     tile size (default 40px)
+   --pattern-fill     square color (default #ccc)
+   ---------------------------------------------------------- */
+.pattern-checkerboard {
+  --_size: var(--pattern-size, 40px);
+  --_fill: var(--pattern-fill, var(--color-pattern-subtle, #ccc));
+  background-image: conic-gradient(var(--_fill) 25%,
+      transparent 25% 50%,
+      var(--_fill) 50% 75%,
+      transparent 75%);
+  background-size: var(--_size) var(--_size);
+}
+
+/* ----------------------------------------------------------
+   Diagonal Lines
+   45-degree stripes.
+   --pattern-size       repeat unit (default 10px)
+   --pattern-fill       line color (default #888)
+   --pattern-width      line thickness (default 1px)
+   ---------------------------------------------------------- */
+.pattern-diagonal-lines {
+  --_size: var(--pattern-size, 10px);
+  --_fill: var(--pattern-fill, var(--color-pattern-default, #888));
+  --_width: var(--pattern-width, 1px);
+  background-image: repeating-linear-gradient(45deg,
+      transparent,
+      transparent calc(var(--_size) - var(--_width)),
+      var(--_fill) calc(var(--_size) - var(--_width)),
+      var(--_fill) var(--_size));
+}
+
+/* ----------------------------------------------------------
+   Cross-hatch
+   Overlapping diagonal lines in both directions.
+   --pattern-size       repeat unit (default 10px)
+   --pattern-fill       line color (default #888)
+   --pattern-width      line thickness (default 1px)
+   ---------------------------------------------------------- */
+.pattern-cross-hatch {
+  --_size: var(--pattern-size, 10px);
+  --_fill: var(--pattern-fill, var(--color-pattern-default, #888));
+  --_width: var(--pattern-width, 1px);
+  background-image:
+    repeating-linear-gradient(45deg,
+      transparent,
+      transparent calc(var(--_size) - var(--_width)),
+      var(--_fill) calc(var(--_size) - var(--_width)),
+      var(--_fill) var(--_size)),
+    repeating-linear-gradient(-45deg,
+      transparent,
+      transparent calc(var(--_size) - var(--_width)),
+      var(--_fill) calc(var(--_size) - var(--_width)),
+      var(--_fill) var(--_size));
+}
+
+/* ----------------------------------------------------------
+   Horizontal Lines
+   Even horizontal stripes.
+   --pattern-size       repeat unit (default 8px)
+   --pattern-fill       line color (default #888)
+   --pattern-width      line thickness (default 1px)
+   ---------------------------------------------------------- */
+.pattern-horizontal-lines {
+  --_size: var(--pattern-size, 8px);
+  --_fill: var(--pattern-fill, var(--color-pattern-default, #888));
+  --_width: var(--pattern-width, 1px);
+  background-image: repeating-linear-gradient(0deg,
+      transparent,
+      transparent calc(var(--_size) - var(--_width)),
+      var(--_fill) calc(var(--_size) - var(--_width)),
+      var(--_fill) var(--_size));
+}
+
+/* ----------------------------------------------------------
+   Vertical Lines
+   Even vertical stripes.
+   --pattern-size       repeat unit (default 8px)
+   --pattern-fill       line color (default #888)
+   --pattern-width      line thickness (default 1px)
+   ---------------------------------------------------------- */
+.pattern-vertical-lines {
+  --_size: var(--pattern-size, 8px);
+  --_fill: var(--pattern-fill, var(--color-pattern-default, #888));
+  --_width: var(--pattern-width, 1px);
+  background-image: repeating-linear-gradient(90deg,
+      transparent,
+      transparent calc(var(--_size) - var(--_width)),
+      var(--_fill) calc(var(--_size) - var(--_width)),
+      var(--_fill) var(--_size));
+}
+
+/* ----------------------------------------------------------
+   Grid
+   Horizontal + vertical lines forming a grid.
+   --pattern-size       cell size (default 20px)
+   --pattern-fill       line color (default #ccc)
+   --pattern-width      line thickness (default 1px)
+   ---------------------------------------------------------- */
+.pattern-grid {
+  --_size: var(--pattern-size, 20px);
+  --_fill: var(--pattern-fill, var(--color-pattern-subtle, #ccc));
+  --_width: var(--pattern-width, 1px);
+  background-image:
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent calc(var(--_size) - var(--_width)),
+      var(--_fill) calc(var(--_size) - var(--_width)),
+      var(--_fill) var(--_size)),
+    repeating-linear-gradient(90deg,
+      transparent,
+      transparent calc(var(--_size) - var(--_width)),
+      var(--_fill) calc(var(--_size) - var(--_width)),
+      var(--_fill) var(--_size));
+}
+
+/* ----------------------------------------------------------
+   PATTERN FLOURISHES - Utility Classes
+   ---------------------------------------------------------- */
+
+/* ────────────────────────────────────────────────────────
+   Pattern Shadow
+   Alternative to drop shadow using offset pattern.
+   
+   Usage:
+   <div class="pattern-shadow">Content with shadow</div>
+   <div class="pattern-shadow" data-pattern-type="lines">Lines shadow</div>
+   ──────────────────────────────────────────────────────── */
+.pattern-shadow {
+  position: relative;
+  background: var(--pattern-shadow-bg, var(--color-canvas));
+  padding: var(--pattern-shadow-padding, var(--space-m, 1.5rem));
+  border-radius: var(--pattern-shadow-radius, var(--radius-md, 8px));
+}
+
+.pattern-shadow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: var(--pattern-shadow-radius, var(--radius-md, 8px));
+
+  /* Lines pattern by default */
+  background-image: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 8px,
+      var(--pattern-shadow-fill, var(--color-primary)) 8px,
+      var(--pattern-shadow-fill, var(--color-primary)) 10px);
+
+  /* Offset creates shadow effect */
+  transform: translate(var(--pattern-shadow-x, 12px),
+      var(--pattern-shadow-y, 12px));
+  opacity: var(--pattern-shadow-opacity, 0.7);
+}
+
+/* Pattern type variants for shadow */
+.pattern-shadow[data-pattern-type="dots"]::before {
+  background-image: radial-gradient(circle,
+      var(--pattern-shadow-fill, var(--color-primary)) var(--pattern-shadow-dot, 2px),
+      transparent var(--pattern-shadow-dot, 2px));
+  background-size: var(--pattern-shadow-size, 20px) var(--pattern-shadow-size, 20px);
+}
+
+.pattern-shadow[data-pattern-type="checkerboard"]::before {
+  background-image: conic-gradient(var(--pattern-shadow-fill, var(--color-primary)) 25%,
+      transparent 25% 50%,
+      var(--pattern-shadow-fill, var(--color-primary)) 50% 75%,
+      transparent 75%);
+  background-size: var(--pattern-shadow-size, 20px) var(--pattern-shadow-size, 20px);
+}
+
+/* ────────────────────────────────────────────────────────
+   Pattern Accent Bar
+   Thin vertical pattern strip on left edge.
+   
+   Usage:
+   <div class="pattern-accent">Content with accent</div>
+   <div class="pattern-accent" data-pattern-type="dots">Dots accent</div>
+   <div class="pattern-accent" data-intent="success">Success color</div>
+   ──────────────────────────────────────────────────────── */
+.pattern-accent {
+  position: relative;
+  padding: var(--pattern-accent-padding, var(--space-m, 1.5rem));
+  padding-inline-start: calc(var(--pattern-accent-padding, var(--space-m, 1.5rem)) + var(--accent-width, 6px) + var(--space-2xs, 0.5rem));
+}
+
+.pattern-accent::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  inline-size: var(--accent-width, 6px);
+  border-radius: var(--pattern-accent-radius, var(--radius-base, 6px)) 0 0 var(--pattern-accent-radius, var(--radius-base, 6px));
+
+  /* Default: diagonal lines */
+  background-image: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 3px,
+      var(--accent-color, var(--color-primary)) 3px,
+      var(--accent-color, var(--color-primary)) 4px);
+}
+
+/* Pattern type variants for accent */
+.pattern-accent[data-pattern-type="dots"]::before {
+  background-image: radial-gradient(circle,
+      var(--accent-color, var(--color-primary)) 1px,
+      transparent 1px);
+  background-size: 6px 6px;
+}
+
+.pattern-accent[data-pattern-type="horizontal"]::before {
+  background-image: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 3px,
+      var(--accent-color, var(--color-primary)) 3px,
+      var(--accent-color, var(--color-primary)) 4px);
+}
+
+.pattern-accent[data-pattern-type="checkerboard"]::before {
+  background-image: conic-gradient(var(--accent-color, var(--color-primary)) 25%,
+      transparent 25% 50%,
+      var(--accent-color, var(--color-primary)) 50% 75%,
+      transparent 75%);
+  background-size: 6px 6px;
+}
+
+/* Intent/theme variants for accent */
+.pattern-accent[data-intent="success"]::before {
+  --accent-color: var(--color-success);
+}
+
+.pattern-accent[data-intent="warning"]::before {
+  --accent-color: var(--color-warning);
+}
+
+.pattern-accent[data-intent="error"]::before {
+  --accent-color: var(--color-error);
+}
+
+.pattern-accent[data-intent="secondary"]::before {
+  --accent-color: var(--color-secondary);
+}
+
+/* ────────────────────────────────────────────────────────
+   Pattern Hero Background
+   Large background with subtle pattern + gradient overlay.
+   
+   Usage:
+   <div class="pattern-hero">Default (dots)</div>
+   <div class="pattern-hero" data-pattern-type="lines">Lines pattern</div>
+   <div class="pattern-hero" data-pattern-type="grid">Grid pattern</div>
+   <div class="pattern-hero" data-intent="success">Success theme</div>
+   ──────────────────────────────────────────────────────── */
+.pattern-hero {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-3xl) var(--space-l);
+  color: var(--color-canvas);
+}
+
+/* Pattern layer (subtle background) */
+.pattern-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  /* Default: lines pattern */
+  background-image: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 10px,
+      var(--color-canvas) 10px,
+      var(--color-canvas) 12px);
+  opacity: var(--hero-pattern-opacity, 0.15);
+}
+
+/* Gradient overlay + vignette */
+.pattern-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse at center,
+      transparent 0%,
+      color-mix(in srgb, black 20%, transparent) 55%,
+      color-mix(in srgb, black 60%, transparent) 100%),
+    linear-gradient(135deg,
+      var(--hero-color-start, var(--color-primary)),
+      var(--hero-color-end, var(--color-primary-emphasis)));
+  opacity: var(--hero-gradient-opacity, 1);
+}
+
+/* Pattern type variants */
+.pattern-hero[data-pattern-type="dots"]::before {
+  background-image: radial-gradient(circle,
+      var(--color-canvas) 2px,
+      transparent 2px);
+  background-size: var(--hero-pattern-size, 30px) var(--hero-pattern-size, 30px);
+}
+
+.pattern-hero[data-pattern-type="grid"]::before {
+  background-image:
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent calc(var(--hero-pattern-size, 30px) - 1px),
+      var(--color-canvas) calc(var(--hero-pattern-size, 30px) - 1px),
+      var(--color-canvas) var(--hero-pattern-size, 30px)),
+    repeating-linear-gradient(90deg,
+      transparent,
+      transparent calc(var(--hero-pattern-size, 30px) - 1px),
+      var(--color-canvas) calc(var(--hero-pattern-size, 30px) - 1px),
+      var(--color-canvas) var(--hero-pattern-size, 30px));
+  background-size: initial;
+}
+
+.pattern-hero[data-pattern-type="checkerboard"]::before {
+  background-image: conic-gradient(var(--color-canvas) 25%,
+      transparent 25% 50%,
+      var(--color-canvas) 50% 75%,
+      transparent 75%);
+  background-size: var(--hero-pattern-size, 30px) var(--hero-pattern-size, 30px);
+}
+
+/* Intent/theme variants for gradient colors */
+.pattern-hero[data-intent="success"]::after {
+  background:
+    radial-gradient(ellipse at center,
+      transparent 0%,
+      color-mix(in srgb, black 20%, transparent) 55%,
+      color-mix(in srgb, black 60%, transparent) 100%),
+    linear-gradient(135deg,
+      var(--hero-color-start, var(--color-success)),
+      var(--hero-color-end, color-mix(in srgb, var(--color-success) 80%, var(--color-ink))));
+}
+
+.pattern-hero[data-intent="warning"]::after {
+  background:
+    radial-gradient(ellipse at center,
+      transparent 0%,
+      color-mix(in srgb, black 20%, transparent) 55%,
+      color-mix(in srgb, black 60%, transparent) 100%),
+    linear-gradient(135deg,
+      var(--hero-color-start, var(--color-warning)),
+      var(--hero-color-end, color-mix(in srgb, var(--color-warning) 80%, var(--color-ink))));
+}
+
+.pattern-hero[data-intent="error"]::after {
+  background:
+    radial-gradient(ellipse at center,
+      transparent 0%,
+      color-mix(in srgb, black 20%, transparent) 55%,
+      color-mix(in srgb, black 60%, transparent) 100%),
+    linear-gradient(135deg,
+      var(--hero-color-start, var(--color-error)),
+      var(--hero-color-end, color-mix(in srgb, var(--color-error) 80%, var(--color-ink))));
+}
+
+.pattern-hero[data-intent="secondary"]::after {
+  background:
+    radial-gradient(ellipse at center,
+      transparent 0%,
+      color-mix(in srgb, black 20%, transparent) 55%,
+      color-mix(in srgb, black 60%, transparent) 100%),
+    linear-gradient(135deg,
+      var(--hero-color-start, var(--color-secondary)),
+      var(--hero-color-end, color-mix(in srgb, var(--color-secondary) 70%, var(--color-ink))));
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+
+  .pattern-shadow::before,
+  .pattern-hero::before {
+    opacity: 0.5;
+  }
+
+  .pattern-accent::before {
+    opacity: 0.7;
+  }
+}

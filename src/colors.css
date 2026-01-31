@@ -1,0 +1,57 @@
+:root {
+  --lch-primary: 50% 0.13 195;
+  --lch-secondary: 72% 0.09 295;
+  --lch-success: 65% 0.23 142;
+  --lch-warning: 75% 0.17 90;
+  --lch-error: 51% 0.2 31;
+  --lch-ink: 26% 0.05 264;
+  --lch-canvas: 100% 0 0;
+  --lch-surface: 96% 0.01 240;
+  --lch-border: 85% 0.02 250;
+  --color-primary: oklch(var(--lch-primary));
+  --color-secondary: oklch(var(--lch-secondary));
+  --color-success: oklch(var(--lch-success));
+  --color-warning: oklch(var(--lch-warning));
+  --color-error: oklch(var(--lch-error));
+  --color-ink: oklch(var(--lch-ink));
+  --color-canvas: oklch(var(--lch-canvas));
+  --color-surface: oklch(var(--lch-surface));
+  --color-border: oklch(var(--lch-border));
+  --color-primary-50: oklch(var(--lch-primary) / 0.5);
+  --color-primary-10: oklch(var(--lch-primary) / 0.1);
+  --color-overlay: oklch(var(--lch-ink) / 0.8);
+  --color-backdrop: oklch(var(--lch-ink) / 0.15);
+  --color-border-subtle: oklch(var(--lch-border) / 0.5);
+  --color-primary-subtle: color-mix(in srgb, var(--color-primary) 8%, var(--color-canvas));
+  --color-primary-muted: color-mix(in srgb, var(--color-primary) 20%, var(--color-canvas));
+  --color-success-subtle: color-mix(in srgb, var(--color-success) 8%, var(--color-canvas));
+  --color-warning-subtle: color-mix(in srgb, var(--color-warning) 12%, var(--color-canvas));
+  --color-error-subtle: color-mix(in srgb, var(--color-error) 8%, var(--color-canvas));
+  --color-primary-emphasis: color-mix(in srgb, var(--color-primary) 80%, var(--color-ink));
+  --color-secondary-emphasis: color-mix(in srgb, var(--color-secondary) 70%, var(--color-ink));
+  --color-text-primary: color-mix(in srgb, var(--color-primary) 10%, var(--color-ink));
+  --color-text-muted: color-mix(in srgb, var(--color-ink) 60%, var(--color-canvas));
+  --color-text-subtle: color-mix(in srgb, var(--color-ink) 40%, var(--color-canvas));
+  --color-text-heading: var(--color-ink);
+  --color-surface-hover: color-mix(in srgb, var(--color-primary) 4%, var(--color-surface));
+  --color-pattern-default: color-mix(in srgb, var(--color-ink) 30%, transparent);
+  --color-pattern-subtle: color-mix(in srgb, var(--color-ink) 20%, transparent);
+  --color-hover-subtle: oklch(var(--lch-primary) / 0.05);
+  --color-tooltip-bg: oklch(var(--lch-ink) / 0.95);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lch-primary: 68% 0.14 195;
+    --lch-secondary: 78% 0.10 295;
+    --lch-success: 70% 0.19 142;
+    --lch-warning: 80% 0.14 95;
+    --lch-error: 60% 0.17 35;
+    --lch-ink: 96% 0.003 260;
+    --lch-canvas: 20% 0.02 233;
+    --lch-surface: 24% 0.02 235;
+    --lch-border: 35% 0.03 240;
+    --color-pattern-default: color-mix(in srgb, var(--color-ink) 20%, transparent);
+    --color-pattern-subtle: color-mix(in srgb, var(--color-ink) 10%, transparent);
+  }
+}

@@ -1,0 +1,56 @@
+<nav class="site-nav">
+  <layout-cluster style="--space: var(--space-m); --align: center; --justify: space-between">
+    <a href="/" class="nav-brand" {{ if .IsHome }}aria-current="page"{{ end }}>
+      Semantastic
+    </a>
+
+    <!-- Desktop navigation -->
+    <layout-cluster class="nav-desktop" style="--space: var(--space-s)">
+      {{ $currentPath := .RelPermalink }}
+      {{ range .Site.RegularPages }}
+        {{ if ne .File.BaseFileName "_index" }}
+          <a href="{{ .RelPermalink }}" {{ if eq .RelPermalink $currentPath }}aria-current="page"{{ end }}>
+            {{ .Title }}
+          </a>
+        {{ end }}
+      {{ end }}
+    </layout-cluster>
+
+    <!-- Mobile hamburger button -->
+    <button class="nav-toggle" popovertarget="mobile-nav" aria-label="Open navigation menu">
+      ☰
+    </button>
+  </layout-cluster>
+</nav>
+
+<!-- Mobile navigation flyout -->
+<ui-flyout
+  id="mobile-nav"
+  popover
+  data-direction="right"
+  style="--flyout-width: 280px; --flyout-bg: var(--color-surface)"
+>
+  <layout-stack style="--space: var(--space-m); padding: var(--space-l)">
+    <layout-stack style="--space: var(--space-2xs)">
+      <a href="/" class="mobile-nav-link" {{ if .IsHome }}aria-current="page"{{ end }}>
+        Home
+      </a>
+      {{ $currentPath := .RelPermalink }}
+      {{ range .Site.RegularPages }}
+        {{ if ne .File.BaseFileName "_index" }}
+          <a
+            href="{{ .RelPermalink }}"
+            class="mobile-nav-link"
+            {{ if eq .RelPermalink $currentPath }}aria-current="page"{{ end }}
+          >
+            {{ .Title }}
+          </a>
+        {{ end }}
+      {{ end }}
+    </layout-stack>
+
+    <button class="mobile-nav-close" popovertarget="mobile-nav">
+      Close Menu
+    </button>
+  </layout-stack>
+</ui-flyout>

@@ -1,0 +1,86 @@
+{{ define "main" }}
+<!-- Hero -->
+<layout-cover class="pattern-hero">{{ .Content }}</layout-cover>
+
+<layout-center style="--measure: 80ch; --gutter: var(--space-l)">
+  <layout-stack style="--space: var(--space-3xl); padding-block: var(--space-3xl)">
+
+    <layout-stack style="--space: var(--space-l)">
+      <p>
+        Semantastic gives you a focused toolkit — each file is independent so
+        you include exactly what your project needs. No utility soup, no
+        framework lock-in.
+      </p>
+
+      <!-- Feature cards -->
+      <layout-grid class="feature-grid" style="--min-width: 15rem; --gutter: var(--space-m)">
+
+        <a href="/tokens/">
+          <ui-card data-variant="interactive">
+            <layout-stack style="--space: var(--space-s)">
+              <ui-label data-intent="primary">tokens.css</ui-label>
+              <h3>Design Tokens</h3>
+              <p>Spacing scale, type scale, shadows, border radius, timing, and measure — all as <code>:root</code>
+                custom properties.</p>
+            </layout-stack>
+          </ui-card>
+        </a>
+
+        <a href="/colors/">
+          <ui-card data-variant="interactive">
+            <layout-stack style="--space: var(--space-s)">
+              <ui-label data-intent="secondary">colors.css</ui-label>
+              <h3>Color System</h3>
+              <p>OKLCH semantic aliases with automatic dark mode. One variable override to retheme the whole site.</p>
+            </layout-stack>
+          </ui-card>
+        </a>
+
+        <a href="/layouts/">
+          <ui-card data-variant="interactive">
+            <layout-stack style="--space: var(--space-s)">
+              <ui-label>layouts.css</ui-label>
+              <h3>Layout Primitives</h3>
+              <p>12 composable custom elements — stack, grid, sidebar, cover, reel, and more. No media queries.</p>
+            </layout-stack>
+          </ui-card>
+        </a>
+
+        <a href="/components/">
+          <ui-card data-variant="interactive">
+            <layout-stack style="--space: var(--space-s)">
+              <ui-label>components.css</ui-label>
+              <h3>Pure CSS Components</h3>
+              <p>Tabs, flyout drawers, and tooltips built with native HTML features. Zero JavaScript.</p>
+            </layout-stack>
+          </ui-card>
+        </a>
+
+        <a href="/candy/">
+          <ui-card data-variant="interactive">
+            <layout-stack style="--space: var(--space-s)">
+              <ui-label>candy.css</ui-label>
+              <h3>Candy</h3>
+              <p>Cards, badges, notices, pattern backgrounds, and a colorize mixin for on-the-fly theming.</p>
+            </layout-stack>
+          </ui-card>
+        </a>
+
+      </layout-grid>
+    </layout-stack>
+
+    <layout-stack style="--space: var(--space-m)">
+      <h2>Usage</h2>
+      <ui-notice>
+        There is no CDN, no minified bundle. If you would like to use Semantastic I recommend you copy the files
+        yourself and start tweaking to meet your needs. I don't intend for anyone to take a hard dependence on
+        Semantastic. I wanted to make a easy starting point for me to copy down thing I know I want to use often.
+        <br />
+        If you can use this as is great. If I've inspired you to do some of your own CSS, even better. Go forth and make
+        standards compliant UI!
+      </ui-notice>
+    </layout-stack>
+
+  </layout-stack>
+</layout-center>
+{{ end }}

@@ -1,0 +1,760 @@
+---
+title: "Candy"
+includeComponents: true
+includeCandy: true
+---
+
+<layout-center style="--measure: 72ch; --gutter: var(--space-l)">
+  <layout-stack>
+
+    <!-- Introduction -->
+    <div>
+      <ui-label data-intent="secondary">Optional CSS</ui-label>
+      <h1>Candy Components</h1>
+      <p style="font-size: 1.25rem; color: var(--color-text-muted);">
+        Production-ready components built on Semantastic design system primitives.
+      </p>
+      <p>
+        <strong>candy.css</strong> is an optional, higher-level CSS layer that provides 15
+        components implemented as custom elements — replacing verbose inline styles with
+        clean, semantic markup.
+      </p>
+      <ui-notice data-intent="secondary">
+        <strong>Note:</strong> This file is <em>completely optional</em>. The Semantastic system works perfectly without
+        it. Candy.css is the <strong>only</strong> CSS file in the system that imports dependencies.
+      </ui-notice>
+    </div>
+
+    <hr>
+
+    <!-- SECTION 1: CARDS & CONTAINERS -->
+    <section>
+      <layout-stack style="--space: var(--space-xl)">
+        <h2>Cards & Containers</h2>
+
+        <!-- 1. Card -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Base Card</h3>
+          <p>Simple card with rounded corners, border, and padding. Implemented as a custom element.</p>
+          {{< example name="candy-card-base">}}
+            <ui-card>
+              <strong>Basic Card</strong>
+              <p>This is a simple card component with default styling.</p>
+            </ui-card>
+            {{< /example>}}
+              <p><em>Tip: Compose with tokens inline:</em> <code>&lt;ui-card style="padding: var(--space-xl);
+                  background: var(--color-surface)"&gt;</code></p>
+        </layout-stack>
+
+        <!-- 2. Card Elevated -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Elevated Card</h3>
+          <p>Card with offset pattern shadow instead of traditional drop shadow.</p>
+          {{< example name="candy-card-elevated">}}
+            <ui-card data-variant="elevated">
+              <strong>Elevated Card</strong>
+              <p>Notice the pattern shadow behind this card! It uses lines by default.</p>
+            </ui-card>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- 3. Interactive Card -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Interactive Card</h3>
+          <p>Clickable card with hover effects.</p>
+          {{< example name="candy-card-interactive">}}
+            <a href="#" style="text-decoration: none; color: inherit">
+              <ui-card data-variant="interactive">
+                <strong>Hover me!</strong>
+                <p>This card lifts up when you hover over it.</p>
+              </ui-card>
+            </a>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- 4. Card Accent -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Card with Accent Bar</h3>
+          <p>Card with colored left border accent. Supports semantic intents.</p>
+          {{< example name="candy-card-accent">}}
+            <layout-grid style="--min-width: 15rem">
+              <ui-card data-variant="accent">
+                <strong>Default</strong>
+                <p>Primary accent.</p>
+              </ui-card>
+              <ui-card data-variant="accent" data-intent="success">
+                <strong>Success</strong>
+                <p>Green accent.</p>
+              </ui-card>
+              <ui-card data-variant="accent" data-intent="warning">
+                <strong>Warning</strong>
+                <p>Amber accent.</p>
+              </ui-card>
+              <ui-card data-variant="accent" data-intent="error">
+                <strong>Error</strong>
+                <p>Red accent.</p>
+              </ui-card>
+            </layout-grid>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- 5. Well -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Well</h3>
+          <p>Recessed container for grouping related content.</p>
+          {{< example name="candy-well">}}
+            <ui-well>
+              <strong>Well Container</strong>
+              <p>Notice the inset shadow effect - perfect for form groups or secondary content.</p>
+            </ui-well>
+            {{< /example>}}
+        </layout-stack>
+      </layout-stack>
+    </section>
+
+    <hr>
+
+    <!-- SECTION 2: BADGES & LABELS -->
+    <section>
+      <layout-stack style="--space: var(--space-xl)">
+        <h2>Badges & Labels</h2>
+
+        <!-- 6. Badge -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Badge</h3>
+          <p>Inline badge/pill for labels, categories, status indicators. Clean custom element syntax!</p>
+          {{< example name="candy-badge">}}
+            <layout-cluster style="--space: var(--space-xs)">
+              <ui-badge>tokens.css</ui-badge>
+              <ui-badge>colors.css</ui-badge>
+              <ui-badge data-intent="success">Active</ui-badge>
+              <ui-badge data-intent="warning">Pending</ui-badge>
+              <ui-badge data-intent="error">Deprecated</ui-badge>
+            </layout-cluster>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- 7. Badge Pill -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Badge Pill</h3>
+          <p>Fully rounded badge variant.</p>
+          {{< example name="candy-badge-pill">}}
+            <layout-cluster style="--space: var(--space-xs)">
+              <ui-badge data-variant="pill">New</ui-badge>
+              <ui-badge data-variant="pill" data-intent="success">Pro</ui-badge>
+              <ui-badge data-variant="pill" data-intent="warning">Beta</ui-badge>
+              <ui-badge data-variant="pill" data-intent="error">Legacy</ui-badge>
+            </layout-cluster>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- 8. Label -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Label</h3>
+          <p>Small uppercase label for sections/categories.</p>
+          {{< example name="candy-label">}}
+            <layout-stack style="--space: var(--space-2xs)">
+              <ui-label>Featured</ui-label>
+              <ui-label data-intent="primary">Primary</ui-label>
+              <ui-label data-intent="success">Success</ui-label>
+              <ui-label data-intent="warning">Warning</ui-label>
+            </layout-stack>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- 9. Tag -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Tag</h3>
+          <p>Interactive tag with hover effect.</p>
+          {{< example name="candy-tag">}}
+            <layout-cluster style="--space: var(--space-xs)">
+              <ui-tag>JavaScript</ui-tag>
+              <ui-tag>CSS</ui-tag>
+              <ui-tag>HTML</ui-tag>
+              <ui-tag>Design Systems</ui-tag>
+            </layout-cluster>
+            {{< /example>}}
+        </layout-stack>
+      </layout-stack>
+    </section>
+
+    <hr>
+
+    <!-- SECTION 3: NOTICES & ALERTS -->
+    <section>
+      <layout-stack style="--space: var(--space-xl)">
+        <h2>Notices & Alerts</h2>
+
+        <!-- 10. Notice -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Notice</h3>
+          <p>Informational notice with semantic color variants.</p>
+          {{< example name="candy-notice">}}
+            <layout-stack style="--space: var(--space-s)">
+              <ui-notice>
+                <strong>Info:</strong> Default info notice with primary colors.
+              </ui-notice>
+              <ui-notice data-intent="success">
+                <strong>Success:</strong> Operation completed successfully!
+              </ui-notice>
+              <ui-notice data-intent="warning">
+                <strong>Warning:</strong> Please review before proceeding.
+              </ui-notice>
+              <ui-notice data-intent="error">
+                <strong>Error:</strong> Something went wrong. Please try again.
+              </ui-notice>
+            </layout-stack>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- 11. Notice with Pattern -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Notice with Pattern Accent</h3>
+          <p>Notice with pattern-filled left accent bar.</p>
+          {{< example name="candy-notice-pattern">}}
+            <layout-stack style="--space: var(--space-s)">
+              <ui-notice data-variant="pattern">
+                <strong>Default:</strong> Diagonal lines pattern accent.
+              </ui-notice>
+              <ui-notice data-variant="pattern" data-pattern-type="dots" data-intent="success">
+                <strong>Dots:</strong> Success notice with dots pattern accent.
+              </ui-notice>
+              <ui-notice data-variant="pattern" data-pattern-type="checkerboard" data-intent="warning">
+                <strong>Checkerboard:</strong> Warning with checkerboard pattern.
+              </ui-notice>
+            </layout-stack>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- 12. Callout -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Callout</h3>
+          <p>Prominent callout block for important content.</p>
+          {{< example name="candy-callout">}}
+            <layout-stack style="--space: var(--space-s)">
+              <ui-callout>
+                <strong>Key Takeaway:</strong> This is an important message that deserves attention.
+              </ui-callout>
+              <ui-callout data-intent="success">
+                <strong>Pro Tip:</strong> This design pattern works great for highlighting tips!
+              </ui-callout>
+            </layout-stack>
+            {{< /example>}}
+        </layout-stack>
+      </layout-stack>
+    </section>
+
+    <hr>
+
+    <!-- SECTION 4: BACKGROUND PATTERNS -->
+    <section>
+      <layout-stack style="--space: var(--space-xl)">
+        <div>
+          <ui-label data-intent="secondary">CSS Background Patterns</ui-label>
+          <h2>Background Patterns</h2>
+          <p>
+            Pure CSS background patterns applied via utility classes. No images, no JavaScript — just CSS gradients and
+            custom properties. Configure size, color, and density inline.
+          </p>
+          <ui-notice data-intent="secondary">
+            All patterns use <code>background-repeat: repeat</code> and <code>background-position: center</code> by
+            default. Apply to any element via a pattern class.
+          </ui-notice>
+        </div>
+
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Usage</h3>
+          <ui-well>
+            <pre><code>&lt;!-- Basic --&gt;
+                &lt;div class="pattern-dots"&gt;&lt;/div&gt;
+
+                &lt;!-- Configured --&gt;
+                &lt;div class="pattern-grid"
+                style="--pattern-size: 30px;
+                --pattern-fill: var(--color-primary);
+                --pattern-width: 2px;"&gt;
+                &lt;/div&gt;</code></pre>
+          </ui-well>
+        </layout-stack>
+
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Shared Properties</h3>
+          <p>Most patterns accept these custom properties (see individual notes for exceptions).</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>varies per pattern</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#888</span></ui-badge>
+            <ui-badge>--pattern-width <span>1px (line patterns)</span></ui-badge>
+          </layout-cluster>
+        </layout-stack>
+
+        <!-- DOTS -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>dots</h3>
+          <p>Grid of repeating circles.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>20px</span></ui-badge>
+            <ui-badge>--pattern-dot <span>2px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#888</span></ui-badge>
+          </layout-cluster>
+          {{< example name="candy-pattern-dots">}}
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="dots"></div>
+              <div class="pattern-tile" data-pattern-type="dots"
+                style="--pattern-dot: 4px; --pattern-fill: var(--color-primary); --pattern-size: 16px;"></div>
+            </layout-grid>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- CHECKERBOARD -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>checkerboard</h3>
+          <p>Alternating squares using <code>conic-gradient</code>.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>40px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#ccc</span></ui-badge>
+          </layout-cluster>
+          {{< example name="candy-pattern-checkerboard">}}
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="checkerboard"
+                style="--pattern-fill: var(--color-border); --pattern-size: 30px"></div>
+              <div class="pattern-tile" data-pattern-type="checkerboard"
+                style="--pattern-fill: var(--color-primary); --pattern-size: 16px; background-color: #98c1d9;"></div>
+            </layout-grid>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- DIAGONAL LINES -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>diagonal-lines</h3>
+          <p>45-degree repeating stripes.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>10px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#888</span></ui-badge>
+            <ui-badge>--pattern-width <span>1px</span></ui-badge>
+          </layout-cluster>
+          {{< example name="candy-pattern-diagonal">}}
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="diagonal-lines"></div>
+              <div class="pattern-tile" data-pattern-type="diagonal-lines"
+                style="--pattern-size: 20px; --pattern-width: 3px; --pattern-fill: #ee6c4d;"></div>
+            </layout-grid>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- CROSS-HATCH -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>cross-hatch</h3>
+          <p>Overlapping diagonal lines in both directions.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>10px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#888</span></ui-badge>
+            <ui-badge>--pattern-width <span>1px</span></ui-badge>
+          </layout-cluster>
+          {{< example name="candy-pattern-crosshatch">}}
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="cross-hatch"></div>
+              <div class="pattern-tile" data-pattern-type="cross-hatch"
+                style="--pattern-size: 16px; --pattern-fill: var(--color-primary); background-color: var(--color-surface);">
+              </div>
+            </layout-grid>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- HORIZONTAL LINES -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>horizontal-lines</h3>
+          <p>Even horizontal stripes.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>8px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#888</span></ui-badge>
+            <ui-badge>--pattern-width <span>1px</span></ui-badge>
+          </layout-cluster>
+          {{< example name="candy-pattern-horizontal">}}
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="horizontal-lines"></div>
+              <div class="pattern-tile" data-pattern-type="horizontal-lines"
+                style="--pattern-size: 4px; --pattern-fill: #98c1d9; background-color: #1a1a2e;"></div>
+            </layout-grid>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- VERTICAL LINES -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>vertical-lines</h3>
+          <p>Even vertical stripes.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>8px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#888</span></ui-badge>
+            <ui-badge>--pattern-width <span>1px</span></ui-badge>
+          </layout-cluster>
+          {{< example name="candy-pattern-vertical">}}
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="vertical-lines"></div>
+              <div class="pattern-tile" data-pattern-type="vertical-lines"
+                style="--pattern-size: 16px; --pattern-width: 2px; --pattern-fill: #ee6c4d;"></div>
+            </layout-grid>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- GRID -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>grid</h3>
+          <p>Horizontal + vertical lines forming a grid.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>20px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#ccc</span></ui-badge>
+            <ui-badge>--pattern-width <span>1px</span></ui-badge>
+          </layout-cluster>
+          {{< example name="candy-pattern-grid">}}
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="grid" style="--pattern-size: 24px"></div>
+              <div class="pattern-tile" data-pattern-type="grid"
+                style="--pattern-size: 40px; --pattern-fill: var(--color-primary); background-color: var(--color-surface);">
+              </div>
+            </layout-grid>
+            {{< /example>}}
+        </layout-stack>
+      </layout-stack>
+    </section>
+
+    <hr>
+
+    <!-- SECTION 5: PATTERN FLOURISHES -->
+    <section>
+      <layout-stack style="--space: var(--space-xl)">
+        <h2>Pattern Flourishes</h2>
+
+        <!-- 13. Pattern Shadow -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Pattern Shadow</h3>
+          <p>Alternative to drop shadow using offset pattern. Creative and unique! Applied via utility class.</p>
+          {{< example name="candy-pattern-shadow">}}
+            <layout-grid style="--min-width: 15rem">
+              <div class="pattern-shadow"
+                style="--pattern-shadow-bg: var(--color-surface); border: 1px solid var(--color-border)">
+                <strong>Lines Pattern</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Default lines
+                  shadow effect.</p>
+              </div>
+              <div class="pattern-shadow" data-pattern-type="dots"
+                style="--pattern-shadow-bg: var(--color-surface); border: 1px solid var(--color-border); --pattern-shadow-fill: var(--color-success)">
+                <strong>Dots Pattern</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Dots shadow.</p>
+              </div>
+              <div class="pattern-shadow" data-pattern-type="checkerboard"
+                style="--pattern-shadow-bg: var(--color-surface); border: 1px solid var(--color-border); --pattern-shadow-fill: var(--color-warning)">
+                <strong>Checkerboard</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Checkerboard
+                  shadow.</p>
+              </div>
+            </layout-grid>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- 14. Pattern Accent -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Pattern Accent Bar</h3>
+          <p>Thin vertical pattern strip on left edge. Applied via the <code>pattern-accent</code> component class.</p>
+          {{< example name="candy-pattern-accent">}}
+            <layout-stack style="--space: var(--space-s)">
+              <div class="pattern-accent"
+                style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-base)">
+                <strong>Diagonal Lines</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Default diagonal
+                  lines pattern on the left edge.</p>
+              </div>
+              <div class="pattern-accent" data-pattern-type="dots" data-intent="success"
+                style="background: var(--color-success-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-base)">
+                <strong>Dots Pattern</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Success color with
+                  dots pattern accent.</p>
+              </div>
+              <div class="pattern-accent" data-pattern-type="horizontal" data-intent="warning"
+                style="background: var(--color-warning-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-base)">
+                <strong>Horizontal Lines</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Warning color with
+                  horizontal lines.</p>
+              </div>
+              <div class="pattern-accent" data-pattern-type="checkerboard" data-intent="error"
+                style="background: var(--color-error-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-base)">
+                <strong>Checkerboard</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Error color with
+                  checkerboard pattern.</p>
+              </div>
+            </layout-stack>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- 15. Pattern Hero -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Pattern Hero Background</h3>
+          <p>Large background with subtle pattern + gradient overlay. Perfect for hero sections. Applied via the
+            <code>pattern-hero</code> component class.
+          </p>
+
+          <p><strong>Pattern Types:</strong> <code>data-pattern-type="lines"</code> (default), <code>dots</code>,
+            <code>grid</code>, <code>checkerboard</code>
+          </p>
+          <p><strong>Intents:</strong> <code>data-intent="primary"</code> (default), <code>success</code>,
+            <code>warning</code>, <code>error</code>, <code>secondary</code>
+          </p>
+
+          <h4 style="margin-block-start: var(--space-m)">Default (Lines + Primary)</h4>
+          {{< example name="candy-hero-default" previewBg="transparent">}}
+            <div class="pattern-hero">
+              <h2 style="margin: 0">Default Hero</h2>
+              <p style="margin-block-start: var(--space-xs)">Lines pattern with primary gradient overlay.</p>
+            </div>
+            {{< /example>}}
+
+              <h4 style="margin-block-start: var(--space-m)">Dots + Success</h4>
+              {{< example name="candy-hero-success" previewBg="transparent">}}
+                <div class="pattern-hero" data-pattern-type="dots" data-intent="success">
+                  <h2 style="margin: 0">Dots Pattern Hero</h2>
+                  <p style="margin-block-start: var(--space-xs)">Success gradient with dots pattern.</p>
+                </div>
+                {{< /example>}}
+
+                  <h4 style="margin-block-start: var(--space-m)">Grid + Secondary</h4>
+                  {{< example name="candy-hero-secondary" previewBg="transparent">}}
+                    <div class="pattern-hero" data-pattern-type="grid" data-intent="secondary">
+                      <h2 style="margin: 0">Grid Pattern Hero</h2>
+                      <p style="margin-block-start: var(--space-xs)">Secondary gradient with grid pattern background.
+                      </p>
+                    </div>
+                    {{< /example>}}
+
+                      <h4 style="margin-block-start: var(--space-m)">Checkerboard + Warning</h4>
+                      {{< example name="candy-hero-warning" previewBg="transparent">}}
+                        <div class="pattern-hero" data-pattern-type="checkerboard" data-intent="warning">
+                          <h2 style="margin: 0">Checkerboard Hero</h2>
+                          <p style="margin-block-start: var(--space-xs)">Warning gradient with checkerboard pattern.</p>
+                        </div>
+                        {{< /example>}}
+
+                          <p><strong>Custom Properties:</strong></p>
+                          <ul>
+                            <li><code>--hero-pattern-size</code> (default: 30px) - Pattern cell size</li>
+                            <li><code>--hero-pattern-opacity</code> (default: 0.15) - Pattern opacity</li>
+                            <li><code>--hero-color-start</code> - Gradient start color</li>
+                            <li><code>--hero-color-end</code> - Gradient end color</li>
+                            <li><code>--hero-gradient-opacity</code> (default: 1) - Gradient opacity</li>
+                          </ul>
+        </layout-stack>
+      </layout-stack>
+    </section>
+
+    <hr>
+
+    <!-- SECTION 5: COLORIZE UTILITY -->
+    <section>
+      <layout-stack style="--space: var(--space-xl)">
+        <h2>Colorize Utility</h2>
+        <p>
+          <strong>One Color In, Full Palette Out!</strong> The <code>data-colorize</code> utility automatically
+          generates
+          a complete, harmonious color palette from a single color input. Perfect for rapid theming and prototyping.
+        </p>
+
+        <ui-notice data-intent="secondary">
+          <strong>How it works:</strong> Provide a single OKLCH color via <code>--colorize</code>, and the utility
+          generates 10 coordinated properties using color-mix() — surfaces, text colors, accents, and borders.
+        </ui-notice>
+
+        <!-- Generated Properties -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Generated Properties</h3>
+          <p>From one color input, you get:</p>
+          <ui-well>
+            <pre><code><strong>Surfaces:</strong> --surface, --surface-hover, --surface-active
+                <strong>Text:</strong> --text, --text-heading, --text-on-accent
+                <strong>Accents:</strong> --accent, --accent-emphasis
+                <strong>Borders:</strong> --border, --border-strong</code></pre>
+          </ui-well>
+        </layout-stack>
+
+        <!-- Example 1: Semantic Colors -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Example 1: Status Indicators with Semantic Colors</h3>
+          <p>Use semantic color tokens to create instant themed content:</p>
+
+          {{< example name="colorize-status">}}
+            <layout-stack style="--space: var(--space-s)">
+              <div data-colorize style="--colorize: var(--lch-success)">
+                <div
+                  style="background: var(--surface); border-left: 4px solid var(--accent); padding: var(--space-m); border-radius: 4px;">
+                  <strong style="color: var(--text-heading)">Success</strong>
+                  <p style="color: var(--text); margin: 0.25rem 0 0 0">Operation completed successfully!</p>
+                </div>
+              </div>
+
+              <div data-colorize style="--colorize: var(--lch-warning)">
+                <div
+                  style="background: var(--surface); border-left: 4px solid var(--accent); padding: var(--space-m); border-radius: 4px;">
+                  <strong style="color: var(--text-heading)">Warning</strong>
+                  <p style="color: var(--text); margin: 0.25rem 0 0 0">Please review before continuing.</p>
+                </div>
+              </div>
+
+              <div data-colorize style="--colorize: var(--lch-error)">
+                <div
+                  style="background: var(--surface); border-left: 4px solid var(--accent); padding: var(--space-m); border-radius: 4px;">
+                  <strong style="color: var(--text-heading)">Error</strong>
+                  <p style="color: var(--text); margin: 0.25rem 0 0 0">Something went wrong. Please try again.</p>
+                </div>
+              </div>
+            </layout-stack>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- Example 2: Themed Cards -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Example 2: Themed Cards</h3>
+          <p>Combine with candy custom elements for instant theming:</p>
+
+          {{< example name="colorize-cards">}}
+            <layout-grid style="--min-width: 15rem">
+              <div data-colorize style="--colorize: var(--lch-primary)">
+                <ui-card style="background: var(--surface); border-color: var(--border)">
+                  <strong style="color: var(--text-heading)">Primary Theme</strong>
+                  <p style="color: var(--text)">Full palette from primary color.</p>
+                  <button
+                    style="background: var(--accent); color: var(--text-on-accent); border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">
+                    Action
+                  </button>
+                </ui-card>
+              </div>
+
+              <div data-colorize style="--colorize: var(--lch-secondary)">
+                <ui-card style="background: var(--surface); border-color: var(--border)">
+                  <strong style="color: var(--text-heading)">Secondary Theme</strong>
+                  <p style="color: var(--text)">Full palette from secondary color.</p>
+                  <button
+                    style="background: var(--accent); color: var(--text-on-accent); border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">
+                    Action
+                  </button>
+                </ui-card>
+              </div>
+
+              <div data-colorize style="--colorize: var(--lch-success)">
+                <ui-card style="background: var(--surface); border-color: var(--border)">
+                  <strong style="color: var(--text-heading)">Success Theme</strong>
+                  <p style="color: var(--text)">Full palette from success color.</p>
+                  <button
+                    style="background: var(--accent); color: var(--text-on-accent); border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">
+                    Action
+                  </button>
+                </ui-card>
+              </div>
+            </layout-grid>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- Example 3: Custom Colors -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Example 3: Custom OKLCH Colors</h3>
+          <p>Not limited to semantic colors! Use any OKLCH triplet for instant custom theming:</p>
+
+          {{< example name="colorize-custom">}}
+            <layout-grid style="--min-width: 15rem">
+              <div data-colorize style="--colorize: 60% 0.18 280">
+                <div
+                  style="background: var(--surface); border: 1px solid var(--border); padding: var(--space-m); border-radius: 6px;">
+                  <strong style="color: var(--text-heading)">Custom Purple</strong>
+                  <p style="color: var(--text); margin: 0.25rem 0">60% 0.18 280</p>
+                </div>
+              </div>
+
+              <div data-colorize style="--colorize: 70% 0.15 50">
+                <div
+                  style="background: var(--surface); border: 1px solid var(--border); padding: var(--space-m); border-radius: 6px;">
+                  <strong style="color: var(--text-heading)">Custom Orange</strong>
+                  <p style="color: var(--text); margin: 0.25rem 0">70% 0.15 50</p>
+                </div>
+              </div>
+
+              <div data-colorize style="--colorize: 55% 0.22 170">
+                <div
+                  style="background: var(--surface); border: 1px solid var(--border); padding: var(--space-m); border-radius: 6px;">
+                  <strong style="color: var(--text-heading)">Custom Teal</strong>
+                  <p style="color: var(--text); margin: 0.25rem 0">55% 0.22 170</p>
+                </div>
+              </div>
+            </layout-grid>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- Example 4: Interactive States -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Example 4: Interactive Button States</h3>
+          <p>Use --surface-hover and --surface-active for interactive feedback:</p>
+
+          {{< example name="colorize-interactive">}}
+            <div data-colorize style="--colorize: var(--lch-primary)">
+              <button style="
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+    " onmouseover="this.style.background='var(--surface-hover)'" onmouseout="this.style.background='var(--surface)'"
+                onmousedown="this.style.background='var(--surface-active)'"
+                onmouseup="this.style.background='var(--surface-hover)'">
+                Hover me to see states!
+              </button>
+            </div>
+            {{< /example>}}
+        </layout-stack>
+
+        <!-- Example 5: Nested Colorization -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Example 5: Nested Themes</h3>
+          <p>Colorize blocks can be nested — inner themes override outer ones:</p>
+
+          {{< example name="colorize-nested">}}
+            <div data-colorize style="--colorize: var(--lch-primary)">
+              <div
+                style="background: var(--surface); padding: var(--space-m); border-radius: 6px; border: 1px solid var(--border)">
+                <strong style="color: var(--text-heading)">Primary Theme (Outer)</strong>
+                <p style="color: var(--text)">This uses the primary color palette.</p>
+
+                <div data-colorize style="--colorize: var(--lch-success); margin-block-start: var(--space-s)">
+                  <div
+                    style="background: var(--surface); padding: var(--space-m); border-radius: 6px; border: 1px solid var(--border)">
+                    <strong style="color: var(--text-heading)">Success Theme (Nested)</strong>
+                    <p style="color: var(--text); margin: 0">This overrides with success colors!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{< /example>}}
+        </layout-stack>
+
+      </layout-stack>
+    </section>
+
+    <hr>
+
+    <!-- TEXT -->
+    <section>
+      <layout-stack style="--space: var(--space-s)">
+        <h2>Text</h2>
+        <p>Drop cap</p>
+
+        {{< example name="drop-cap">}}
+          <p class="text-dropcap">
+            Once upon a time. In a website far far away. Made with CSS after the great Y2K. Despite what the overlords
+            of
+            webworldia told the populas, there was no need for the Script of Java for many a fiefdom.
+          </p>
+          {{< /example>}}
+      </layout-stack>
+    </section>
+
+    <hr>
+
+  </layout-stack>
+</layout-center>

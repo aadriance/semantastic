@@ -1,0 +1,1160 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Components - Semantastic CSS</title><link rel=stylesheet href=/css/tokens.css><link rel=stylesheet href=/css/colors.css><link rel=stylesheet href=/css/layout.css><link rel=stylesheet href=/css/components.css><link rel=stylesheet href=/css/candy.css><link rel=stylesheet href=/css/docs.css><style>{ { .Params.inlineStyles | safeCSS }}</style></head><body><nav class=site-nav><layout-cluster style="--space: var(--space-m); --align: center; --justify: space-between"><a href=/ class=nav-brand>Semantastic
+</a><layout-cluster class=nav-desktop style="--space: var(--space-s)"><a href=/tokens/>Tokens
+</a><a href=/colors/>Colors
+</a><a href=/layouts/>Layouts
+</a><a href=/components/ aria-current=page>Components
+</a><a href=/candy/>Candy
+</a></layout-cluster><button class=nav-toggle popovertarget=mobile-nav aria-label="Open navigation menu">
+☰</button></layout-cluster></nav><ui-flyout id=mobile-nav popover data-direction=right style="--flyout-width: 280px; --flyout-bg: var(--color-surface)"><layout-stack style="--space: var(--space-m); padding: var(--space-l)"><layout-stack style="--space: var(--space-2xs)"><a href=/ class=mobile-nav-link>Home
+</a><a href=/tokens/ class=mobile-nav-link>Tokens
+</a><a href=/colors/ class=mobile-nav-link>Colors
+</a><a href=/layouts/ class=mobile-nav-link>Layouts
+</a><a href=/components/ class=mobile-nav-link aria-current=page>Components
+</a><a href=/candy/ class=mobile-nav-link>Candy
+</a></layout-stack><button class=mobile-nav-close popovertarget=mobile-nav>
+Close Menu
+</button>
+</layout-stack></ui-flyout><layout-center style="--measure: 72ch; --gutter: var(--space-l)"><layout-stack style="--space: var(--space-3xl); padding-block: var(--space-3xl)"><layout-stack><div><ui-label data-intent=secondary>Pure CSS</ui-label><h1>Components</h1><p style=font-size:1.25rem;color:var(--color-text-muted)>Interactive components built with CSS only — no JavaScript required.</p><p>Accessible, keyboard-navigable, and configurable with custom properties.</p></div><hr><section><layout-stack style="--space: var(--space-m)"><h2><code>&lt;ui-tabs></code> — Tab Navigation</h2><p>Pure CSS tabs using radio inputs and labels. Three variants: default
+(bordered), pills, and underline. Implemented as a custom element for cleaner markup.</p><h3>Structure</h3><layout-box><pre><code>&lt;ui-tabs&gt;
+  &lt;input type="radio" name="demo" id="tab1" checked&gt;
+  &lt;label for="tab1"&gt;Tab 1&lt;/label&gt;
+  &lt;div data-content&gt;Content 1&lt;/div&gt;
+
+  &lt;input type="radio" name="demo" id="tab2"&gt;
+  &lt;label for="tab2"&gt;Tab 2&lt;/label&gt;
+  &lt;div data-content&gt;Content 2&lt;/div&gt;
+&lt;/ui-tabs&gt;</code></pre></layout-box><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge>--tab-bg <span>transparent</span></ui-badge>
+<ui-badge>--tab-bg-active <span>var(--color-primary)</span></ui-badge>
+<ui-badge>--tab-color <span>#666</span></ui-badge>
+<ui-badge>--tab-color-active <span>var(--color-canvas)</span></ui-badge>
+<ui-badge>--tab-border-color <span>var(--color-border)</span></ui-badge>
+<ui-badge>--tab-border-width <span>2px</span></ui-badge>
+<ui-badge>--tab-padding <span>0.75rem 1.5rem</span></ui-badge>
+<ui-badge>--tab-radius <span>6px 6px 0 0</span></ui-badge></layout-cluster><h3>Default Tabs</h3><ui-tabs data-variant=underline><input type=radio name=tabs-default-example id=tabs-default-preview checked>
+<label for=tabs-default-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><ui-tabs><input type=radio name=demo-default id=default-tab1 checked>
+<label for=default-tab1>Overview</label><div data-content><layout-stack style="--space: var(--space-s)"><h4>Overview</h4><p>This is the overview panel. Tabs use radio inputs under the hood,
+so only one can be active at a time.</p><p>The active tab has a border that connects to the content panel.</p></layout-stack></div><input type=radio name=demo-default id=default-tab2>
+<label for=default-tab2>Features</label><div data-content><layout-stack style="--space: var(--space-s)"><h4>Features</h4><ul><li>Pure CSS — no JavaScript required</li><li>Keyboard accessible</li><li>Fully customizable with CSS custom properties</li><li>Three built-in variants</li></ul></layout-stack></div><input type=radio name=demo-default id=default-tab3>
+<label for=default-tab3>Code</label><div data-content><layout-stack style="--space: var(--space-s)"><h4>Code</h4><p>The implementation uses the <code>:checked</code> pseudo-class and
+adjacent sibling selectors to show/hide content panels.</p><p>All radio inputs share the same <code>name</code> attribute to
+ensure mutual exclusivity.</p></layout-stack></div></ui-tabs></layout-box></div><input type=radio name=tabs-default-example id=tabs-default-code>
+<label for=tabs-default-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;ui-tabs&gt;
+  &lt;input type=&#34;radio&#34; name=&#34;demo-default&#34; id=&#34;default-tab1&#34; checked /&gt;
+  &lt;label for=&#34;default-tab1&#34;&gt;Overview&lt;/label&gt;
+  &lt;div data-content&gt;
+    &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+      &lt;h4&gt;Overview&lt;/h4&gt;
+      &lt;p&gt;
+        This is the overview panel. Tabs use radio inputs under the hood,
+        so only one can be active at a time.
+      &lt;/p&gt;
+      &lt;p&gt;
+        The active tab has a border that connects to the content panel.
+      &lt;/p&gt;
+    &lt;/layout-stack&gt;
+  &lt;/div&gt;
+
+  &lt;input type=&#34;radio&#34; name=&#34;demo-default&#34; id=&#34;default-tab2&#34; /&gt;
+  &lt;label for=&#34;default-tab2&#34;&gt;Features&lt;/label&gt;
+  &lt;div data-content&gt;
+    &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+      &lt;h4&gt;Features&lt;/h4&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Pure CSS — no JavaScript required&lt;/li&gt;
+        &lt;li&gt;Keyboard accessible&lt;/li&gt;
+        &lt;li&gt;Fully customizable with CSS custom properties&lt;/li&gt;
+        &lt;li&gt;Three built-in variants&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/layout-stack&gt;
+  &lt;/div&gt;
+
+  &lt;input type=&#34;radio&#34; name=&#34;demo-default&#34; id=&#34;default-tab3&#34; /&gt;
+  &lt;label for=&#34;default-tab3&#34;&gt;Code&lt;/label&gt;
+  &lt;div data-content&gt;
+    &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+      &lt;h4&gt;Code&lt;/h4&gt;
+      &lt;p&gt;
+        The implementation uses the &lt;code&gt;:checked&lt;/code&gt; pseudo-class and
+        adjacent sibling selectors to show/hide content panels.
+      &lt;/p&gt;
+      &lt;p&gt;
+        All radio inputs share the same &lt;code&gt;name&lt;/code&gt; attribute to
+        ensure mutual exclusivity.
+      &lt;/p&gt;
+    &lt;/layout-stack&gt;
+  &lt;/div&gt;
+&lt;/ui-tabs&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Pills Variant</h3><p>Add <code>data-variant="pills"</code> for rounded, button-style tabs.</p><ui-tabs data-variant=underline><input type=radio name=tabs-pills-example id=tabs-pills-preview checked>
+<label for=tabs-pills-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><ui-tabs data-variant=pills><input type=radio name=demo-pills id=pills-tab1 checked>
+<label for=pills-tab1>React</label><div data-content><layout-stack style="--space: var(--space-s)"><h4>React</h4><p>A JavaScript library for building user interfaces.</p><code>npm install react react-dom</code></layout-stack></div><input type=radio name=demo-pills id=pills-tab2>
+<label for=pills-tab2>Vue</label><div data-content><layout-stack style="--space: var(--space-s)"><h4>Vue</h4><p>The Progressive JavaScript Framework.</p><code>npm install vue</code></layout-stack></div><input type=radio name=demo-pills id=pills-tab3>
+<label for=pills-tab3>Svelte</label><div data-content><layout-stack style="--space: var(--space-s)"><h4>Svelte</h4><p>Cybernetically enhanced web apps.</p><code>npm install svelte</code></layout-stack></div></ui-tabs></layout-box></div><input type=radio name=tabs-pills-example id=tabs-pills-code>
+<label for=tabs-pills-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;ui-tabs data-variant=&#34;pills&#34;&gt;
+  &lt;input type=&#34;radio&#34; name=&#34;demo-pills&#34; id=&#34;pills-tab1&#34; checked /&gt;
+  &lt;label for=&#34;pills-tab1&#34;&gt;React&lt;/label&gt;
+  &lt;div data-content&gt;
+    &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+      &lt;h4&gt;React&lt;/h4&gt;
+      &lt;p&gt;A JavaScript library for building user interfaces.&lt;/p&gt;
+      &lt;code&gt;npm install react react-dom&lt;/code&gt;
+    &lt;/layout-stack&gt;
+  &lt;/div&gt;
+
+  &lt;input type=&#34;radio&#34; name=&#34;demo-pills&#34; id=&#34;pills-tab2&#34; /&gt;
+  &lt;label for=&#34;pills-tab2&#34;&gt;Vue&lt;/label&gt;
+  &lt;div data-content&gt;
+    &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+      &lt;h4&gt;Vue&lt;/h4&gt;
+      &lt;p&gt;The Progressive JavaScript Framework.&lt;/p&gt;
+      &lt;code&gt;npm install vue&lt;/code&gt;
+    &lt;/layout-stack&gt;
+  &lt;/div&gt;
+
+  &lt;input type=&#34;radio&#34; name=&#34;demo-pills&#34; id=&#34;pills-tab3&#34; /&gt;
+  &lt;label for=&#34;pills-tab3&#34;&gt;Svelte&lt;/label&gt;
+  &lt;div data-content&gt;
+    &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+      &lt;h4&gt;Svelte&lt;/h4&gt;
+      &lt;p&gt;Cybernetically enhanced web apps.&lt;/p&gt;
+      &lt;code&gt;npm install svelte&lt;/code&gt;
+    &lt;/layout-stack&gt;
+  &lt;/div&gt;
+&lt;/ui-tabs&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Underline Variant</h3><p>Add <code>data-variant="underline"</code> for minimalist tabs with an
+underline indicator.</p><ui-tabs data-variant=underline><input type=radio name=tabs-underline-example id=tabs-underline-preview checked>
+<label for=tabs-underline-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><ui-tabs data-variant=underline><input type=radio name=demo-underline id=underline-tab1 checked>
+<label for=underline-tab1>Dashboard</label><div data-content><layout-stack style="--space: var(--space-s)"><h4>Dashboard</h4><p>Welcome to your dashboard. Here you can see an overview of your
+activity.</p></layout-stack></div><input type=radio name=demo-underline id=underline-tab2>
+<label for=underline-tab2>Analytics</label><div data-content><layout-stack style="--space: var(--space-s)"><h4>Analytics</h4><p>View detailed analytics and insights about your data.</p></layout-stack></div><input type=radio name=demo-underline id=underline-tab3>
+<label for=underline-tab3>Settings</label><div data-content><layout-stack style="--space: var(--space-s)"><h4>Settings</h4><p>Configure your preferences and account settings.</p></layout-stack></div></ui-tabs></layout-box></div><input type=radio name=tabs-underline-example id=tabs-underline-code>
+<label for=tabs-underline-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;ui-tabs data-variant=&#34;underline&#34;&gt;
+  &lt;input type=&#34;radio&#34; name=&#34;demo-underline&#34; id=&#34;underline-tab1&#34; checked /&gt;
+  &lt;label for=&#34;underline-tab1&#34;&gt;Dashboard&lt;/label&gt;
+  &lt;div data-content&gt;
+    &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+      &lt;h4&gt;Dashboard&lt;/h4&gt;
+      &lt;p&gt;
+        Welcome to your dashboard. Here you can see an overview of your
+        activity.
+      &lt;/p&gt;
+    &lt;/layout-stack&gt;
+  &lt;/div&gt;
+
+  &lt;input type=&#34;radio&#34; name=&#34;demo-underline&#34; id=&#34;underline-tab2&#34; /&gt;
+  &lt;label for=&#34;underline-tab2&#34;&gt;Analytics&lt;/label&gt;
+  &lt;div data-content&gt;
+    &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+      &lt;h4&gt;Analytics&lt;/h4&gt;
+      &lt;p&gt;View detailed analytics and insights about your data.&lt;/p&gt;
+    &lt;/layout-stack&gt;
+  &lt;/div&gt;
+
+  &lt;input type=&#34;radio&#34; name=&#34;demo-underline&#34; id=&#34;underline-tab3&#34; /&gt;
+  &lt;label for=&#34;underline-tab3&#34;&gt;Settings&lt;/label&gt;
+  &lt;div data-content&gt;
+    &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+      &lt;h4&gt;Settings&lt;/h4&gt;
+      &lt;p&gt;Configure your preferences and account settings.&lt;/p&gt;
+    &lt;/layout-stack&gt;
+  &lt;/div&gt;
+&lt;/ui-tabs&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Custom Styling</h3><p>Use CSS custom properties to customize colors and spacing.</p><ui-tabs data-variant=underline><input type=radio name=tabs-custom-example id=tabs-custom-preview checked>
+<label for=tabs-custom-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><ui-tabs style="
+    --tab-bg-active: #ee6c4d;
+    --tab-color-active: #fff;
+    --tab-border-color: #ee6c4d;
+    --tab-border-width: 3px;
+    --tab-padding: 1rem 2rem;
+  "><input type=radio name=demo-custom id=custom-tab1 checked>
+<label for=custom-tab1>Design</label><div data-content><p>Custom orange theme with thicker borders and larger padding.</p></div><input type=radio name=demo-custom id=custom-tab2>
+<label for=custom-tab2>Development</label><div data-content><p>All styling is controlled via CSS custom properties for easy
+theming.</p></div></ui-tabs></layout-box></div><input type=radio name=tabs-custom-example id=tabs-custom-code>
+<label for=tabs-custom-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;ui-tabs
+  style=&#34;
+    --tab-bg-active: #ee6c4d;
+    --tab-color-active: #fff;
+    --tab-border-color: #ee6c4d;
+    --tab-border-width: 3px;
+    --tab-padding: 1rem 2rem;
+  &#34;
+&gt;
+  &lt;input type=&#34;radio&#34; name=&#34;demo-custom&#34; id=&#34;custom-tab1&#34; checked /&gt;
+  &lt;label for=&#34;custom-tab1&#34;&gt;Design&lt;/label&gt;
+  &lt;div data-content&gt;
+    &lt;p&gt;Custom orange theme with thicker borders and larger padding.&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;input type=&#34;radio&#34; name=&#34;demo-custom&#34; id=&#34;custom-tab2&#34; /&gt;
+  &lt;label for=&#34;custom-tab2&#34;&gt;Development&lt;/label&gt;
+  &lt;div data-content&gt;
+    &lt;p&gt;
+      All styling is controlled via CSS custom properties for easy
+      theming.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/ui-tabs&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs></layout-stack></section><hr><section><layout-stack style="--space: var(--space-m)"><h2><code>&lt;ui-flyout></code> — Slide-in Drawer</h2><p>A slide-in drawer/sidebar using the Popover API. Slides in from any of
+the four cardinal directions: left (default), right, top, or bottom.
+Implemented as a custom element for semantic markup.</p><h3>Structure</h3><layout-box><pre><code>&lt;button popovertarget="my-flyout"&gt;Open Menu&lt;/button&gt;
+
+&lt;ui-flyout id="my-flyout" popover&gt;
+  &lt;!-- Flyout content --&gt;
+&lt;/ui-flyout&gt;
+
+&lt;!-- With direction --&gt;
+&lt;ui-flyout id="my-flyout" popover
+     data-direction="right"&gt;
+  &lt;!-- Content --&gt;
+&lt;/ui-flyout&gt;</code></pre></layout-box><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge>--flyout-width <span>300px</span></ui-badge>
+<ui-badge>--flyout-height <span>300px</span></ui-badge>
+<ui-badge>--flyout-bg <span>#fff</span></ui-badge>
+<ui-badge>--flyout-shadow <span>0 0 20px rgba(0,0,0,0.3)</span></ui-badge>
+</layout-cluster><ui-label>Directions</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge>data-direction="left" <span>default</span></ui-badge>
+<ui-badge>data-direction="right"</ui-badge>
+<ui-badge>data-direction="top"</ui-badge>
+<ui-badge>data-direction="bottom"</ui-badge></layout-cluster><h3>Left Flyout (Default)</h3><ui-tabs data-variant=underline><input type=radio name=flyout-left-example id=flyout-left-preview checked>
+<label for=flyout-left-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><button popovertarget=flyout-left style="background:var(--color-primary);color:var(--color-canvas);border:none;padding:.75rem 1.5rem;border-radius:6px;cursor:pointer">
+Open Left Menu
+</button>
+<ui-flyout id=flyout-left popover><layout-stack style="--space: var(--space-m); padding: var(--space-l)"><h3 style=margin:0;color:var(--color-primary)>Navigation Menu</h3><nav><layout-stack style="--space: var(--space-xs)"><a href=# style=color:#1a1a2e;text-decoration:none;padding:.5rem>Home</a>
+<a href=# style=color:#1a1a2e;text-decoration:none;padding:.5rem>About</a>
+<a href=# style=color:#1a1a2e;text-decoration:none;padding:.5rem>Services</a>
+<a href=# style=color:#1a1a2e;text-decoration:none;padding:.5rem>Contact</a></layout-stack></nav><button popovertarget=flyout-left style="background:#ee6c4d;color:var(--color-canvas);border:none;padding:.75rem 1.5rem;border-radius:6px;cursor:pointer;margin-block-start:auto">
+Close</button></layout-stack></ui-flyout></layout-box></div><input type=radio name=flyout-left-example id=flyout-left-code>
+<label for=flyout-left-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;button
+  popovertarget=&#34;flyout-left&#34;
+  style=&#34;
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+  &#34;
+&gt;
+  Open Left Menu
+&lt;/button&gt;
+
+&lt;ui-flyout id=&#34;flyout-left&#34; popover&gt;
+  &lt;layout-stack
+    style=&#34;--space: var(--space-m); padding: var(--space-l)&#34;
+  &gt;
+    &lt;h3 style=&#34;margin: 0; color: var(--color-primary)&#34;&gt;
+      Navigation Menu
+    &lt;/h3&gt;
+    &lt;nav&gt;
+      &lt;layout-stack style=&#34;--space: var(--space-xs)&#34;&gt;
+        &lt;a
+          href=&#34;#&#34;
+          style=&#34;color: #1a1a2e; text-decoration: none; padding: 0.5rem&#34;
+          &gt;Home&lt;/a
+        &gt;
+        &lt;a
+          href=&#34;#&#34;
+          style=&#34;color: #1a1a2e; text-decoration: none; padding: 0.5rem&#34;
+          &gt;About&lt;/a
+        &gt;
+        &lt;a
+          href=&#34;#&#34;
+          style=&#34;color: #1a1a2e; text-decoration: none; padding: 0.5rem&#34;
+          &gt;Services&lt;/a
+        &gt;
+        &lt;a
+          href=&#34;#&#34;
+          style=&#34;color: #1a1a2e; text-decoration: none; padding: 0.5rem&#34;
+          &gt;Contact&lt;/a
+        &gt;
+      &lt;/layout-stack&gt;
+    &lt;/nav&gt;
+    &lt;button
+      popovertarget=&#34;flyout-left&#34;
+      style=&#34;
+        background: #ee6c4d;
+        color: var(--color-canvas);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-block-start: auto;
+      &#34;
+    &gt;
+      Close
+    &lt;/button&gt;
+  &lt;/layout-stack&gt;
+&lt;/ui-flyout&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Right Flyout</h3><ui-tabs data-variant=underline><input type=radio name=flyout-right-example id=flyout-right-preview checked>
+<label for=flyout-right-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><button popovertarget=flyout-right style="background:var(--color-primary);color:var(--color-canvas);border:none;padding:.75rem 1.5rem;border-radius:6px;cursor:pointer">
+Open Right Panel
+</button>
+<ui-flyout id=flyout-right popover data-direction=right style="--flyout-width: 350px"><layout-stack style="--space: var(--space-m); padding: var(--space-l)"><h3 style=margin:0;color:var(--color-primary)>Settings</h3><layout-stack style="--space: var(--space-s)"><label style=display:flex;align-items:center;gap:.5rem><input type=checkbox>
+<span>Enable notifications</span>
+</label><label style=display:flex;align-items:center;gap:.5rem><input type=checkbox checked>
+<span>Dark mode</span>
+</label><label style=display:flex;align-items:center;gap:.5rem><input type=checkbox>
+<span>Auto-save</span>
+</label></layout-stack><button popovertarget=flyout-right style="background:#ee6c4d;color:var(--color-canvas);border:none;padding:.75rem 1.5rem;border-radius:6px;cursor:pointer">
+Close</button></layout-stack></ui-flyout></layout-box></div><input type=radio name=flyout-right-example id=flyout-right-code>
+<label for=flyout-right-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;button
+  popovertarget=&#34;flyout-right&#34;
+  style=&#34;
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+  &#34;
+&gt;
+  Open Right Panel
+&lt;/button&gt;
+
+&lt;ui-flyout
+  id=&#34;flyout-right&#34;
+  popover
+  data-direction=&#34;right&#34;
+  style=&#34;--flyout-width: 350px&#34;
+&gt;
+  &lt;layout-stack
+    style=&#34;--space: var(--space-m); padding: var(--space-l)&#34;
+  &gt;
+    &lt;h3 style=&#34;margin: 0; color: var(--color-primary)&#34;&gt;Settings&lt;/h3&gt;
+    &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+      &lt;label style=&#34;display: flex; align-items: center; gap: 0.5rem&#34;&gt;
+        &lt;input type=&#34;checkbox&#34; /&gt;
+        &lt;span&gt;Enable notifications&lt;/span&gt;
+      &lt;/label&gt;
+      &lt;label style=&#34;display: flex; align-items: center; gap: 0.5rem&#34;&gt;
+        &lt;input type=&#34;checkbox&#34; checked /&gt;
+        &lt;span&gt;Dark mode&lt;/span&gt;
+      &lt;/label&gt;
+      &lt;label style=&#34;display: flex; align-items: center; gap: 0.5rem&#34;&gt;
+        &lt;input type=&#34;checkbox&#34; /&gt;
+        &lt;span&gt;Auto-save&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/layout-stack&gt;
+    &lt;button
+      popovertarget=&#34;flyout-right&#34;
+      style=&#34;
+        background: #ee6c4d;
+        color: var(--color-canvas);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        cursor: pointer;
+      &#34;
+    &gt;
+      Close
+    &lt;/button&gt;
+  &lt;/layout-stack&gt;
+&lt;/ui-flyout&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Top Flyout</h3><ui-tabs data-variant=underline><input type=radio name=flyout-top-example id=flyout-top-preview checked>
+<label for=flyout-top-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><button popovertarget=flyout-top style="background:var(--color-primary);color:var(--color-canvas);border:none;padding:.75rem 1.5rem;border-radius:6px;cursor:pointer">
+Open Top Banner
+</button>
+<ui-flyout id=flyout-top popover data-direction=top style="--flyout-height: 200px; --flyout-bg: #1a1a2e"><layout-center style="--measure: 60ch"><layout-stack style="
+        --space: var(--space-s);
+        padding: var(--space-l);
+        text-align: center;
+      "><h3 style=margin:0;color:var(--color-canvas)>Important Announcement</h3><p style=margin:0;color:var(--color-secondary)>This is a notification banner that slides down from the top of
+the screen.</p><button popovertarget=flyout-top style="background:#ee6c4d;color:var(--color-canvas);border:none;padding:.5rem 1rem;border-radius:4px;cursor:pointer">
+Dismiss</button></layout-stack></layout-center></ui-flyout></layout-box></div><input type=radio name=flyout-top-example id=flyout-top-code>
+<label for=flyout-top-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;button
+  popovertarget=&#34;flyout-top&#34;
+  style=&#34;
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+  &#34;
+&gt;
+  Open Top Banner
+&lt;/button&gt;
+
+&lt;ui-flyout
+  id=&#34;flyout-top&#34;
+  popover
+  data-direction=&#34;top&#34;
+  style=&#34;--flyout-height: 200px; --flyout-bg: #1a1a2e&#34;
+&gt;
+  &lt;layout-center style=&#34;--measure: 60ch&#34;&gt;
+    &lt;layout-stack
+      style=&#34;
+        --space: var(--space-s);
+        padding: var(--space-l);
+        text-align: center;
+      &#34;
+    &gt;
+      &lt;h3 style=&#34;margin: 0; color: var(--color-canvas)&#34;&gt;
+        Important Announcement
+      &lt;/h3&gt;
+      &lt;p style=&#34;margin: 0; color: var(--color-secondary)&#34;&gt;
+        This is a notification banner that slides down from the top of
+        the screen.
+      &lt;/p&gt;
+      &lt;button
+        popovertarget=&#34;flyout-top&#34;
+        style=&#34;
+          background: #ee6c4d;
+          color: var(--color-canvas);
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          cursor: pointer;
+        &#34;
+      &gt;
+        Dismiss
+      &lt;/button&gt;
+    &lt;/layout-stack&gt;
+  &lt;/layout-center&gt;
+&lt;/ui-flyout&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Bottom Flyout</h3><ui-tabs data-variant=underline><input type=radio name=flyout-bottom-example id=flyout-bottom-preview checked>
+<label for=flyout-bottom-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><button popovertarget=flyout-bottom style="background:var(--color-primary);color:var(--color-canvas);border:none;padding:.75rem 1.5rem;border-radius:6px;cursor:pointer">
+Open Bottom Sheet
+</button>
+<ui-flyout id=flyout-bottom popover data-direction=bottom style="--flyout-height: 250px"><layout-center style="--measure: 60ch"><layout-stack style="--space: var(--space-m); padding: var(--space-l)"><h3 style=margin:0;color:var(--color-primary);text-align:center>Cookie Consent</h3><p style=margin:0;text-align:center>We use cookies to enhance your browsing experience. By
+continuing to use this site, you agree to our use of cookies.</p><layout-cluster style="--space: var(--space-s); --justify: center"><button style="background:var(--color-primary);color:var(--color-canvas);border:none;padding:.75rem 1.5rem;border-radius:6px;cursor:pointer">
+Accept
+</button>
+<button popovertarget=flyout-bottom style="background:0 0;color:var(--color-primary);border:2px solid var(--color-primary);padding:.75rem 1.5rem;border-radius:6px;cursor:pointer">
+Decline</button></layout-cluster></layout-stack></layout-center></ui-flyout></layout-box></div><input type=radio name=flyout-bottom-example id=flyout-bottom-code>
+<label for=flyout-bottom-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;button
+  popovertarget=&#34;flyout-bottom&#34;
+  style=&#34;
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+  &#34;
+&gt;
+  Open Bottom Sheet
+&lt;/button&gt;
+
+&lt;ui-flyout
+  id=&#34;flyout-bottom&#34;
+  popover
+  data-direction=&#34;bottom&#34;
+  style=&#34;--flyout-height: 250px&#34;
+&gt;
+  &lt;layout-center style=&#34;--measure: 60ch&#34;&gt;
+    &lt;layout-stack
+      style=&#34;--space: var(--space-m); padding: var(--space-l)&#34;
+    &gt;
+      &lt;h3
+        style=&#34;
+          margin: 0;
+          color: var(--color-primary);
+          text-align: center;
+        &#34;
+      &gt;
+        Cookie Consent
+      &lt;/h3&gt;
+      &lt;p style=&#34;margin: 0; text-align: center&#34;&gt;
+        We use cookies to enhance your browsing experience. By
+        continuing to use this site, you agree to our use of cookies.
+      &lt;/p&gt;
+      &lt;layout-cluster
+        style=&#34;--space: var(--space-s); --justify: center&#34;
+      &gt;
+        &lt;button
+          style=&#34;
+            background: var(--color-primary);
+            color: var(--color-canvas);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+          &#34;
+        &gt;
+          Accept
+        &lt;/button&gt;
+        &lt;button
+          popovertarget=&#34;flyout-bottom&#34;
+          style=&#34;
+            background: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+          &#34;
+        &gt;
+          Decline
+        &lt;/button&gt;
+      &lt;/layout-cluster&gt;
+    &lt;/layout-stack&gt;
+  &lt;/layout-center&gt;
+&lt;/ui-flyout&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs></layout-stack></section><hr><section><layout-stack style="--space: var(--space-m)"><h2 id=tooltip>Tooltip</h2><p>Pure CSS tooltips that appear on hover. Add the
+<code>has-tooltip</code> class and <code>data-tooltip</code> attribute to any element to show helpful text.</p><layout-box><h3>Structure</h3><pre><code>&lt;button
+  class="has-tooltip"
+  data-tooltip="Helpful tooltip text"
+  data-position="top"&gt;
+  Hover me
+&lt;/button&gt;</code></pre></layout-box><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge>--tooltip-bg <span>#313247</span></ui-badge>
+<ui-badge>--tooltip-color <span>#fff</span></ui-badge>
+<ui-badge>--tooltip-padding <span>10px 15px</span></ui-badge>
+<ui-badge>--tooltip-radius <span>10px</span></ui-badge>
+<ui-badge>--tooltip-font-size <span>1rem</span></ui-badge>
+<ui-badge>--tooltip-max-width <span>250px</span></ui-badge>
+<ui-badge>--tooltip-offset <span>10px</span></ui-badge>
+<ui-badge>--tooltip-arrow-size <span>15px</span></ui-badge></layout-cluster><h3>Tooltip Positions</h3><p>Tooltips can appear in four directions using the
+<code>data-position</code> attribute.</p><ui-tabs data-variant=underline><input type=radio name=tooltip-positions-example id=tooltip-positions-preview checked>
+<label for=tooltip-positions-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-cluster style="--space: var(--space-l); --justify: center"><button class=has-tooltip data-tooltip="Tooltip appears above" data-position=top>
+Top
+</button>
+<button class=has-tooltip data-tooltip="Tooltip appears below" data-position=bottom>
+Bottom
+</button>
+<button class=has-tooltip data-tooltip="Tooltip appears to the left" data-position=left>
+Left
+</button>
+<button class=has-tooltip data-tooltip="Tooltip appears to the right" data-position=right>
+Right</button></layout-cluster></layout-box></div><input type=radio name=tooltip-positions-example id=tooltip-positions-code>
+<label for=tooltip-positions-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;layout-cluster style=&#34;--space: var(--space-l); --justify: center&#34;&gt;
+  &lt;button
+    class=&#34;has-tooltip&#34;
+    data-tooltip=&#34;Tooltip appears above&#34;
+    data-position=&#34;top&#34;
+  &gt;
+    Top
+  &lt;/button&gt;
+
+  &lt;button
+    class=&#34;has-tooltip&#34;
+    data-tooltip=&#34;Tooltip appears below&#34;
+    data-position=&#34;bottom&#34;
+  &gt;
+    Bottom
+  &lt;/button&gt;
+
+  &lt;button
+    class=&#34;has-tooltip&#34;
+    data-tooltip=&#34;Tooltip appears to the left&#34;
+    data-position=&#34;left&#34;
+  &gt;
+    Left
+  &lt;/button&gt;
+
+  &lt;button
+    class=&#34;has-tooltip&#34;
+    data-tooltip=&#34;Tooltip appears to the right&#34;
+    data-position=&#34;right&#34;
+  &gt;
+    Right
+  &lt;/button&gt;
+&lt;/layout-cluster&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Tooltip in Context</h3><p>Tooltips work on any element - buttons, links, icons, etc.</p><ui-tabs data-variant=underline><input type=radio name=tooltip-context-example id=tooltip-context-preview checked>
+<label for=tooltip-context-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><p style=max-inline-size:60ch;margin:0>This is some text with helpful
+<button class=has-tooltip data-tooltip="Additional context about this term" data-position=top style="background:0 0;border:none;color:var(--color-primary);text-decoration:underline;cursor:help;padding:0;font-size:inherit">
+tooltips
+</button>
+that appear when you hover. You can also add them to
+<span class=has-tooltip data-tooltip="Click to learn more" data-position=bottom style="color:#ee6c4d;font-weight:700;cursor:pointer;border-bottom:2px dotted">important terms
+</span>in your content.</p></layout-box></div><input type=radio name=tooltip-context-example id=tooltip-context-code>
+<label for=tooltip-context-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;p style=&#34;max-inline-size: 60ch; margin: 0&#34;&gt;
+  This is some text with helpful
+  &lt;button
+    class=&#34;has-tooltip&#34;
+    data-tooltip=&#34;Additional context about this term&#34;
+    data-position=&#34;top&#34;
+    style=&#34;
+      background: transparent;
+      border: none;
+      color: var(--color-primary);
+      text-decoration: underline;
+      cursor: help;
+      padding: 0;
+      font-size: inherit;
+    &#34;
+  &gt;
+    tooltips
+  &lt;/button&gt;
+  that appear when you hover. You can also add them to
+  &lt;span
+    class=&#34;has-tooltip&#34;
+    data-tooltip=&#34;Click to learn more&#34;
+    data-position=&#34;bottom&#34;
+    style=&#34;
+      color: #ee6c4d;
+      font-weight: bold;
+      cursor: pointer;
+      border-bottom: 2px dotted currentColor;
+    &#34;
+  &gt;
+    important terms
+  &lt;/span&gt;
+  in your content.
+&lt;/p&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Custom Styling</h3><p>Customize tooltip appearance with CSS custom properties.</p><ui-tabs data-variant=underline><input type=radio name=tooltip-custom-example id=tooltip-custom-preview checked>
+<label for=tooltip-custom-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-cluster style="--space: var(--space-m); --justify: center"><button class=has-tooltip data-tooltip="⚠️ This action cannot be undone" data-position=top style="--tooltip-bg:#dc2626;--tooltip-radius:6px;--tooltip-font-size:0.875rem;background:#ef4444;color:var(--color-canvas);border:none;padding:.5rem 1rem;border-radius:6px;cursor:pointer">
+Delete
+</button>
+<button class=has-tooltip data-tooltip="💡 Pro tip: Use keyboard shortcuts for faster editing" data-position=bottom style="--tooltip-bg:#eff6ff;--tooltip-color:#1e40af;--tooltip-padding:12px 16px;--tooltip-radius:8px;--tooltip-max-width:300px;background:#3b82f6;color:var(--color-canvas);border:none;padding:.5rem 1rem;border-radius:6px;cursor:pointer">
+Help</button></layout-cluster></layout-box></div><input type=radio name=tooltip-custom-example id=tooltip-custom-code>
+<label for=tooltip-custom-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;layout-cluster style=&#34;--space: var(--space-m); --justify: center&#34;&gt;
+  &lt;!-- Warning style tooltip --&gt;
+  &lt;button
+    class=&#34;has-tooltip&#34;
+    data-tooltip=&#34;⚠️ This action cannot be undone&#34;
+    data-position=&#34;top&#34;
+    style=&#34;
+      --tooltip-bg: #dc2626;
+      --tooltip-radius: 6px;
+      --tooltip-font-size: 0.875rem;
+      background: #ef4444;
+      color: var(--color-canvas);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    &#34;
+  &gt;
+    Delete
+  &lt;/button&gt;
+
+  &lt;!-- Info style tooltip --&gt;
+  &lt;button
+    class=&#34;has-tooltip&#34;
+    data-tooltip=&#34;💡 Pro tip: Use keyboard shortcuts for faster editing&#34;
+    data-position=&#34;bottom&#34;
+    style=&#34;
+      --tooltip-bg: #eff6ff;
+      --tooltip-color: #1e40af;
+      --tooltip-padding: 12px 16px;
+      --tooltip-radius: 8px;
+      --tooltip-max-width: 300px;
+      background: #3b82f6;
+      color: var(--color-canvas);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    &#34;
+  &gt;
+    Help
+  &lt;/button&gt;
+&lt;/layout-cluster&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs></layout-stack></section><hr><section><layout-stack style="--space: var(--space-m)"><h2>Vanilla HTML Components</h2><p>Native HTML elements that work without any JavaScript or custom CSS.
+These semantic elements provide built-in interactivity and
+accessibility.</p><h3>Accordion with <code>&lt;details></code> and
+<code>&lt;summary></code></h3><p>The <code>&lt;details></code> element creates a disclosure widget
+that can be toggled open and closed. No JavaScript required.</p><layout-box><pre><code>&lt;details&gt;
+  &lt;summary&gt;What is Semantastic?&lt;/summary&gt;
+  &lt;p&gt;A CSS toolkit with layout primitives and components.&lt;/p&gt;
+&lt;/details&gt;</code></pre></layout-box><h3>Basic Example</h3><ui-tabs data-variant=underline><input type=radio name=details-basic-example id=details-basic-preview checked>
+<label for=details-basic-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-stack style="--space: var(--space-s)"><details><summary>What is Semantastic?</summary><p>Semantastic is a CSS toolkit featuring design tokens, composable
+layout primitives, CSS patterns, and pure CSS components. It
+emphasizes semantic HTML and CSS custom properties over classes
+and JavaScript.</p></details><details><summary>How do I use the layout primitives?</summary><p>Layout primitives are custom HTML elements like
+<code>&lt;layout-stack></code> and
+<code>&lt;layout-grid></code>. Just use them as tags in your
+HTML and configure them with CSS custom properties via inline
+styles or classes.</p></details><details><summary>Do I need to register custom elements?</summary><p>No! The layout primitives work with pure CSS using element
+selectors. There's no JavaScript custom element registration
+required.</p></details><details open><summary>Can details be open by default?</summary><p>Yes! Add the <code>open</code> attribute to have a details element
+expanded by default, like this one.</p></details></layout-stack></layout-box></div><input type=radio name=details-basic-example id=details-basic-code>
+<label for=details-basic-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+  &lt;details&gt;
+    &lt;summary&gt;What is Semantastic?&lt;/summary&gt;
+    &lt;p&gt;
+      Semantastic is a CSS toolkit featuring design tokens, composable
+      layout primitives, CSS patterns, and pure CSS components. It
+      emphasizes semantic HTML and CSS custom properties over classes
+      and JavaScript.
+    &lt;/p&gt;
+  &lt;/details&gt;
+
+  &lt;details&gt;
+    &lt;summary&gt;How do I use the layout primitives?&lt;/summary&gt;
+    &lt;p&gt;
+      Layout primitives are custom HTML elements like
+      &lt;code&gt;&amp;lt;layout-stack&amp;gt;&lt;/code&gt; and
+      &lt;code&gt;&amp;lt;layout-grid&amp;gt;&lt;/code&gt;. Just use them as tags in your
+      HTML and configure them with CSS custom properties via inline
+      styles or classes.
+    &lt;/p&gt;
+  &lt;/details&gt;
+
+  &lt;details&gt;
+    &lt;summary&gt;Do I need to register custom elements?&lt;/summary&gt;
+    &lt;p&gt;
+      No! The layout primitives work with pure CSS using element
+      selectors. There&#39;s no JavaScript custom element registration
+      required.
+    &lt;/p&gt;
+  &lt;/details&gt;
+
+  &lt;details open&gt;
+    &lt;summary&gt;Can details be open by default?&lt;/summary&gt;
+    &lt;p&gt;
+      Yes! Add the &lt;code&gt;open&lt;/code&gt; attribute to have a details element
+      expanded by default, like this one.
+    &lt;/p&gt;
+  &lt;/details&gt;
+&lt;/layout-stack&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Nested Accordion</h3><p>Details elements can be nested to create hierarchical content.</p><ui-tabs data-variant=underline><input type=radio name=details-nested-example id=details-nested-preview checked>
+<label for=details-nested-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><details><summary>CSS Files</summary><layout-stack style="
+      --space: var(--space-s);
+      padding-inline-start: var(--space-m);
+    "><details><summary>tokens.css</summary><p>Design tokens including spacing scale, measure, ratios, and
+borders.</p></details><details><summary>layout.css</summary><p>12 composable layout primitives: stack, box, center, cluster,
+sidebar, switcher, cover, grid, frame, reel, imposter, and icon.</p></details><details><summary>patterns.css</summary><p>7 CSS background patterns: dots, checkerboard, diagonal lines,
+cross-hatch, horizontal lines, vertical lines, and grid.</p></details><details><summary>components.css</summary><p>Pure CSS interactive components like tabs (with default, pills,
+and underline variants).</p></details></layout-stack></details></layout-box></div><input type=radio name=details-nested-example id=details-nested-code>
+<label for=details-nested-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;details&gt;
+  &lt;summary&gt;CSS Files&lt;/summary&gt;
+  &lt;layout-stack
+    style=&#34;
+      --space: var(--space-s);
+      padding-inline-start: var(--space-m);
+    &#34;
+  &gt;
+    &lt;details&gt;
+      &lt;summary&gt;tokens.css&lt;/summary&gt;
+      &lt;p&gt;
+        Design tokens including spacing scale, measure, ratios, and
+        borders.
+      &lt;/p&gt;
+    &lt;/details&gt;
+    &lt;details&gt;
+      &lt;summary&gt;layout.css&lt;/summary&gt;
+      &lt;p&gt;
+        12 composable layout primitives: stack, box, center, cluster,
+        sidebar, switcher, cover, grid, frame, reel, imposter, and icon.
+      &lt;/p&gt;
+    &lt;/details&gt;
+    &lt;details&gt;
+      &lt;summary&gt;patterns.css&lt;/summary&gt;
+      &lt;p&gt;
+        7 CSS background patterns: dots, checkerboard, diagonal lines,
+        cross-hatch, horizontal lines, vertical lines, and grid.
+      &lt;/p&gt;
+    &lt;/details&gt;
+    &lt;details&gt;
+      &lt;summary&gt;components.css&lt;/summary&gt;
+      &lt;p&gt;
+        Pure CSS interactive components like tabs (with default, pills,
+        and underline variants).
+      &lt;/p&gt;
+    &lt;/details&gt;
+  &lt;/layout-stack&gt;
+&lt;/details&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Styled Accordion</h3><p>Add custom styling while preserving native functionality.</p><ui-tabs data-variant=underline><input type=radio name=details-styled-example id=details-styled-preview checked>
+<label for=details-styled-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-stack style="--space: var(--space-s)"><details class=styled-details><summary>Why use semantic HTML?</summary><p>Semantic HTML improves accessibility, SEO, and code
+maintainability. Native elements like
+<code>&lt;details></code> come with built-in keyboard
+navigation and screen reader support.</p></details><details class=styled-details open><summary>Benefits of native components</summary><ul style=margin:0><li>No JavaScript dependencies</li><li>Built-in accessibility</li><li>Better performance</li><li>Future-proof</li><li>Progressive enhancement</li></ul></details><details class=styled-details><summary>Other native interactive elements</summary><p>HTML5 includes other native interactive elements like
+<code>&lt;dialog></code> for modals,
+<code>&lt;input type="color"></code> for color pickers, and
+<code>&lt;input type="range"></code> for sliders.</p></details></layout-stack></layout-box></div><input type=radio name=details-styled-example id=details-styled-code>
+<label for=details-styled-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+  &lt;details class=&#34;styled-details&#34;&gt;
+    &lt;summary&gt;Why use semantic HTML?&lt;/summary&gt;
+    &lt;p&gt;
+      Semantic HTML improves accessibility, SEO, and code
+      maintainability. Native elements like
+      &lt;code&gt;&amp;lt;details&amp;gt;&lt;/code&gt; come with built-in keyboard
+      navigation and screen reader support.
+    &lt;/p&gt;
+  &lt;/details&gt;
+
+  &lt;details class=&#34;styled-details&#34; open&gt;
+    &lt;summary&gt;Benefits of native components&lt;/summary&gt;
+    &lt;ul style=&#34;margin: 0&#34;&gt;
+      &lt;li&gt;No JavaScript dependencies&lt;/li&gt;
+      &lt;li&gt;Built-in accessibility&lt;/li&gt;
+      &lt;li&gt;Better performance&lt;/li&gt;
+      &lt;li&gt;Future-proof&lt;/li&gt;
+      &lt;li&gt;Progressive enhancement&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/details&gt;
+
+  &lt;details class=&#34;styled-details&#34;&gt;
+    &lt;summary&gt;Other native interactive elements&lt;/summary&gt;
+    &lt;p&gt;
+      HTML5 includes other native interactive elements like
+      &lt;code&gt;&amp;lt;dialog&amp;gt;&lt;/code&gt; for modals,
+      &lt;code&gt;&amp;lt;input type=&#34;color&#34;&amp;gt;&lt;/code&gt; for color pickers, and
+      &lt;code&gt;&amp;lt;input type=&#34;range&#34;&amp;gt;&lt;/code&gt; for sliders.
+    &lt;/p&gt;
+  &lt;/details&gt;
+&lt;/layout-stack&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs></layout-stack></section><hr><section><layout-stack style="--space: var(--space-m)"><h2>Popover with <code>popover</code> attribute</h2><p>The Popover API provides a native way to create popovers, tooltips, and
+menus without JavaScript. Use the <code>popover</code> attribute and
+<code>popovertarget</code> to connect triggers to popovers.</p><layout-box><pre><code>&lt;button popovertarget="my-popover"&gt;Open Popover&lt;/button&gt;
+
+&lt;div id="my-popover" popover&gt;
+  &lt;p&gt;This is a popover!&lt;/p&gt;
+&lt;/div&gt;</code></pre></layout-box><h3>Basic Popover</h3><p>Click the button to toggle the popover. Click outside or press Escape to
+dismiss.</p><ui-tabs data-variant=underline><input type=radio name=popover-basic-example id=popover-basic-preview checked>
+<label for=popover-basic-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><button popovertarget=popover-basic style="background:var(--color-primary);color:var(--color-canvas);border:none;padding:.75rem 1.5rem;border-radius:6px;cursor:pointer;font-size:1rem">
+Open Popover</button><div id=popover-basic popover style="border:2px solid var(--color-primary);border-radius:8px;padding:var(--space-m);background:var(--color-canvas);box-shadow:0 4px 12px rgba(0,0,0,.15)"><layout-stack style="--space: var(--space-s)"><h4 style=margin:0;color:var(--color-primary)>Hello from Popover!</h4><p style=margin:0>This is a native HTML popover. It automatically handles:</p><ul style=margin:0;padding-inline-start:1.5rem><li>Focus management</li><li>Escape key to close</li><li>Click outside to dismiss</li><li>Top layer rendering</li></ul></layout-stack></div></layout-box></div><input type=radio name=popover-basic-example id=popover-basic-code>
+<label for=popover-basic-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;button
+  popovertarget=&#34;popover-basic&#34;
+  style=&#34;
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+  &#34;
+&gt;
+  Open Popover
+&lt;/button&gt;
+
+&lt;div
+  id=&#34;popover-basic&#34;
+  popover
+  style=&#34;
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    padding: var(--space-m);
+    background: var(--color-canvas);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  &#34;
+&gt;
+  &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+    &lt;h4 style=&#34;margin: 0; color: var(--color-primary)&#34;&gt;
+      Hello from Popover!
+    &lt;/h4&gt;
+    &lt;p style=&#34;margin: 0&#34;&gt;
+      This is a native HTML popover. It automatically handles:
+    &lt;/p&gt;
+    &lt;ul style=&#34;margin: 0; padding-inline-start: 1.5rem&#34;&gt;
+      &lt;li&gt;Focus management&lt;/li&gt;
+      &lt;li&gt;Escape key to close&lt;/li&gt;
+      &lt;li&gt;Click outside to dismiss&lt;/li&gt;
+      &lt;li&gt;Top layer rendering&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/layout-stack&gt;
+&lt;/div&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Manual Popover</h3><p>Use <code>popover="manual"</code> to require explicit close actions.
+This won't auto-dismiss on outside clicks.</p><ui-tabs data-variant=underline><input type=radio name=popover-manual-example id=popover-manual-preview checked>
+<label for=popover-manual-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-cluster style="--space: var(--space-s)"><button popovertarget=popover-manual popovertargetaction=show style="background:var(--color-primary);color:var(--color-canvas);border:none;padding:.75rem 1.5rem;border-radius:6px;cursor:pointer">
+Show Manual Popover</button></layout-cluster><div id=popover-manual popover=manual style="border:2px solid #ee6c4d;border-radius:8px;padding:var(--space-m);background:var(--color-canvas);box-shadow:0 4px 12px rgba(0,0,0,.15)"><layout-stack style="--space: var(--space-s)"><h4 style=margin:0;color:#ee6c4d>Manual Popover</h4><p style=margin:0>This popover won't close when clicking outside. You must click the
+close button.</p><button popovertarget=popover-manual popovertargetaction=hide style="background:#ee6c4d;color:var(--color-canvas);border:none;padding:.5rem 1rem;border-radius:4px;cursor:pointer">
+Close</button></layout-stack></div></layout-box></div><input type=radio name=popover-manual-example id=popover-manual-code>
+<label for=popover-manual-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;layout-cluster style=&#34;--space: var(--space-s)&#34;&gt;
+  &lt;button
+    popovertarget=&#34;popover-manual&#34;
+    popovertargetaction=&#34;show&#34;
+    style=&#34;
+      background: var(--color-primary);
+      color: var(--color-canvas);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+    &#34;
+  &gt;
+    Show Manual Popover
+  &lt;/button&gt;
+&lt;/layout-cluster&gt;
+
+&lt;div
+  id=&#34;popover-manual&#34;
+  popover=&#34;manual&#34;
+  style=&#34;
+    border: 2px solid #ee6c4d;
+    border-radius: 8px;
+    padding: var(--space-m);
+    background: var(--color-canvas);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  &#34;
+&gt;
+  &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
+    &lt;h4 style=&#34;margin: 0; color: #ee6c4d&#34;&gt;Manual Popover&lt;/h4&gt;
+    &lt;p style=&#34;margin: 0&#34;&gt;
+      This popover won&#39;t close when clicking outside. You must click the
+      close button.
+    &lt;/p&gt;
+    &lt;button
+      popovertarget=&#34;popover-manual&#34;
+      popovertargetaction=&#34;hide&#34;
+      style=&#34;
+        background: #ee6c4d;
+        color: var(--color-canvas);
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+      &#34;
+    &gt;
+      Close
+    &lt;/button&gt;
+  &lt;/layout-stack&gt;
+&lt;/div&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Popover with Custom Size</h3><p>Popovers render in the top layer, centered in the viewport. Control
+their size with inline styles.</p><ui-tabs data-variant=underline><input type=radio name=popover-sized-example id=popover-sized-preview checked>
+<label for=popover-sized-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><button popovertarget=popover-sized style="background:var(--color-primary);color:var(--color-canvas);border:none;padding:.75rem 1.5rem;border-radius:6px;cursor:pointer;font-size:1rem">
+Open Confirmation</button><div id=popover-sized popover style="border:2px solid var(--color-border);border-radius:12px;padding:var(--space-l);background:var(--color-canvas);box-shadow:0 8px 24px rgba(0,0,0,.15);max-inline-size:400px"><layout-stack style="--space: var(--space-m)"><h4 style=margin:0;color:var(--color-primary)>Confirm Action</h4><p style=margin:0>Are you sure you want to proceed? This will apply your changes.</p><layout-cluster style="--space: var(--space-s); --justify: flex-end"><button popovertarget=popover-sized popovertargetaction=hide style="background:0 0;color:var(--color-primary);border:2px solid var(--color-primary);padding:.5rem 1rem;border-radius:6px;cursor:pointer">
+Cancel
+</button>
+<button popovertarget=popover-sized popovertargetaction=hide style="background:var(--color-primary);color:var(--color-canvas);border:none;padding:.5rem 1rem;border-radius:6px;cursor:pointer">
+Confirm</button></layout-cluster></layout-stack></div></layout-box></div><input type=radio name=popover-sized-example id=popover-sized-code>
+<label for=popover-sized-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;button
+  popovertarget=&#34;popover-sized&#34;
+  style=&#34;
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+  &#34;
+&gt;
+  Open Confirmation
+&lt;/button&gt;
+
+&lt;div
+  id=&#34;popover-sized&#34;
+  popover
+  style=&#34;
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-l);
+    background: var(--color-canvas);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    max-inline-size: 400px;
+  &#34;
+&gt;
+  &lt;layout-stack style=&#34;--space: var(--space-m)&#34;&gt;
+    &lt;h4 style=&#34;margin: 0; color: var(--color-primary)&#34;&gt;
+      Confirm Action
+    &lt;/h4&gt;
+    &lt;p style=&#34;margin: 0&#34;&gt;
+      Are you sure you want to proceed? This will apply your changes.
+    &lt;/p&gt;
+    &lt;layout-cluster style=&#34;--space: var(--space-s); --justify: flex-end&#34;&gt;
+      &lt;button
+        popovertarget=&#34;popover-sized&#34;
+        popovertargetaction=&#34;hide&#34;
+        style=&#34;
+          background: transparent;
+          color: var(--color-primary);
+          border: 2px solid var(--color-primary);
+          padding: 0.5rem 1rem;
+          border-radius: 6px;
+          cursor: pointer;
+        &#34;
+      &gt;
+        Cancel
+      &lt;/button&gt;
+      &lt;button
+        popovertarget=&#34;popover-sized&#34;
+        popovertargetaction=&#34;hide&#34;
+        style=&#34;
+          background: var(--color-primary);
+          color: var(--color-canvas);
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 6px;
+          cursor: pointer;
+        &#34;
+      &gt;
+        Confirm
+      &lt;/button&gt;
+    &lt;/layout-cluster&gt;
+  &lt;/layout-stack&gt;
+&lt;/div&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Popover States</h3><p>Use <code>popovertargetaction</code> to control show/hide/toggle
+behavior.</p><ui-tabs data-variant=underline><input type=radio name=popover-states-example id=popover-states-preview checked>
+<label for=popover-states-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-cluster style="--space: var(--space-s)"><button popovertarget=popover-actions popovertargetaction=show style="background:var(--color-primary);color:var(--color-canvas);border:none;padding:.5rem 1rem;border-radius:4px;cursor:pointer">
+Show
+</button>
+<button popovertarget=popover-actions popovertargetaction=hide style="background:#ee6c4d;color:var(--color-canvas);border:none;padding:.5rem 1rem;border-radius:4px;cursor:pointer">
+Hide
+</button>
+<button popovertarget=popover-actions popovertargetaction=toggle style="background:#98c1d9;color:#1a1a2e;border:none;padding:.5rem 1rem;border-radius:4px;cursor:pointer">
+Toggle</button></layout-cluster><div id=popover-actions popover style="border:2px solid var(--color-primary);border-radius:8px;padding:var(--space-m);background:var(--color-canvas);box-shadow:0 4px 12px rgba(0,0,0,.15)"><p style=margin:0>Use the buttons above to control this popover with different
+actions: show, hide, or toggle.</p></div></layout-box></div><input type=radio name=popover-states-example id=popover-states-code>
+<label for=popover-states-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;layout-cluster style=&#34;--space: var(--space-s)&#34;&gt;
+  &lt;button
+    popovertarget=&#34;popover-actions&#34;
+    popovertargetaction=&#34;show&#34;
+    style=&#34;
+      background: var(--color-primary);
+      color: var(--color-canvas);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    &#34;
+  &gt;
+    Show
+  &lt;/button&gt;
+  &lt;button
+    popovertarget=&#34;popover-actions&#34;
+    popovertargetaction=&#34;hide&#34;
+    style=&#34;
+      background: #ee6c4d;
+      color: var(--color-canvas);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    &#34;
+  &gt;
+    Hide
+  &lt;/button&gt;
+  &lt;button
+    popovertarget=&#34;popover-actions&#34;
+    popovertargetaction=&#34;toggle&#34;
+    style=&#34;
+      background: #98c1d9;
+      color: #1a1a2e;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    &#34;
+  &gt;
+    Toggle
+  &lt;/button&gt;
+&lt;/layout-cluster&gt;
+
+&lt;div
+  id=&#34;popover-actions&#34;
+  popover
+  style=&#34;
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    padding: var(--space-m);
+    background: var(--color-canvas);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  &#34;
+&gt;
+  &lt;p style=&#34;margin: 0&#34;&gt;
+    Use the buttons above to control this popover with different
+    actions: show, hide, or toggle.
+  &lt;/p&gt;
+&lt;/div&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs><h3>Popover with Backdrop</h3><p>Use the <code>::backdrop</code> pseudo-element to dim the page content
+while a popover is open, creating a modal-like effect.</p><ui-tabs data-variant=underline><input type=radio name=popover-backdrop-example id=popover-backdrop-preview checked>
+<label for=popover-backdrop-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><button popovertarget=popover-backdrop style="background:var(--color-primary);color:var(--color-canvas);border:none;padding:.75rem 1.5rem;border-radius:6px;cursor:pointer;font-size:1rem">
+Open Modal Popover</button><div id=popover-backdrop popover style="border:2px solid var(--color-primary);border-radius:12px;padding:var(--space-l);background:var(--color-canvas);box-shadow:0 8px 24px rgba(0,0,0,.25)"><layout-stack style="--space: var(--space-m)"><h4 style=margin:0;color:var(--color-primary);font-size:1.5rem>Modal-like Popover</h4><p style=margin:0>When this popover is open, the page content behind it is dimmed
+and blurred using the <code>::backdrop</code> pseudo-element.</p><layout-stack style="--space: var(--space-xs)"><p style=margin:0;font-weight:600>CSS used:</p><pre style=background:var(--color-surface);padding:var(--space-s);border-radius:4px;margin:0;overflow-x:auto><code>#popover-backdrop::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}</code></pre></layout-stack><p style=margin:0;font-size:.9rem;color:#666>Click outside, press Escape, or use the button below to close.</p><button popovertarget=popover-backdrop popovertargetaction=hide style="background:#ee6c4d;color:var(--color-canvas);border:none;padding:.75rem 1.5rem;border-radius:6px;cursor:pointer">
+Close Modal</button></layout-stack></div></layout-box></div><input type=radio name=popover-backdrop-example id=popover-backdrop-code>
+<label for=popover-backdrop-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+&lt;button
+  popovertarget=&#34;popover-backdrop&#34;
+  style=&#34;
+    background: var(--color-primary);
+    color: var(--color-canvas);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+  &#34;
+&gt;
+  Open Modal Popover
+&lt;/button&gt;
+
+&lt;div
+  id=&#34;popover-backdrop&#34;
+  popover
+  style=&#34;
+    border: 2px solid var(--color-primary);
+    border-radius: 12px;
+    padding: var(--space-l);
+    background: var(--color-canvas);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  &#34;
+&gt;
+  &lt;layout-stack style=&#34;--space: var(--space-m)&#34;&gt;
+    &lt;h4
+      style=&#34;margin: 0; color: var(--color-primary); font-size: 1.5rem&#34;
+    &gt;
+      Modal-like Popover
+    &lt;/h4&gt;
+    &lt;p style=&#34;margin: 0&#34;&gt;
+      When this popover is open, the page content behind it is dimmed
+      and blurred using the &lt;code&gt;::backdrop&lt;/code&gt; pseudo-element.
+    &lt;/p&gt;
+    &lt;layout-stack style=&#34;--space: var(--space-xs)&#34;&gt;
+      &lt;p style=&#34;margin: 0; font-weight: 600&#34;&gt;CSS used:&lt;/p&gt;
+      &lt;pre
+        style=&#34;
+          background: var(--color-surface);
+          padding: var(--space-s);
+          border-radius: 4px;
+          margin: 0;
+          overflow-x: auto;
+        &#34;
+      &gt;&lt;code&gt;#popover-backdrop::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}&lt;/code&gt;&lt;/pre&gt;
+    &lt;/layout-stack&gt;
+    &lt;p style=&#34;margin: 0; font-size: 0.9rem; color: #666&#34;&gt;
+      Click outside, press Escape, or use the button below to close.
+    &lt;/p&gt;
+    &lt;button
+      popovertarget=&#34;popover-backdrop&#34;
+      popovertargetaction=&#34;hide&#34;
+      style=&#34;
+        background: #ee6c4d;
+        color: var(--color-canvas);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        cursor: pointer;
+      &#34;
+    &gt;
+      Close Modal
+    &lt;/button&gt;
+  &lt;/layout-stack&gt;
+&lt;/div&gt;
+      </code>
+      </pre></layout-box></div></ui-tabs></layout-stack></section></layout-stack></layout-stack></layout-center></body></html>

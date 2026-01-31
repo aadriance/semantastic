@@ -1,0 +1,5 @@
+# Hugo
+/resources/_gen/
+.hugo_build.lock
+/docs-old/
+.DS_STORE
