@@ -1,42 +1,273 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Candy - Semantastic CSS</title><link rel=stylesheet href=/css/tokens.css><link rel=stylesheet href=/css/colors.css><link rel=stylesheet href=/css/layout.css><link rel=stylesheet href=/css/components.css><link rel=stylesheet href=/css/candy.css><link rel=stylesheet href=/css/docs.css></head><body><nav class=site-nav><layout-cluster style="--space: var(--space-m); --align: center; --justify: space-between"><a href=/ class=nav-brand>Semantastic
-</a><layout-cluster class=nav-desktop style="--space: var(--space-s)"><a href=/tokens/>Tokens
-</a><a href=/colors/>Colors
-</a><a href=/layouts/>Layouts
-</a><a href=/components/>Components
-</a><a href=/candy/ aria-current=page>Candy
-</a></layout-cluster><button class=nav-toggle popovertarget=mobile-nav aria-label="Open navigation menu">
-☰</button></layout-cluster></nav><ui-flyout id=mobile-nav popover data-direction=right style="--flyout-width: 280px; --flyout-bg: var(--color-surface)"><layout-stack style="--space: var(--space-m); padding: var(--space-l)"><layout-stack style="--space: var(--space-2xs)"><a href=/ class=mobile-nav-link>Home
-</a><a href=/tokens/ class=mobile-nav-link>Tokens
-</a><a href=/colors/ class=mobile-nav-link>Colors
-</a><a href=/layouts/ class=mobile-nav-link>Layouts
-</a><a href=/components/ class=mobile-nav-link>Components
-</a><a href=/candy/ class=mobile-nav-link aria-current=page>Candy
-</a></layout-stack><button class=mobile-nav-close popovertarget=mobile-nav>
-Close Menu
-</button>
-</layout-stack></ui-flyout><layout-center style="--measure: 72ch; --gutter: var(--space-l)"><layout-stack style="--space: var(--space-3xl); padding-block: var(--space-3xl)"><layout-center style="--measure: 72ch; --gutter: var(--space-l)"><layout-stack><div><ui-label data-intent=secondary>Optional CSS</ui-label><h1>Candy Components</h1><p style=font-size:1.25rem;color:var(--color-text-muted)>Production-ready components built on Semantastic design system primitives.</p><p><strong>candy.css</strong> is an optional, higher-level CSS layer that provides 15
-components implemented as custom elements — replacing verbose inline styles with
-clean, semantic markup.</p><ui-notice data-intent=secondary><strong>Note:</strong> This file is <em>completely optional</em>. The Semantastic system works perfectly without
-it. Candy.css is the <strong>only</strong> CSS file in the system that imports dependencies.</ui-notice></div><hr><section><layout-stack style="--space: var(--space-xl)"><h2>Cards & Containers</h2><layout-stack style="--space: var(--space-s)"><h3>Base Card</h3><p>Simple card with rounded corners, border, and padding. Implemented as a custom element.</p><ui-tabs data-variant=underline><input type=radio name=candy-card-base-example id=candy-card-base-preview checked>
-<label for=candy-card-base-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><ui-card><strong>Basic Card</strong><p>This is a simple card component with default styling.</p></ui-card></layout-box></div><input type=radio name=candy-card-base-example id=candy-card-base-code>
-<label for=candy-card-base-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Candy - Semantastic CSS</title>
+
+
+<link rel="stylesheet" href="/semantastic/css/tokens.css" />
+<link rel="stylesheet" href="/semantastic/css/colors.css" />
+<link rel="stylesheet" href="/semantastic/css/layout.css" />
+<link rel="stylesheet" href="/semantastic/css/components.css" />
+<link rel="stylesheet" href="/semantastic/css/candy.css" />
+
+
+<link rel="stylesheet" href="/semantastic/css/docs.css" />
+
+
+
+  </head>
+  <body>
+    <nav class="site-nav">
+  <layout-cluster style="--space: var(--space-m); --align: center; --justify: space-between">
+    <a href="/" class="nav-brand" >
+      Semantastic
+    </a>
+
+    
+    <layout-cluster class="nav-desktop" style="--space: var(--space-s)">
+      
+      
+        
+          <a href="/semantastic/tokens/" >
+            Tokens
+          </a>
+        
+      
+        
+          <a href="/semantastic/colors/" >
+            Colors
+          </a>
+        
+      
+        
+          <a href="/semantastic/layouts/" >
+            Layouts
+          </a>
+        
+      
+        
+          <a href="/semantastic/components/" >
+            Components
+          </a>
+        
+      
+        
+          <a href="/semantastic/candy/" aria-current="page">
+            Candy
+          </a>
+        
+      
+    </layout-cluster>
+
+    
+    <button class="nav-toggle" popovertarget="mobile-nav" aria-label="Open navigation menu">
+      ☰
+    </button>
+  </layout-cluster>
+</nav>
+
+
+<ui-flyout
+  id="mobile-nav"
+  popover
+  data-direction="right"
+  style="--flyout-width: 280px; --flyout-bg: var(--color-surface)"
+>
+  <layout-stack style="--space: var(--space-m); padding: var(--space-l)">
+    <layout-stack style="--space: var(--space-2xs)">
+      <a href="/" class="mobile-nav-link" >
+        Home
+      </a>
+      
+      
+        
+          <a
+            href="/semantastic/tokens/"
+            class="mobile-nav-link"
+            
+          >
+            Tokens
+          </a>
+        
+      
+        
+          <a
+            href="/semantastic/colors/"
+            class="mobile-nav-link"
+            
+          >
+            Colors
+          </a>
+        
+      
+        
+          <a
+            href="/semantastic/layouts/"
+            class="mobile-nav-link"
+            
+          >
+            Layouts
+          </a>
+        
+      
+        
+          <a
+            href="/semantastic/components/"
+            class="mobile-nav-link"
+            
+          >
+            Components
+          </a>
+        
+      
+        
+          <a
+            href="/semantastic/candy/"
+            class="mobile-nav-link"
+            aria-current="page"
+          >
+            Candy
+          </a>
+        
+      
+    </layout-stack>
+
+    <button class="mobile-nav-close" popovertarget="mobile-nav">
+      Close Menu
+    </button>
+  </layout-stack>
+</ui-flyout>
+
+
+    
+<layout-center style="--measure: 72ch; --gutter: var(--space-l)">
+  <layout-stack style="--space: var(--space-3xl); padding-block: var(--space-3xl)">
+    
+<layout-center style="--measure: 72ch; --gutter: var(--space-l)">
+  <layout-stack>
+
+    <!-- Introduction -->
+    <div>
+      <ui-label data-intent="secondary">Optional CSS</ui-label>
+      <h1>Candy Components</h1>
+      <p style="font-size: 1.25rem; color: var(--color-text-muted);">
+        Production-ready components built on Semantastic design system primitives.
+      </p>
+      <p>
+        <strong>candy.css</strong> is an optional, higher-level CSS layer that provides 15
+        components implemented as custom elements — replacing verbose inline styles with
+        clean, semantic markup.
+      </p>
+      <ui-notice data-intent="secondary">
+        <strong>Note:</strong> This file is <em>completely optional</em>. The Semantastic system works perfectly without
+        it. Candy.css is the <strong>only</strong> CSS file in the system that imports dependencies.
+      </ui-notice>
+    </div>
+
+    <hr>
+
+    <!-- SECTION 1: CARDS & CONTAINERS -->
+    <section>
+      <layout-stack style="--space: var(--space-xl)">
+        <h2>Cards & Containers</h2>
+
+        <!-- 1. Card -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Base Card</h3>
+          <p>Simple card with rounded corners, border, and padding. Implemented as a custom element.</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-card-base-example" id="candy-card-base-preview" checked>
+  <label for="candy-card-base-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <ui-card>
+              <strong>Basic Card</strong>
+              <p>This is a simple card component with default styling.</p>
+            </ui-card>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-card-base-example" id="candy-card-base-code">
+  <label for="candy-card-base-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;ui-card&gt;
               &lt;strong&gt;Basic Card&lt;/strong&gt;
               &lt;p&gt;This is a simple card component with default styling.&lt;/p&gt;
             &lt;/ui-card&gt;
             </code>
-      </pre></layout-box></div></ui-tabs><p><em>Tip: Compose with tokens inline:</em> <code>&lt;ui-card style="padding: var(--space-xl);
-background: var(--color-surface)"></code></p></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Elevated Card</h3><p>Card with offset pattern shadow instead of traditional drop shadow.</p><ui-tabs data-variant=underline><input type=radio name=candy-card-elevated-example id=candy-card-elevated-preview checked>
-<label for=candy-card-elevated-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><ui-card data-variant=elevated><strong>Elevated Card</strong><p>Notice the pattern shadow behind this card! It uses lines by default.</p></ui-card></layout-box></div><input type=radio name=candy-card-elevated-example id=candy-card-elevated-code>
-<label for=candy-card-elevated-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+              <p><em>Tip: Compose with tokens inline:</em> <code>&lt;ui-card style="padding: var(--space-xl);
+                  background: var(--color-surface)"&gt;</code></p>
+        </layout-stack>
+
+        <!-- 2. Card Elevated -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Elevated Card</h3>
+          <p>Card with offset pattern shadow instead of traditional drop shadow.</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-card-elevated-example" id="candy-card-elevated-preview" checked>
+  <label for="candy-card-elevated-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <ui-card data-variant="elevated">
+              <strong>Elevated Card</strong>
+              <p>Notice the pattern shadow behind this card! It uses lines by default.</p>
+            </ui-card>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-card-elevated-example" id="candy-card-elevated-code">
+  <label for="candy-card-elevated-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;ui-card data-variant=&#34;elevated&#34;&gt;
               &lt;strong&gt;Elevated Card&lt;/strong&gt;
               &lt;p&gt;Notice the pattern shadow behind this card! It uses lines by default.&lt;/p&gt;
             &lt;/ui-card&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Interactive Card</h3><p>Clickable card with hover effects.</p><ui-tabs data-variant=underline><input type=radio name=candy-card-interactive-example id=candy-card-interactive-preview checked>
-<label for=candy-card-interactive-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><a href=# style=text-decoration:none;color:inherit><ui-card data-variant=interactive><strong>Hover me!</strong><p>This card lifts up when you hover over it.</p></ui-card></a></layout-box></div><input type=radio name=candy-card-interactive-example id=candy-card-interactive-code>
-<label for=candy-card-interactive-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- 3. Interactive Card -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Interactive Card</h3>
+          <p>Clickable card with hover effects.</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-card-interactive-example" id="candy-card-interactive-preview" checked>
+  <label for="candy-card-interactive-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <a href="#" style="text-decoration: none; color: inherit">
+              <ui-card data-variant="interactive">
+                <strong>Hover me!</strong>
+                <p>This card lifts up when you hover over it.</p>
+              </ui-card>
+            </a>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-card-interactive-example" id="candy-card-interactive-code">
+  <label for="candy-card-interactive-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;a href=&#34;#&#34; style=&#34;text-decoration: none; color: inherit&#34;&gt;
               &lt;ui-card data-variant=&#34;interactive&#34;&gt;
                 &lt;strong&gt;Hover me!&lt;/strong&gt;
@@ -44,9 +275,49 @@ background: var(--color-surface)"></code></p></layout-stack><layout-stack style=
               &lt;/ui-card&gt;
             &lt;/a&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Card with Accent Bar</h3><p>Card with colored left border accent. Supports semantic intents.</p><ui-tabs data-variant=underline><input type=radio name=candy-card-accent-example id=candy-card-accent-preview checked>
-<label for=candy-card-accent-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-grid style="--min-width: 15rem"><ui-card data-variant=accent><strong>Default</strong><p>Primary accent.</p></ui-card><ui-card data-variant=accent data-intent=success><strong>Success</strong><p>Green accent.</p></ui-card><ui-card data-variant=accent data-intent=warning><strong>Warning</strong><p>Amber accent.</p></ui-card><ui-card data-variant=accent data-intent=error><strong>Error</strong><p>Red accent.</p></ui-card></layout-grid></layout-box></div><input type=radio name=candy-card-accent-example id=candy-card-accent-code>
-<label for=candy-card-accent-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- 4. Card Accent -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Card with Accent Bar</h3>
+          <p>Card with colored left border accent. Supports semantic intents.</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-card-accent-example" id="candy-card-accent-preview" checked>
+  <label for="candy-card-accent-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-grid style="--min-width: 15rem">
+              <ui-card data-variant="accent">
+                <strong>Default</strong>
+                <p>Primary accent.</p>
+              </ui-card>
+              <ui-card data-variant="accent" data-intent="success">
+                <strong>Success</strong>
+                <p>Green accent.</p>
+              </ui-card>
+              <ui-card data-variant="accent" data-intent="warning">
+                <strong>Warning</strong>
+                <p>Amber accent.</p>
+              </ui-card>
+              <ui-card data-variant="accent" data-intent="error">
+                <strong>Error</strong>
+                <p>Red accent.</p>
+              </ui-card>
+            </layout-grid>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-card-accent-example" id="candy-card-accent-code">
+  <label for="candy-card-accent-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-grid style=&#34;--min-width: 15rem&#34;&gt;
               &lt;ui-card data-variant=&#34;accent&#34;&gt;
                 &lt;strong&gt;Default&lt;/strong&gt;
@@ -66,21 +337,81 @@ background: var(--color-surface)"></code></p></layout-stack><layout-stack style=
               &lt;/ui-card&gt;
             &lt;/layout-grid&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Well</h3><p>Recessed container for grouping related content.</p><ui-tabs data-variant=underline><input type=radio name=candy-well-example id=candy-well-preview checked>
-<label for=candy-well-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><ui-well><strong>Well Container</strong><p>Notice the inset shadow effect - perfect for form groups or secondary content.</p></ui-well></layout-box></div><input type=radio name=candy-well-example id=candy-well-code>
-<label for=candy-well-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- 5. Well -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Well</h3>
+          <p>Recessed container for grouping related content.</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-well-example" id="candy-well-preview" checked>
+  <label for="candy-well-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <ui-well>
+              <strong>Well Container</strong>
+              <p>Notice the inset shadow effect - perfect for form groups or secondary content.</p>
+            </ui-well>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-well-example" id="candy-well-code">
+  <label for="candy-well-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;ui-well&gt;
               &lt;strong&gt;Well Container&lt;/strong&gt;
               &lt;p&gt;Notice the inset shadow effect - perfect for form groups or secondary content.&lt;/p&gt;
             &lt;/ui-well&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack></layout-stack></section><hr><section><layout-stack style="--space: var(--space-xl)"><h2>Badges & Labels</h2><layout-stack style="--space: var(--space-s)"><h3>Badge</h3><p>Inline badge/pill for labels, categories, status indicators. Clean custom element syntax!</p><ui-tabs data-variant=underline><input type=radio name=candy-badge-example id=candy-badge-preview checked>
-<label for=candy-badge-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-cluster style="--space: var(--space-xs)"><ui-badge>tokens.css</ui-badge>
-<ui-badge>colors.css</ui-badge>
-<ui-badge data-intent=success>Active</ui-badge>
-<ui-badge data-intent=warning>Pending</ui-badge>
-<ui-badge data-intent=error>Deprecated</ui-badge></layout-cluster></layout-box></div><input type=radio name=candy-badge-example id=candy-badge-code>
-<label for=candy-badge-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+      </layout-stack>
+    </section>
+
+    <hr>
+
+    <!-- SECTION 2: BADGES & LABELS -->
+    <section>
+      <layout-stack style="--space: var(--space-xl)">
+        <h2>Badges & Labels</h2>
+
+        <!-- 6. Badge -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Badge</h3>
+          <p>Inline badge/pill for labels, categories, status indicators. Clean custom element syntax!</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-badge-example" id="candy-badge-preview" checked>
+  <label for="candy-badge-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-cluster style="--space: var(--space-xs)">
+              <ui-badge>tokens.css</ui-badge>
+              <ui-badge>colors.css</ui-badge>
+              <ui-badge data-intent="success">Active</ui-badge>
+              <ui-badge data-intent="warning">Pending</ui-badge>
+              <ui-badge data-intent="error">Deprecated</ui-badge>
+            </layout-cluster>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-badge-example" id="candy-badge-code">
+  <label for="candy-badge-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-cluster style=&#34;--space: var(--space-xs)&#34;&gt;
               &lt;ui-badge&gt;tokens.css&lt;/ui-badge&gt;
               &lt;ui-badge&gt;colors.css&lt;/ui-badge&gt;
@@ -89,12 +420,37 @@ background: var(--color-surface)"></code></p></layout-stack><layout-stack style=
               &lt;ui-badge data-intent=&#34;error&#34;&gt;Deprecated&lt;/ui-badge&gt;
             &lt;/layout-cluster&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Badge Pill</h3><p>Fully rounded badge variant.</p><ui-tabs data-variant=underline><input type=radio name=candy-badge-pill-example id=candy-badge-pill-preview checked>
-<label for=candy-badge-pill-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-cluster style="--space: var(--space-xs)"><ui-badge data-variant=pill>New</ui-badge>
-<ui-badge data-variant=pill data-intent=success>Pro</ui-badge>
-<ui-badge data-variant=pill data-intent=warning>Beta</ui-badge>
-<ui-badge data-variant=pill data-intent=error>Legacy</ui-badge></layout-cluster></layout-box></div><input type=radio name=candy-badge-pill-example id=candy-badge-pill-code>
-<label for=candy-badge-pill-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- 7. Badge Pill -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Badge Pill</h3>
+          <p>Fully rounded badge variant.</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-badge-pill-example" id="candy-badge-pill-preview" checked>
+  <label for="candy-badge-pill-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-cluster style="--space: var(--space-xs)">
+              <ui-badge data-variant="pill">New</ui-badge>
+              <ui-badge data-variant="pill" data-intent="success">Pro</ui-badge>
+              <ui-badge data-variant="pill" data-intent="warning">Beta</ui-badge>
+              <ui-badge data-variant="pill" data-intent="error">Legacy</ui-badge>
+            </layout-cluster>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-badge-pill-example" id="candy-badge-pill-code">
+  <label for="candy-badge-pill-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-cluster style=&#34;--space: var(--space-xs)&#34;&gt;
               &lt;ui-badge data-variant=&#34;pill&#34;&gt;New&lt;/ui-badge&gt;
               &lt;ui-badge data-variant=&#34;pill&#34; data-intent=&#34;success&#34;&gt;Pro&lt;/ui-badge&gt;
@@ -102,12 +458,37 @@ background: var(--color-surface)"></code></p></layout-stack><layout-stack style=
               &lt;ui-badge data-variant=&#34;pill&#34; data-intent=&#34;error&#34;&gt;Legacy&lt;/ui-badge&gt;
             &lt;/layout-cluster&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Label</h3><p>Small uppercase label for sections/categories.</p><ui-tabs data-variant=underline><input type=radio name=candy-label-example id=candy-label-preview checked>
-<label for=candy-label-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-stack style="--space: var(--space-2xs)"><ui-label>Featured</ui-label>
-<ui-label data-intent=primary>Primary</ui-label>
-<ui-label data-intent=success>Success</ui-label>
-<ui-label data-intent=warning>Warning</ui-label></layout-stack></layout-box></div><input type=radio name=candy-label-example id=candy-label-code>
-<label for=candy-label-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- 8. Label -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Label</h3>
+          <p>Small uppercase label for sections/categories.</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-label-example" id="candy-label-preview" checked>
+  <label for="candy-label-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-stack style="--space: var(--space-2xs)">
+              <ui-label>Featured</ui-label>
+              <ui-label data-intent="primary">Primary</ui-label>
+              <ui-label data-intent="success">Success</ui-label>
+              <ui-label data-intent="warning">Warning</ui-label>
+            </layout-stack>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-label-example" id="candy-label-code">
+  <label for="candy-label-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-stack style=&#34;--space: var(--space-2xs)&#34;&gt;
               &lt;ui-label&gt;Featured&lt;/ui-label&gt;
               &lt;ui-label data-intent=&#34;primary&#34;&gt;Primary&lt;/ui-label&gt;
@@ -115,12 +496,37 @@ background: var(--color-surface)"></code></p></layout-stack><layout-stack style=
               &lt;ui-label data-intent=&#34;warning&#34;&gt;Warning&lt;/ui-label&gt;
             &lt;/layout-stack&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Tag</h3><p>Interactive tag with hover effect.</p><ui-tabs data-variant=underline><input type=radio name=candy-tag-example id=candy-tag-preview checked>
-<label for=candy-tag-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-cluster style="--space: var(--space-xs)"><ui-tag>JavaScript</ui-tag>
-<ui-tag>CSS</ui-tag>
-<ui-tag>HTML</ui-tag>
-<ui-tag>Design Systems</ui-tag></layout-cluster></layout-box></div><input type=radio name=candy-tag-example id=candy-tag-code>
-<label for=candy-tag-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- 9. Tag -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Tag</h3>
+          <p>Interactive tag with hover effect.</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-tag-example" id="candy-tag-preview" checked>
+  <label for="candy-tag-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-cluster style="--space: var(--space-xs)">
+              <ui-tag>JavaScript</ui-tag>
+              <ui-tag>CSS</ui-tag>
+              <ui-tag>HTML</ui-tag>
+              <ui-tag>Design Systems</ui-tag>
+            </layout-cluster>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-tag-example" id="candy-tag-code">
+  <label for="candy-tag-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-cluster style=&#34;--space: var(--space-xs)&#34;&gt;
               &lt;ui-tag&gt;JavaScript&lt;/ui-tag&gt;
               &lt;ui-tag&gt;CSS&lt;/ui-tag&gt;
@@ -128,12 +534,54 @@ background: var(--color-surface)"></code></p></layout-stack><layout-stack style=
               &lt;ui-tag&gt;Design Systems&lt;/ui-tag&gt;
             &lt;/layout-cluster&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack></layout-stack></section><hr><section><layout-stack style="--space: var(--space-xl)"><h2>Notices & Alerts</h2><layout-stack style="--space: var(--space-s)"><h3>Notice</h3><p>Informational notice with semantic color variants.</p><ui-tabs data-variant=underline><input type=radio name=candy-notice-example id=candy-notice-preview checked>
-<label for=candy-notice-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-stack style="--space: var(--space-s)"><ui-notice><strong>Info:</strong> Default info notice with primary colors.
-</ui-notice><ui-notice data-intent=success><strong>Success:</strong> Operation completed successfully!
-</ui-notice><ui-notice data-intent=warning><strong>Warning:</strong> Please review before proceeding.
-</ui-notice><ui-notice data-intent=error><strong>Error:</strong> Something went wrong. Please try again.</ui-notice></layout-stack></layout-box></div><input type=radio name=candy-notice-example id=candy-notice-code>
-<label for=candy-notice-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+      </layout-stack>
+    </section>
+
+    <hr>
+
+    <!-- SECTION 3: NOTICES & ALERTS -->
+    <section>
+      <layout-stack style="--space: var(--space-xl)">
+        <h2>Notices & Alerts</h2>
+
+        <!-- 10. Notice -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Notice</h3>
+          <p>Informational notice with semantic color variants.</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-notice-example" id="candy-notice-preview" checked>
+  <label for="candy-notice-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-stack style="--space: var(--space-s)">
+              <ui-notice>
+                <strong>Info:</strong> Default info notice with primary colors.
+              </ui-notice>
+              <ui-notice data-intent="success">
+                <strong>Success:</strong> Operation completed successfully!
+              </ui-notice>
+              <ui-notice data-intent="warning">
+                <strong>Warning:</strong> Please review before proceeding.
+              </ui-notice>
+              <ui-notice data-intent="error">
+                <strong>Error:</strong> Something went wrong. Please try again.
+              </ui-notice>
+            </layout-stack>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-notice-example" id="candy-notice-code">
+  <label for="candy-notice-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
               &lt;ui-notice&gt;
                 &lt;strong&gt;Info:&lt;/strong&gt; Default info notice with primary colors.
@@ -149,11 +597,42 @@ background: var(--color-surface)"></code></p></layout-stack><layout-stack style=
               &lt;/ui-notice&gt;
             &lt;/layout-stack&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Notice with Pattern Accent</h3><p>Notice with pattern-filled left accent bar.</p><ui-tabs data-variant=underline><input type=radio name=candy-notice-pattern-example id=candy-notice-pattern-preview checked>
-<label for=candy-notice-pattern-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-stack style="--space: var(--space-s)"><ui-notice data-variant=pattern><strong>Default:</strong> Diagonal lines pattern accent.
-</ui-notice><ui-notice data-variant=pattern data-pattern-type=dots data-intent=success><strong>Dots:</strong> Success notice with dots pattern accent.
-</ui-notice><ui-notice data-variant=pattern data-pattern-type=checkerboard data-intent=warning><strong>Checkerboard:</strong> Warning with checkerboard pattern.</ui-notice></layout-stack></layout-box></div><input type=radio name=candy-notice-pattern-example id=candy-notice-pattern-code>
-<label for=candy-notice-pattern-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- 11. Notice with Pattern -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Notice with Pattern Accent</h3>
+          <p>Notice with pattern-filled left accent bar.</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-notice-pattern-example" id="candy-notice-pattern-preview" checked>
+  <label for="candy-notice-pattern-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-stack style="--space: var(--space-s)">
+              <ui-notice data-variant="pattern">
+                <strong>Default:</strong> Diagonal lines pattern accent.
+              </ui-notice>
+              <ui-notice data-variant="pattern" data-pattern-type="dots" data-intent="success">
+                <strong>Dots:</strong> Success notice with dots pattern accent.
+              </ui-notice>
+              <ui-notice data-variant="pattern" data-pattern-type="checkerboard" data-intent="warning">
+                <strong>Checkerboard:</strong> Warning with checkerboard pattern.
+              </ui-notice>
+            </layout-stack>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-notice-pattern-example" id="candy-notice-pattern-code">
+  <label for="candy-notice-pattern-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
               &lt;ui-notice data-variant=&#34;pattern&#34;&gt;
                 &lt;strong&gt;Default:&lt;/strong&gt; Diagonal lines pattern accent.
@@ -166,10 +645,39 @@ background: var(--color-surface)"></code></p></layout-stack><layout-stack style=
               &lt;/ui-notice&gt;
             &lt;/layout-stack&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Callout</h3><p>Prominent callout block for important content.</p><ui-tabs data-variant=underline><input type=radio name=candy-callout-example id=candy-callout-preview checked>
-<label for=candy-callout-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-stack style="--space: var(--space-s)"><ui-callout><strong>Key Takeaway:</strong> This is an important message that deserves attention.
-</ui-callout><ui-callout data-intent=success><strong>Pro Tip:</strong> This design pattern works great for highlighting tips!</ui-callout></layout-stack></layout-box></div><input type=radio name=candy-callout-example id=candy-callout-code>
-<label for=candy-callout-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- 12. Callout -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Callout</h3>
+          <p>Prominent callout block for important content.</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-callout-example" id="candy-callout-preview" checked>
+  <label for="candy-callout-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-stack style="--space: var(--space-s)">
+              <ui-callout>
+                <strong>Key Takeaway:</strong> This is an important message that deserves attention.
+              </ui-callout>
+              <ui-callout data-intent="success">
+                <strong>Pro Tip:</strong> This design pattern works great for highlighting tips!
+              </ui-callout>
+            </layout-stack>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-callout-example" id="candy-callout-code">
+  <label for="candy-callout-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
               &lt;ui-callout&gt;
                 &lt;strong&gt;Key Takeaway:&lt;/strong&gt; This is an important message that deserves attention.
@@ -179,9 +687,36 @@ background: var(--color-surface)"></code></p></layout-stack><layout-stack style=
               &lt;/ui-callout&gt;
             &lt;/layout-stack&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack></layout-stack></section><hr><section><layout-stack style="--space: var(--space-xl)"><div><ui-label data-intent=secondary>CSS Background Patterns</ui-label><h2>Background Patterns</h2><p>Pure CSS background patterns applied via utility classes. No images, no JavaScript — just CSS gradients and
-custom properties. Configure size, color, and density inline.</p><ui-notice data-intent=secondary>All patterns use <code>background-repeat: repeat</code> and <code>background-position: center</code> by
-default. Apply to any element via a pattern class.</ui-notice></div><layout-stack style="--space: var(--space-s)"><h3>Usage</h3><ui-well><pre><code>&lt;!-- Basic --&gt;
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+      </layout-stack>
+    </section>
+
+    <hr>
+
+    <!-- SECTION 4: BACKGROUND PATTERNS -->
+    <section>
+      <layout-stack style="--space: var(--space-xl)">
+        <div>
+          <ui-label data-intent="secondary">CSS Background Patterns</ui-label>
+          <h2>Background Patterns</h2>
+          <p>
+            Pure CSS background patterns applied via utility classes. No images, no JavaScript — just CSS gradients and
+            custom properties. Configure size, color, and density inline.
+          </p>
+          <ui-notice data-intent="secondary">
+            All patterns use <code>background-repeat: repeat</code> and <code>background-position: center</code> by
+            default. Apply to any element via a pattern class.
+          </ui-notice>
+        </div>
+
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Usage</h3>
+          <ui-well>
+            <pre><code>&lt;!-- Basic --&gt;
                 &lt;div class="pattern-dots"&gt;&lt;/div&gt;
 
                 &lt;!-- Configured --&gt;
@@ -189,26 +724,90 @@ default. Apply to any element via a pattern class.</ui-notice></div><layout-stac
                 style="--pattern-size: 30px;
                 --pattern-fill: var(--color-primary);
                 --pattern-width: 2px;"&gt;
-                &lt;/div&gt;</code></pre></ui-well></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Shared Properties</h3><p>Most patterns accept these custom properties (see individual notes for exceptions).</p><layout-cluster style="--space: var(--space-xs)"><ui-badge>--pattern-size <span>varies per pattern</span></ui-badge>
-<ui-badge>--pattern-fill <span>#888</span></ui-badge>
-<ui-badge>--pattern-width <span>1px (line patterns)</span></ui-badge>
-</layout-cluster></layout-stack><layout-stack style="--space: var(--space-s)"><h3>dots</h3><p>Grid of repeating circles.</p><layout-cluster style="--space: var(--space-xs)"><ui-badge>--pattern-size <span>20px</span></ui-badge>
-<ui-badge>--pattern-dot <span>2px</span></ui-badge>
-<ui-badge>--pattern-fill <span>#888</span></ui-badge>
-</layout-cluster><ui-tabs data-variant=underline><input type=radio name=candy-pattern-dots-example id=candy-pattern-dots-preview checked>
-<label for=candy-pattern-dots-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-grid style="--min-width: 14rem; --gutter: var(--space-s)"><div class=pattern-tile data-pattern-type=dots></div><div class=pattern-tile data-pattern-type=dots style=--pattern-dot:4px;--pattern-fill:var(--color-primary);--pattern-size:16px></div></layout-grid></layout-box></div><input type=radio name=candy-pattern-dots-example id=candy-pattern-dots-code>
-<label for=candy-pattern-dots-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+                &lt;/div&gt;</code></pre>
+          </ui-well>
+        </layout-stack>
+
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Shared Properties</h3>
+          <p>Most patterns accept these custom properties (see individual notes for exceptions).</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>varies per pattern</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#888</span></ui-badge>
+            <ui-badge>--pattern-width <span>1px (line patterns)</span></ui-badge>
+          </layout-cluster>
+        </layout-stack>
+
+        <!-- DOTS -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>dots</h3>
+          <p>Grid of repeating circles.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>20px</span></ui-badge>
+            <ui-badge>--pattern-dot <span>2px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#888</span></ui-badge>
+          </layout-cluster>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-pattern-dots-example" id="candy-pattern-dots-preview" checked>
+  <label for="candy-pattern-dots-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="dots"></div>
+              <div class="pattern-tile" data-pattern-type="dots"
+                style="--pattern-dot: 4px; --pattern-fill: var(--color-primary); --pattern-size: 16px;"></div>
+            </layout-grid>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-pattern-dots-example" id="candy-pattern-dots-code">
+  <label for="candy-pattern-dots-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-grid style=&#34;--min-width: 14rem; --gutter: var(--space-s)&#34;&gt;
               &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;dots&#34;&gt;&lt;/div&gt;
               &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;dots&#34;
                 style=&#34;--pattern-dot: 4px; --pattern-fill: var(--color-primary); --pattern-size: 16px;&#34;&gt;&lt;/div&gt;
             &lt;/layout-grid&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>checkerboard</h3><p>Alternating squares using <code>conic-gradient</code>.</p><layout-cluster style="--space: var(--space-xs)"><ui-badge>--pattern-size <span>40px</span></ui-badge>
-<ui-badge>--pattern-fill <span>#ccc</span></ui-badge>
-</layout-cluster><ui-tabs data-variant=underline><input type=radio name=candy-pattern-checkerboard-example id=candy-pattern-checkerboard-preview checked>
-<label for=candy-pattern-checkerboard-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-grid style="--min-width: 14rem; --gutter: var(--space-s)"><div class=pattern-tile data-pattern-type=checkerboard style=--pattern-fill:var(--color-border);--pattern-size:30px></div><div class=pattern-tile data-pattern-type=checkerboard style=--pattern-fill:var(--color-primary);--pattern-size:16px;background-color:#98c1d9></div></layout-grid></layout-box></div><input type=radio name=candy-pattern-checkerboard-example id=candy-pattern-checkerboard-code>
-<label for=candy-pattern-checkerboard-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- CHECKERBOARD -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>checkerboard</h3>
+          <p>Alternating squares using <code>conic-gradient</code>.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>40px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#ccc</span></ui-badge>
+          </layout-cluster>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-pattern-checkerboard-example" id="candy-pattern-checkerboard-preview" checked>
+  <label for="candy-pattern-checkerboard-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="checkerboard"
+                style="--pattern-fill: var(--color-border); --pattern-size: 30px"></div>
+              <div class="pattern-tile" data-pattern-type="checkerboard"
+                style="--pattern-fill: var(--color-primary); --pattern-size: 16px; background-color: #98c1d9;"></div>
+            </layout-grid>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-pattern-checkerboard-example" id="candy-pattern-checkerboard-code">
+  <label for="candy-pattern-checkerboard-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-grid style=&#34;--min-width: 14rem; --gutter: var(--space-s)&#34;&gt;
               &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;checkerboard&#34;
                 style=&#34;--pattern-fill: var(--color-border); --pattern-size: 30px&#34;&gt;&lt;/div&gt;
@@ -216,24 +815,83 @@ default. Apply to any element via a pattern class.</ui-notice></div><layout-stac
                 style=&#34;--pattern-fill: var(--color-primary); --pattern-size: 16px; background-color: #98c1d9;&#34;&gt;&lt;/div&gt;
             &lt;/layout-grid&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>diagonal-lines</h3><p>45-degree repeating stripes.</p><layout-cluster style="--space: var(--space-xs)"><ui-badge>--pattern-size <span>10px</span></ui-badge>
-<ui-badge>--pattern-fill <span>#888</span></ui-badge>
-<ui-badge>--pattern-width <span>1px</span></ui-badge>
-</layout-cluster><ui-tabs data-variant=underline><input type=radio name=candy-pattern-diagonal-example id=candy-pattern-diagonal-preview checked>
-<label for=candy-pattern-diagonal-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-grid style="--min-width: 14rem; --gutter: var(--space-s)"><div class=pattern-tile data-pattern-type=diagonal-lines></div><div class=pattern-tile data-pattern-type=diagonal-lines style=--pattern-size:20px;--pattern-width:3px;--pattern-fill:#ee6c4d></div></layout-grid></layout-box></div><input type=radio name=candy-pattern-diagonal-example id=candy-pattern-diagonal-code>
-<label for=candy-pattern-diagonal-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- DIAGONAL LINES -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>diagonal-lines</h3>
+          <p>45-degree repeating stripes.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>10px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#888</span></ui-badge>
+            <ui-badge>--pattern-width <span>1px</span></ui-badge>
+          </layout-cluster>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-pattern-diagonal-example" id="candy-pattern-diagonal-preview" checked>
+  <label for="candy-pattern-diagonal-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="diagonal-lines"></div>
+              <div class="pattern-tile" data-pattern-type="diagonal-lines"
+                style="--pattern-size: 20px; --pattern-width: 3px; --pattern-fill: #ee6c4d;"></div>
+            </layout-grid>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-pattern-diagonal-example" id="candy-pattern-diagonal-code">
+  <label for="candy-pattern-diagonal-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-grid style=&#34;--min-width: 14rem; --gutter: var(--space-s)&#34;&gt;
               &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;diagonal-lines&#34;&gt;&lt;/div&gt;
               &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;diagonal-lines&#34;
                 style=&#34;--pattern-size: 20px; --pattern-width: 3px; --pattern-fill: #ee6c4d;&#34;&gt;&lt;/div&gt;
             &lt;/layout-grid&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>cross-hatch</h3><p>Overlapping diagonal lines in both directions.</p><layout-cluster style="--space: var(--space-xs)"><ui-badge>--pattern-size <span>10px</span></ui-badge>
-<ui-badge>--pattern-fill <span>#888</span></ui-badge>
-<ui-badge>--pattern-width <span>1px</span></ui-badge>
-</layout-cluster><ui-tabs data-variant=underline><input type=radio name=candy-pattern-crosshatch-example id=candy-pattern-crosshatch-preview checked>
-<label for=candy-pattern-crosshatch-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-grid style="--min-width: 14rem; --gutter: var(--space-s)"><div class=pattern-tile data-pattern-type=cross-hatch></div><div class=pattern-tile data-pattern-type=cross-hatch style=--pattern-size:16px;--pattern-fill:var(--color-primary);background-color:var(--color-surface)></div></layout-grid></layout-box></div><input type=radio name=candy-pattern-crosshatch-example id=candy-pattern-crosshatch-code>
-<label for=candy-pattern-crosshatch-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- CROSS-HATCH -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>cross-hatch</h3>
+          <p>Overlapping diagonal lines in both directions.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>10px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#888</span></ui-badge>
+            <ui-badge>--pattern-width <span>1px</span></ui-badge>
+          </layout-cluster>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-pattern-crosshatch-example" id="candy-pattern-crosshatch-preview" checked>
+  <label for="candy-pattern-crosshatch-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="cross-hatch"></div>
+              <div class="pattern-tile" data-pattern-type="cross-hatch"
+                style="--pattern-size: 16px; --pattern-fill: var(--color-primary); background-color: var(--color-surface);">
+              </div>
+            </layout-grid>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-pattern-crosshatch-example" id="candy-pattern-crosshatch-code">
+  <label for="candy-pattern-crosshatch-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-grid style=&#34;--min-width: 14rem; --gutter: var(--space-s)&#34;&gt;
               &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;cross-hatch&#34;&gt;&lt;/div&gt;
               &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;cross-hatch&#34;
@@ -241,36 +899,124 @@ default. Apply to any element via a pattern class.</ui-notice></div><layout-stac
               &lt;/div&gt;
             &lt;/layout-grid&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>horizontal-lines</h3><p>Even horizontal stripes.</p><layout-cluster style="--space: var(--space-xs)"><ui-badge>--pattern-size <span>8px</span></ui-badge>
-<ui-badge>--pattern-fill <span>#888</span></ui-badge>
-<ui-badge>--pattern-width <span>1px</span></ui-badge>
-</layout-cluster><ui-tabs data-variant=underline><input type=radio name=candy-pattern-horizontal-example id=candy-pattern-horizontal-preview checked>
-<label for=candy-pattern-horizontal-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-grid style="--min-width: 14rem; --gutter: var(--space-s)"><div class=pattern-tile data-pattern-type=horizontal-lines></div><div class=pattern-tile data-pattern-type=horizontal-lines style=--pattern-size:4px;--pattern-fill:#98c1d9;background-color:#1a1a2e></div></layout-grid></layout-box></div><input type=radio name=candy-pattern-horizontal-example id=candy-pattern-horizontal-code>
-<label for=candy-pattern-horizontal-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- HORIZONTAL LINES -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>horizontal-lines</h3>
+          <p>Even horizontal stripes.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>8px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#888</span></ui-badge>
+            <ui-badge>--pattern-width <span>1px</span></ui-badge>
+          </layout-cluster>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-pattern-horizontal-example" id="candy-pattern-horizontal-preview" checked>
+  <label for="candy-pattern-horizontal-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="horizontal-lines"></div>
+              <div class="pattern-tile" data-pattern-type="horizontal-lines"
+                style="--pattern-size: 4px; --pattern-fill: #98c1d9; background-color: #1a1a2e;"></div>
+            </layout-grid>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-pattern-horizontal-example" id="candy-pattern-horizontal-code">
+  <label for="candy-pattern-horizontal-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-grid style=&#34;--min-width: 14rem; --gutter: var(--space-s)&#34;&gt;
               &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;horizontal-lines&#34;&gt;&lt;/div&gt;
               &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;horizontal-lines&#34;
                 style=&#34;--pattern-size: 4px; --pattern-fill: #98c1d9; background-color: #1a1a2e;&#34;&gt;&lt;/div&gt;
             &lt;/layout-grid&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>vertical-lines</h3><p>Even vertical stripes.</p><layout-cluster style="--space: var(--space-xs)"><ui-badge>--pattern-size <span>8px</span></ui-badge>
-<ui-badge>--pattern-fill <span>#888</span></ui-badge>
-<ui-badge>--pattern-width <span>1px</span></ui-badge>
-</layout-cluster><ui-tabs data-variant=underline><input type=radio name=candy-pattern-vertical-example id=candy-pattern-vertical-preview checked>
-<label for=candy-pattern-vertical-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-grid style="--min-width: 14rem; --gutter: var(--space-s)"><div class=pattern-tile data-pattern-type=vertical-lines></div><div class=pattern-tile data-pattern-type=vertical-lines style=--pattern-size:16px;--pattern-width:2px;--pattern-fill:#ee6c4d></div></layout-grid></layout-box></div><input type=radio name=candy-pattern-vertical-example id=candy-pattern-vertical-code>
-<label for=candy-pattern-vertical-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- VERTICAL LINES -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>vertical-lines</h3>
+          <p>Even vertical stripes.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>8px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#888</span></ui-badge>
+            <ui-badge>--pattern-width <span>1px</span></ui-badge>
+          </layout-cluster>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-pattern-vertical-example" id="candy-pattern-vertical-preview" checked>
+  <label for="candy-pattern-vertical-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="vertical-lines"></div>
+              <div class="pattern-tile" data-pattern-type="vertical-lines"
+                style="--pattern-size: 16px; --pattern-width: 2px; --pattern-fill: #ee6c4d;"></div>
+            </layout-grid>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-pattern-vertical-example" id="candy-pattern-vertical-code">
+  <label for="candy-pattern-vertical-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-grid style=&#34;--min-width: 14rem; --gutter: var(--space-s)&#34;&gt;
               &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;vertical-lines&#34;&gt;&lt;/div&gt;
               &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;vertical-lines&#34;
                 style=&#34;--pattern-size: 16px; --pattern-width: 2px; --pattern-fill: #ee6c4d;&#34;&gt;&lt;/div&gt;
             &lt;/layout-grid&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>grid</h3><p>Horizontal + vertical lines forming a grid.</p><layout-cluster style="--space: var(--space-xs)"><ui-badge>--pattern-size <span>20px</span></ui-badge>
-<ui-badge>--pattern-fill <span>#ccc</span></ui-badge>
-<ui-badge>--pattern-width <span>1px</span></ui-badge>
-</layout-cluster><ui-tabs data-variant=underline><input type=radio name=candy-pattern-grid-example id=candy-pattern-grid-preview checked>
-<label for=candy-pattern-grid-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-grid style="--min-width: 14rem; --gutter: var(--space-s)"><div class=pattern-tile data-pattern-type=grid style=--pattern-size:24px></div><div class=pattern-tile data-pattern-type=grid style=--pattern-size:40px;--pattern-fill:var(--color-primary);background-color:var(--color-surface)></div></layout-grid></layout-box></div><input type=radio name=candy-pattern-grid-example id=candy-pattern-grid-code>
-<label for=candy-pattern-grid-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- GRID -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>grid</h3>
+          <p>Horizontal + vertical lines forming a grid.</p>
+          <layout-cluster style="--space: var(--space-xs)">
+            <ui-badge>--pattern-size <span>20px</span></ui-badge>
+            <ui-badge>--pattern-fill <span>#ccc</span></ui-badge>
+            <ui-badge>--pattern-width <span>1px</span></ui-badge>
+          </layout-cluster>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-pattern-grid-example" id="candy-pattern-grid-preview" checked>
+  <label for="candy-pattern-grid-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-grid style="--min-width: 14rem; --gutter: var(--space-s)">
+              <div class="pattern-tile" data-pattern-type="grid" style="--pattern-size: 24px"></div>
+              <div class="pattern-tile" data-pattern-type="grid"
+                style="--pattern-size: 40px; --pattern-fill: var(--color-primary); background-color: var(--color-surface);">
+              </div>
+            </layout-grid>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-pattern-grid-example" id="candy-pattern-grid-code">
+  <label for="candy-pattern-grid-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-grid style=&#34;--min-width: 14rem; --gutter: var(--space-s)&#34;&gt;
               &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;grid&#34; style=&#34;--pattern-size: 24px&#34;&gt;&lt;/div&gt;
               &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;grid&#34;
@@ -278,11 +1024,59 @@ default. Apply to any element via a pattern class.</ui-notice></div><layout-stac
               &lt;/div&gt;
             &lt;/layout-grid&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack></layout-stack></section><hr><section><layout-stack style="--space: var(--space-xl)"><h2>Pattern Flourishes</h2><layout-stack style="--space: var(--space-s)"><h3>Pattern Shadow</h3><p>Alternative to drop shadow using offset pattern. Creative and unique! Applied via utility class.</p><ui-tabs data-variant=underline><input type=radio name=candy-pattern-shadow-example id=candy-pattern-shadow-preview checked>
-<label for=candy-pattern-shadow-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-grid style="--min-width: 15rem"><div class=pattern-shadow style="--pattern-shadow-bg:var(--color-surface);border:1px solid var(--color-border)"><strong>Lines Pattern</strong><p style=margin:0;margin-block-start:var(--space-2xs);font-size:var(--text-sm)>Default lines
-shadow effect.</p></div><div class=pattern-shadow data-pattern-type=dots style="--pattern-shadow-bg:var(--color-surface);border:1px solid var(--color-border);--pattern-shadow-fill:var(--color-success)"><strong>Dots Pattern</strong><p style=margin:0;margin-block-start:var(--space-2xs);font-size:var(--text-sm)>Dots shadow.</p></div><div class=pattern-shadow data-pattern-type=checkerboard style="--pattern-shadow-bg:var(--color-surface);border:1px solid var(--color-border);--pattern-shadow-fill:var(--color-warning)"><strong>Checkerboard</strong><p style=margin:0;margin-block-start:var(--space-2xs);font-size:var(--text-sm)>Checkerboard
-shadow.</p></div></layout-grid></layout-box></div><input type=radio name=candy-pattern-shadow-example id=candy-pattern-shadow-code>
-<label for=candy-pattern-shadow-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+      </layout-stack>
+    </section>
+
+    <hr>
+
+    <!-- SECTION 5: PATTERN FLOURISHES -->
+    <section>
+      <layout-stack style="--space: var(--space-xl)">
+        <h2>Pattern Flourishes</h2>
+
+        <!-- 13. Pattern Shadow -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Pattern Shadow</h3>
+          <p>Alternative to drop shadow using offset pattern. Creative and unique! Applied via utility class.</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-pattern-shadow-example" id="candy-pattern-shadow-preview" checked>
+  <label for="candy-pattern-shadow-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-grid style="--min-width: 15rem">
+              <div class="pattern-shadow"
+                style="--pattern-shadow-bg: var(--color-surface); border: 1px solid var(--color-border)">
+                <strong>Lines Pattern</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Default lines
+                  shadow effect.</p>
+              </div>
+              <div class="pattern-shadow" data-pattern-type="dots"
+                style="--pattern-shadow-bg: var(--color-surface); border: 1px solid var(--color-border); --pattern-shadow-fill: var(--color-success)">
+                <strong>Dots Pattern</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Dots shadow.</p>
+              </div>
+              <div class="pattern-shadow" data-pattern-type="checkerboard"
+                style="--pattern-shadow-bg: var(--color-surface); border: 1px solid var(--color-border); --pattern-shadow-fill: var(--color-warning)">
+                <strong>Checkerboard</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Checkerboard
+                  shadow.</p>
+              </div>
+            </layout-grid>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-pattern-shadow-example" id="candy-pattern-shadow-code">
+  <label for="candy-pattern-shadow-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-grid style=&#34;--min-width: 15rem&#34;&gt;
               &lt;div class=&#34;pattern-shadow&#34;
                 style=&#34;--pattern-shadow-bg: var(--color-surface); border: 1px solid var(--color-border)&#34;&gt;
@@ -303,13 +1097,57 @@ shadow.</p></div></layout-grid></layout-box></div><input type=radio name=candy-p
               &lt;/div&gt;
             &lt;/layout-grid&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Pattern Accent Bar</h3><p>Thin vertical pattern strip on left edge. Applied via the <code>pattern-accent</code> component class.</p><ui-tabs data-variant=underline><input type=radio name=candy-pattern-accent-example id=candy-pattern-accent-preview checked>
-<label for=candy-pattern-accent-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-stack style="--space: var(--space-s)"><div class=pattern-accent style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-base)"><strong>Diagonal Lines</strong><p style=margin:0;margin-block-start:var(--space-2xs);font-size:var(--text-sm)>Default diagonal
-lines pattern on the left edge.</p></div><div class=pattern-accent data-pattern-type=dots data-intent=success style="background:var(--color-success-subtle);border:1px solid var(--color-border);border-radius:var(--radius-base)"><strong>Dots Pattern</strong><p style=margin:0;margin-block-start:var(--space-2xs);font-size:var(--text-sm)>Success color with
-dots pattern accent.</p></div><div class=pattern-accent data-pattern-type=horizontal data-intent=warning style="background:var(--color-warning-subtle);border:1px solid var(--color-border);border-radius:var(--radius-base)"><strong>Horizontal Lines</strong><p style=margin:0;margin-block-start:var(--space-2xs);font-size:var(--text-sm)>Warning color with
-horizontal lines.</p></div><div class=pattern-accent data-pattern-type=checkerboard data-intent=error style="background:var(--color-error-subtle);border:1px solid var(--color-border);border-radius:var(--radius-base)"><strong>Checkerboard</strong><p style=margin:0;margin-block-start:var(--space-2xs);font-size:var(--text-sm)>Error color with
-checkerboard pattern.</p></div></layout-stack></layout-box></div><input type=radio name=candy-pattern-accent-example id=candy-pattern-accent-code>
-<label for=candy-pattern-accent-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- 14. Pattern Accent -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Pattern Accent Bar</h3>
+          <p>Thin vertical pattern strip on left edge. Applied via the <code>pattern-accent</code> component class.</p>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-pattern-accent-example" id="candy-pattern-accent-preview" checked>
+  <label for="candy-pattern-accent-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-stack style="--space: var(--space-s)">
+              <div class="pattern-accent"
+                style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-base)">
+                <strong>Diagonal Lines</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Default diagonal
+                  lines pattern on the left edge.</p>
+              </div>
+              <div class="pattern-accent" data-pattern-type="dots" data-intent="success"
+                style="background: var(--color-success-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-base)">
+                <strong>Dots Pattern</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Success color with
+                  dots pattern accent.</p>
+              </div>
+              <div class="pattern-accent" data-pattern-type="horizontal" data-intent="warning"
+                style="background: var(--color-warning-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-base)">
+                <strong>Horizontal Lines</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Warning color with
+                  horizontal lines.</p>
+              </div>
+              <div class="pattern-accent" data-pattern-type="checkerboard" data-intent="error"
+                style="background: var(--color-error-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-base)">
+                <strong>Checkerboard</strong>
+                <p style="margin: 0; margin-block-start: var(--space-2xs); font-size: var(--text-sm)">Error color with
+                  checkerboard pattern.</p>
+              </div>
+            </layout-stack>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-pattern-accent-example" id="candy-pattern-accent-code">
+  <label for="candy-pattern-accent-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
               &lt;div class=&#34;pattern-accent&#34;
                 style=&#34;background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-base)&#34;&gt;
@@ -337,52 +1175,234 @@ checkerboard pattern.</p></div></layout-stack></layout-box></div><input type=rad
               &lt;/div&gt;
             &lt;/layout-stack&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Pattern Hero Background</h3><p>Large background with subtle pattern + gradient overlay. Perfect for hero sections. Applied via the
-<code>pattern-hero</code> component class.</p><p><strong>Pattern Types:</strong> <code>data-pattern-type="lines"</code> (default), <code>dots</code>,
-<code>grid</code>, <code>checkerboard</code></p><p><strong>Intents:</strong> <code>data-intent="primary"</code> (default), <code>success</code>,
-<code>warning</code>, <code>error</code>, <code>secondary</code></p><h4 style=margin-block-start:var(--space-m)>Default (Lines + Primary)</h4><ui-tabs data-variant=underline><input type=radio name=candy-hero-default-example id=candy-hero-default-preview checked>
-<label for=candy-hero-default-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><div class=pattern-hero><h2 style=margin:0>Default Hero</h2><p style=margin-block-start:var(--space-xs)>Lines pattern with primary gradient overlay.</p></div></layout-box></div><input type=radio name=candy-hero-default-example id=candy-hero-default-code>
-<label for=candy-hero-default-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- 15. Pattern Hero -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Pattern Hero Background</h3>
+          <p>Large background with subtle pattern + gradient overlay. Perfect for hero sections. Applied via the
+            <code>pattern-hero</code> component class.
+          </p>
+
+          <p><strong>Pattern Types:</strong> <code>data-pattern-type="lines"</code> (default), <code>dots</code>,
+            <code>grid</code>, <code>checkerboard</code>
+          </p>
+          <p><strong>Intents:</strong> <code>data-intent="primary"</code> (default), <code>success</code>,
+            <code>warning</code>, <code>error</code>, <code>secondary</code>
+          </p>
+
+          <h4 style="margin-block-start: var(--space-m)">Default (Lines + Primary)</h4>
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-hero-default-example" id="candy-hero-default-preview" checked>
+  <label for="candy-hero-default-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <div class="pattern-hero">
+              <h2 style="margin: 0">Default Hero</h2>
+              <p style="margin-block-start: var(--space-xs)">Lines pattern with primary gradient overlay.</p>
+            </div>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-hero-default-example" id="candy-hero-default-code">
+  <label for="candy-hero-default-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;div class=&#34;pattern-hero&#34;&gt;
               &lt;h2 style=&#34;margin: 0&#34;&gt;Default Hero&lt;/h2&gt;
               &lt;p style=&#34;margin-block-start: var(--space-xs)&#34;&gt;Lines pattern with primary gradient overlay.&lt;/p&gt;
             &lt;/div&gt;
             </code>
-      </pre></layout-box></div></ui-tabs><h4 style=margin-block-start:var(--space-m)>Dots + Success</h4><ui-tabs data-variant=underline><input type=radio name=candy-hero-success-example id=candy-hero-success-preview checked>
-<label for=candy-hero-success-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><div class=pattern-hero data-pattern-type=dots data-intent=success><h2 style=margin:0>Dots Pattern Hero</h2><p style=margin-block-start:var(--space-xs)>Success gradient with dots pattern.</p></div></layout-box></div><input type=radio name=candy-hero-success-example id=candy-hero-success-code>
-<label for=candy-hero-success-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+
+              <h4 style="margin-block-start: var(--space-m)">Dots + Success</h4>
+              <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-hero-success-example" id="candy-hero-success-preview" checked>
+  <label for="candy-hero-success-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+                <div class="pattern-hero" data-pattern-type="dots" data-intent="success">
+                  <h2 style="margin: 0">Dots Pattern Hero</h2>
+                  <p style="margin-block-start: var(--space-xs)">Success gradient with dots pattern.</p>
+                </div>
+                
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-hero-success-example" id="candy-hero-success-code">
+  <label for="candy-hero-success-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
                 &lt;div class=&#34;pattern-hero&#34; data-pattern-type=&#34;dots&#34; data-intent=&#34;success&#34;&gt;
                   &lt;h2 style=&#34;margin: 0&#34;&gt;Dots Pattern Hero&lt;/h2&gt;
                   &lt;p style=&#34;margin-block-start: var(--space-xs)&#34;&gt;Success gradient with dots pattern.&lt;/p&gt;
                 &lt;/div&gt;
                 </code>
-      </pre></layout-box></div></ui-tabs><h4 style=margin-block-start:var(--space-m)>Grid + Secondary</h4><ui-tabs data-variant=underline><input type=radio name=candy-hero-secondary-example id=candy-hero-secondary-preview checked>
-<label for=candy-hero-secondary-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><div class=pattern-hero data-pattern-type=grid data-intent=secondary><h2 style=margin:0>Grid Pattern Hero</h2><p style=margin-block-start:var(--space-xs)>Secondary gradient with grid pattern background.</p></div></layout-box></div><input type=radio name=candy-hero-secondary-example id=candy-hero-secondary-code>
-<label for=candy-hero-secondary-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+
+                  <h4 style="margin-block-start: var(--space-m)">Grid + Secondary</h4>
+                  <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-hero-secondary-example" id="candy-hero-secondary-preview" checked>
+  <label for="candy-hero-secondary-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+                    <div class="pattern-hero" data-pattern-type="grid" data-intent="secondary">
+                      <h2 style="margin: 0">Grid Pattern Hero</h2>
+                      <p style="margin-block-start: var(--space-xs)">Secondary gradient with grid pattern background.
+                      </p>
+                    </div>
+                    
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-hero-secondary-example" id="candy-hero-secondary-code">
+  <label for="candy-hero-secondary-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
                     &lt;div class=&#34;pattern-hero&#34; data-pattern-type=&#34;grid&#34; data-intent=&#34;secondary&#34;&gt;
                       &lt;h2 style=&#34;margin: 0&#34;&gt;Grid Pattern Hero&lt;/h2&gt;
                       &lt;p style=&#34;margin-block-start: var(--space-xs)&#34;&gt;Secondary gradient with grid pattern background.
                       &lt;/p&gt;
                     &lt;/div&gt;
                     </code>
-      </pre></layout-box></div></ui-tabs><h4 style=margin-block-start:var(--space-m)>Checkerboard + Warning</h4><ui-tabs data-variant=underline><input type=radio name=candy-hero-warning-example id=candy-hero-warning-preview checked>
-<label for=candy-hero-warning-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><div class=pattern-hero data-pattern-type=checkerboard data-intent=warning><h2 style=margin:0>Checkerboard Hero</h2><p style=margin-block-start:var(--space-xs)>Warning gradient with checkerboard pattern.</p></div></layout-box></div><input type=radio name=candy-hero-warning-example id=candy-hero-warning-code>
-<label for=candy-hero-warning-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+
+                      <h4 style="margin-block-start: var(--space-m)">Checkerboard + Warning</h4>
+                      <ui-tabs data-variant="underline">
+  <input type="radio" name="candy-hero-warning-example" id="candy-hero-warning-preview" checked>
+  <label for="candy-hero-warning-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+                        <div class="pattern-hero" data-pattern-type="checkerboard" data-intent="warning">
+                          <h2 style="margin: 0">Checkerboard Hero</h2>
+                          <p style="margin-block-start: var(--space-xs)">Warning gradient with checkerboard pattern.</p>
+                        </div>
+                        
+    </layout-box>
+  </div>
+
+  <input type="radio" name="candy-hero-warning-example" id="candy-hero-warning-code">
+  <label for="candy-hero-warning-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
                         &lt;div class=&#34;pattern-hero&#34; data-pattern-type=&#34;checkerboard&#34; data-intent=&#34;warning&#34;&gt;
                           &lt;h2 style=&#34;margin: 0&#34;&gt;Checkerboard Hero&lt;/h2&gt;
                           &lt;p style=&#34;margin-block-start: var(--space-xs)&#34;&gt;Warning gradient with checkerboard pattern.&lt;/p&gt;
                         &lt;/div&gt;
                         </code>
-      </pre></layout-box></div></ui-tabs><p><strong>Custom Properties:</strong></p><ul><li><code>--hero-pattern-size</code> (default: 30px) - Pattern cell size</li><li><code>--hero-pattern-opacity</code> (default: 0.15) - Pattern opacity</li><li><code>--hero-color-start</code> - Gradient start color</li><li><code>--hero-color-end</code> - Gradient end color</li><li><code>--hero-gradient-opacity</code> (default: 1) - Gradient opacity</li></ul></layout-stack></layout-stack></section><hr><section><layout-stack style="--space: var(--space-xl)"><h2>Colorize Utility</h2><p><strong>One Color In, Full Palette Out!</strong> The <code>data-colorize</code> utility automatically
-generates
-a complete, harmonious color palette from a single color input. Perfect for rapid theming and prototyping.</p><ui-notice data-intent=secondary><strong>How it works:</strong> Provide a single OKLCH color via <code>--colorize</code>, and the utility
-generates 10 coordinated properties using color-mix() — surfaces, text colors, accents, and borders.
-</ui-notice><layout-stack style="--space: var(--space-s)"><h3>Generated Properties</h3><p>From one color input, you get:</p><ui-well><pre><code><strong>Surfaces:</strong> --surface, --surface-hover, --surface-active
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+
+                          <p><strong>Custom Properties:</strong></p>
+                          <ul>
+                            <li><code>--hero-pattern-size</code> (default: 30px) - Pattern cell size</li>
+                            <li><code>--hero-pattern-opacity</code> (default: 0.15) - Pattern opacity</li>
+                            <li><code>--hero-color-start</code> - Gradient start color</li>
+                            <li><code>--hero-color-end</code> - Gradient end color</li>
+                            <li><code>--hero-gradient-opacity</code> (default: 1) - Gradient opacity</li>
+                          </ul>
+        </layout-stack>
+      </layout-stack>
+    </section>
+
+    <hr>
+
+    <!-- SECTION 5: COLORIZE UTILITY -->
+    <section>
+      <layout-stack style="--space: var(--space-xl)">
+        <h2>Colorize Utility</h2>
+        <p>
+          <strong>One Color In, Full Palette Out!</strong> The <code>data-colorize</code> utility automatically
+          generates
+          a complete, harmonious color palette from a single color input. Perfect for rapid theming and prototyping.
+        </p>
+
+        <ui-notice data-intent="secondary">
+          <strong>How it works:</strong> Provide a single OKLCH color via <code>--colorize</code>, and the utility
+          generates 10 coordinated properties using color-mix() — surfaces, text colors, accents, and borders.
+        </ui-notice>
+
+        <!-- Generated Properties -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Generated Properties</h3>
+          <p>From one color input, you get:</p>
+          <ui-well>
+            <pre><code><strong>Surfaces:</strong> --surface, --surface-hover, --surface-active
                 <strong>Text:</strong> --text, --text-heading, --text-on-accent
                 <strong>Accents:</strong> --accent, --accent-emphasis
-                <strong>Borders:</strong> --border, --border-strong</code></pre></ui-well></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Example 1: Status Indicators with Semantic Colors</h3><p>Use semantic color tokens to create instant themed content:</p><ui-tabs data-variant=underline><input type=radio name=colorize-status-example id=colorize-status-preview checked>
-<label for=colorize-status-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-stack style="--space: var(--space-s)"><div data-colorize style=--colorize:var(--lch-success)><div style="background:var(--surface);border-left:4px solid var(--accent);padding:var(--space-m);border-radius:4px"><strong style=color:var(--text-heading)>Success</strong><p style="color:var(--text);margin:.25rem 0 0">Operation completed successfully!</p></div></div><div data-colorize style=--colorize:var(--lch-warning)><div style="background:var(--surface);border-left:4px solid var(--accent);padding:var(--space-m);border-radius:4px"><strong style=color:var(--text-heading)>Warning</strong><p style="color:var(--text);margin:.25rem 0 0">Please review before continuing.</p></div></div><div data-colorize style=--colorize:var(--lch-error)><div style="background:var(--surface);border-left:4px solid var(--accent);padding:var(--space-m);border-radius:4px"><strong style=color:var(--text-heading)>Error</strong><p style="color:var(--text);margin:.25rem 0 0">Something went wrong. Please try again.</p></div></div></layout-stack></layout-box></div><input type=radio name=colorize-status-example id=colorize-status-code>
-<label for=colorize-status-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+                <strong>Borders:</strong> --border, --border-strong</code></pre>
+          </ui-well>
+        </layout-stack>
+
+        <!-- Example 1: Semantic Colors -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Example 1: Status Indicators with Semantic Colors</h3>
+          <p>Use semantic color tokens to create instant themed content:</p>
+
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="colorize-status-example" id="colorize-status-preview" checked>
+  <label for="colorize-status-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-stack style="--space: var(--space-s)">
+              <div data-colorize style="--colorize: var(--lch-success)">
+                <div
+                  style="background: var(--surface); border-left: 4px solid var(--accent); padding: var(--space-m); border-radius: 4px;">
+                  <strong style="color: var(--text-heading)">Success</strong>
+                  <p style="color: var(--text); margin: 0.25rem 0 0 0">Operation completed successfully!</p>
+                </div>
+              </div>
+
+              <div data-colorize style="--colorize: var(--lch-warning)">
+                <div
+                  style="background: var(--surface); border-left: 4px solid var(--accent); padding: var(--space-m); border-radius: 4px;">
+                  <strong style="color: var(--text-heading)">Warning</strong>
+                  <p style="color: var(--text); margin: 0.25rem 0 0 0">Please review before continuing.</p>
+                </div>
+              </div>
+
+              <div data-colorize style="--colorize: var(--lch-error)">
+                <div
+                  style="background: var(--surface); border-left: 4px solid var(--accent); padding: var(--space-m); border-radius: 4px;">
+                  <strong style="color: var(--text-heading)">Error</strong>
+                  <p style="color: var(--text); margin: 0.25rem 0 0 0">Something went wrong. Please try again.</p>
+                </div>
+              </div>
+            </layout-stack>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="colorize-status-example" id="colorize-status-code">
+  <label for="colorize-status-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
               &lt;div data-colorize style=&#34;--colorize: var(--lch-success)&#34;&gt;
                 &lt;div
@@ -409,12 +1429,66 @@ generates 10 coordinated properties using color-mix() — surfaces, text colors,
               &lt;/div&gt;
             &lt;/layout-stack&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Example 2: Themed Cards</h3><p>Combine with candy custom elements for instant theming:</p><ui-tabs data-variant=underline><input type=radio name=colorize-cards-example id=colorize-cards-preview checked>
-<label for=colorize-cards-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-grid style="--min-width: 15rem"><div data-colorize style=--colorize:var(--lch-primary)><ui-card style="background: var(--surface); border-color: var(--border)"><strong style=color:var(--text-heading)>Primary Theme</strong><p style=color:var(--text)>Full palette from primary color.</p><button style="background:var(--accent);color:var(--text-on-accent);border:none;padding:.5rem 1rem;border-radius:4px;cursor:pointer">
-Action</button></ui-card></div><div data-colorize style=--colorize:var(--lch-secondary)><ui-card style="background: var(--surface); border-color: var(--border)"><strong style=color:var(--text-heading)>Secondary Theme</strong><p style=color:var(--text)>Full palette from secondary color.</p><button style="background:var(--accent);color:var(--text-on-accent);border:none;padding:.5rem 1rem;border-radius:4px;cursor:pointer">
-Action</button></ui-card></div><div data-colorize style=--colorize:var(--lch-success)><ui-card style="background: var(--surface); border-color: var(--border)"><strong style=color:var(--text-heading)>Success Theme</strong><p style=color:var(--text)>Full palette from success color.</p><button style="background:var(--accent);color:var(--text-on-accent);border:none;padding:.5rem 1rem;border-radius:4px;cursor:pointer">
-Action</button></ui-card></div></layout-grid></layout-box></div><input type=radio name=colorize-cards-example id=colorize-cards-code>
-<label for=colorize-cards-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- Example 2: Themed Cards -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Example 2: Themed Cards</h3>
+          <p>Combine with candy custom elements for instant theming:</p>
+
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="colorize-cards-example" id="colorize-cards-preview" checked>
+  <label for="colorize-cards-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-grid style="--min-width: 15rem">
+              <div data-colorize style="--colorize: var(--lch-primary)">
+                <ui-card style="background: var(--surface); border-color: var(--border)">
+                  <strong style="color: var(--text-heading)">Primary Theme</strong>
+                  <p style="color: var(--text)">Full palette from primary color.</p>
+                  <button
+                    style="background: var(--accent); color: var(--text-on-accent); border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">
+                    Action
+                  </button>
+                </ui-card>
+              </div>
+
+              <div data-colorize style="--colorize: var(--lch-secondary)">
+                <ui-card style="background: var(--surface); border-color: var(--border)">
+                  <strong style="color: var(--text-heading)">Secondary Theme</strong>
+                  <p style="color: var(--text)">Full palette from secondary color.</p>
+                  <button
+                    style="background: var(--accent); color: var(--text-on-accent); border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">
+                    Action
+                  </button>
+                </ui-card>
+              </div>
+
+              <div data-colorize style="--colorize: var(--lch-success)">
+                <ui-card style="background: var(--surface); border-color: var(--border)">
+                  <strong style="color: var(--text-heading)">Success Theme</strong>
+                  <p style="color: var(--text)">Full palette from success color.</p>
+                  <button
+                    style="background: var(--accent); color: var(--text-on-accent); border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">
+                    Action
+                  </button>
+                </ui-card>
+              </div>
+            </layout-grid>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="colorize-cards-example" id="colorize-cards-code">
+  <label for="colorize-cards-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-grid style=&#34;--min-width: 15rem&#34;&gt;
               &lt;div data-colorize style=&#34;--colorize: var(--lch-primary)&#34;&gt;
                 &lt;ui-card style=&#34;background: var(--surface); border-color: var(--border)&#34;&gt;
@@ -450,9 +1524,57 @@ Action</button></ui-card></div></layout-grid></layout-box></div><input type=radi
               &lt;/div&gt;
             &lt;/layout-grid&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Example 3: Custom OKLCH Colors</h3><p>Not limited to semantic colors! Use any OKLCH triplet for instant custom theming:</p><ui-tabs data-variant=underline><input type=radio name=colorize-custom-example id=colorize-custom-preview checked>
-<label for=colorize-custom-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-grid style="--min-width: 15rem"><div data-colorize style="--colorize:60% 0.18 280"><div style="background:var(--surface);border:1px solid var(--border);padding:var(--space-m);border-radius:6px"><strong style=color:var(--text-heading)>Custom Purple</strong><p style="color:var(--text);margin:.25rem 0">60% 0.18 280</p></div></div><div data-colorize style="--colorize:70% 0.15 50"><div style="background:var(--surface);border:1px solid var(--border);padding:var(--space-m);border-radius:6px"><strong style=color:var(--text-heading)>Custom Orange</strong><p style="color:var(--text);margin:.25rem 0">70% 0.15 50</p></div></div><div data-colorize style="--colorize:55% 0.22 170"><div style="background:var(--surface);border:1px solid var(--border);padding:var(--space-m);border-radius:6px"><strong style=color:var(--text-heading)>Custom Teal</strong><p style="color:var(--text);margin:.25rem 0">55% 0.22 170</p></div></div></layout-grid></layout-box></div><input type=radio name=colorize-custom-example id=colorize-custom-code>
-<label for=colorize-custom-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- Example 3: Custom Colors -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Example 3: Custom OKLCH Colors</h3>
+          <p>Not limited to semantic colors! Use any OKLCH triplet for instant custom theming:</p>
+
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="colorize-custom-example" id="colorize-custom-preview" checked>
+  <label for="colorize-custom-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <layout-grid style="--min-width: 15rem">
+              <div data-colorize style="--colorize: 60% 0.18 280">
+                <div
+                  style="background: var(--surface); border: 1px solid var(--border); padding: var(--space-m); border-radius: 6px;">
+                  <strong style="color: var(--text-heading)">Custom Purple</strong>
+                  <p style="color: var(--text); margin: 0.25rem 0">60% 0.18 280</p>
+                </div>
+              </div>
+
+              <div data-colorize style="--colorize: 70% 0.15 50">
+                <div
+                  style="background: var(--surface); border: 1px solid var(--border); padding: var(--space-m); border-radius: 6px;">
+                  <strong style="color: var(--text-heading)">Custom Orange</strong>
+                  <p style="color: var(--text); margin: 0.25rem 0">70% 0.15 50</p>
+                </div>
+              </div>
+
+              <div data-colorize style="--colorize: 55% 0.22 170">
+                <div
+                  style="background: var(--surface); border: 1px solid var(--border); padding: var(--space-m); border-radius: 6px;">
+                  <strong style="color: var(--text-heading)">Custom Teal</strong>
+                  <p style="color: var(--text); margin: 0.25rem 0">55% 0.22 170</p>
+                </div>
+              </div>
+            </layout-grid>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="colorize-custom-example" id="colorize-custom-code">
+  <label for="colorize-custom-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;layout-grid style=&#34;--min-width: 15rem&#34;&gt;
               &lt;div data-colorize style=&#34;--colorize: 60% 0.18 280&#34;&gt;
                 &lt;div
@@ -479,10 +1601,48 @@ Action</button></ui-card></div></layout-grid></layout-box></div><input type=radi
               &lt;/div&gt;
             &lt;/layout-grid&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Example 4: Interactive Button States</h3><p>Use --surface-hover and --surface-active for interactive feedback:</p><ui-tabs data-variant=underline><input type=radio name=colorize-interactive-example id=colorize-interactive-preview checked>
-<label for=colorize-interactive-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><div data-colorize style=--colorize:var(--lch-primary)><button style="background:var(--surface);border:1px solid var(--border);color:var(--text);padding:.75rem 1.5rem;border-radius:6px;cursor:pointer;font-size:1rem;transition:background .2s" onmouseover='this.style.background="var(--surface-hover)"' onmouseout='this.style.background="var(--surface)"' onmousedown='this.style.background="var(--surface-active)"' onmouseup='this.style.background="var(--surface-hover)"'>
-Hover me to see states!</button></div></layout-box></div><input type=radio name=colorize-interactive-example id=colorize-interactive-code>
-<label for=colorize-interactive-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- Example 4: Interactive States -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Example 4: Interactive Button States</h3>
+          <p>Use --surface-hover and --surface-active for interactive feedback:</p>
+
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="colorize-interactive-example" id="colorize-interactive-preview" checked>
+  <label for="colorize-interactive-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <div data-colorize style="--colorize: var(--lch-primary)">
+              <button style="
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+    " onmouseover="this.style.background='var(--surface-hover)'" onmouseout="this.style.background='var(--surface)'"
+                onmousedown="this.style.background='var(--surface-active)'"
+                onmouseup="this.style.background='var(--surface-hover)'">
+                Hover me to see states!
+              </button>
+            </div>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="colorize-interactive-example" id="colorize-interactive-code">
+  <label for="colorize-interactive-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;div data-colorize style=&#34;--colorize: var(--lch-primary)&#34;&gt;
               &lt;button style=&#34;
       background: var(--surface);
@@ -500,9 +1660,47 @@ Hover me to see states!</button></div></layout-box></div><input type=radio name=
               &lt;/button&gt;
             &lt;/div&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack><layout-stack style="--space: var(--space-s)"><h3>Example 5: Nested Themes</h3><p>Colorize blocks can be nested — inner themes override outer ones:</p><ui-tabs data-variant=underline><input type=radio name=colorize-nested-example id=colorize-nested-preview checked>
-<label for=colorize-nested-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><div data-colorize style=--colorize:var(--lch-primary)><div style="background:var(--surface);padding:var(--space-m);border-radius:6px;border:1px solid var(--border)"><strong style=color:var(--text-heading)>Primary Theme (Outer)</strong><p style=color:var(--text)>This uses the primary color palette.</p><div data-colorize style=--colorize:var(--lch-success);margin-block-start:var(--space-s)><div style="background:var(--surface);padding:var(--space-m);border-radius:6px;border:1px solid var(--border)"><strong style=color:var(--text-heading)>Success Theme (Nested)</strong><p style=color:var(--text);margin:0>This overrides with success colors!</p></div></div></div></div></layout-box></div><input type=radio name=colorize-nested-example id=colorize-nested-code>
-<label for=colorize-nested-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+        <!-- Example 5: Nested Colorization -->
+        <layout-stack style="--space: var(--space-s)">
+          <h3>Example 5: Nested Themes</h3>
+          <p>Colorize blocks can be nested — inner themes override outer ones:</p>
+
+          <ui-tabs data-variant="underline">
+  <input type="radio" name="colorize-nested-example" id="colorize-nested-preview" checked>
+  <label for="colorize-nested-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+            <div data-colorize style="--colorize: var(--lch-primary)">
+              <div
+                style="background: var(--surface); padding: var(--space-m); border-radius: 6px; border: 1px solid var(--border)">
+                <strong style="color: var(--text-heading)">Primary Theme (Outer)</strong>
+                <p style="color: var(--text)">This uses the primary color palette.</p>
+
+                <div data-colorize style="--colorize: var(--lch-success); margin-block-start: var(--space-s)">
+                  <div
+                    style="background: var(--surface); padding: var(--space-m); border-radius: 6px; border: 1px solid var(--border)">
+                    <strong style="color: var(--text-heading)">Success Theme (Nested)</strong>
+                    <p style="color: var(--text); margin: 0">This overrides with success colors!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+    </layout-box>
+  </div>
+
+  <input type="radio" name="colorize-nested-example" id="colorize-nested-code">
+  <label for="colorize-nested-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
             &lt;div data-colorize style=&#34;--colorize: var(--lch-primary)&#34;&gt;
               &lt;div
                 style=&#34;background: var(--surface); padding: var(--space-m); border-radius: 6px; border: 1px solid var(--border)&#34;&gt;
@@ -519,15 +1717,62 @@ Hover me to see states!</button></div></layout-box></div><input type=radio name=
               &lt;/div&gt;
             &lt;/div&gt;
             </code>
-      </pre></layout-box></div></ui-tabs></layout-stack></layout-stack></section><hr><section><layout-stack style="--space: var(--space-s)"><h2>Text</h2><p>Drop cap</p><ui-tabs data-variant=underline><input type=radio name=drop-cap-example id=drop-cap-preview checked>
-<label for=drop-cap-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><p class=text-dropcap>Once upon a time. In a website far far away. Made with CSS after the great Y2K. Despite what the overlords
-of
-webworldia told the populas, there was no need for the Script of Java for many a fiefdom.</p></layout-box></div><input type=radio name=drop-cap-example id=drop-cap-code>
-<label for=drop-cap-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+        </layout-stack>
+
+      </layout-stack>
+    </section>
+
+    <hr>
+
+    <!-- TEXT -->
+    <section>
+      <layout-stack style="--space: var(--space-s)">
+        <h2>Text</h2>
+        <p>Drop cap</p>
+
+        <ui-tabs data-variant="underline">
+  <input type="radio" name="drop-cap-example" id="drop-cap-preview" checked>
+  <label for="drop-cap-preview">Preview</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      
+          <p class="text-dropcap">
+            Once upon a time. In a website far far away. Made with CSS after the great Y2K. Despite what the overlords
+            of
+            webworldia told the populas, there was no need for the Script of Java for many a fiefdom.
+          </p>
+          
+    </layout-box>
+  </div>
+
+  <input type="radio" name="drop-cap-example" id="drop-cap-code">
+  <label for="drop-cap-code">Code</label>
+  <div data-content>
+    <layout-box style="--padding: var(--space-m); --border-width: 0;">
+      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
           &lt;p class=&#34;text-dropcap&#34;&gt;
             Once upon a time. In a website far far away. Made with CSS after the great Y2K. Despite what the overlords
             of
             webworldia told the populas, there was no need for the Script of Java for many a fiefdom.
           &lt;/p&gt;
           </code>
-      </pre></layout-box></div></ui-tabs></layout-stack></section><hr></layout-stack></layout-center></layout-stack></layout-center></body></html>
+      </pre>
+    </layout-box>
+  </div>
+</ui-tabs>
+      </layout-stack>
+    </section>
+
+    <hr>
+
+  </layout-stack>
+</layout-center>
+  </layout-stack>
+</layout-center>
+
+  </body>
+</html>

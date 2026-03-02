@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>/</loc></url><url><loc>/tokens/</loc></url><url><loc>/colors/</loc></url><url><loc>/layouts/</loc></url><url><loc>/components/</loc></url><url><loc>/candy/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://aadriance.github.io/semantastic/</loc>
+  </url><url>
+    <loc>https://aadriance.github.io/semantastic/tokens/</loc>
+  </url><url>
+    <loc>https://aadriance.github.io/semantastic/colors/</loc>
+  </url><url>
+    <loc>https://aadriance.github.io/semantastic/layouts/</loc>
+  </url><url>
+    <loc>https://aadriance.github.io/semantastic/components/</loc>
+  </url><url>
+    <loc>https://aadriance.github.io/semantastic/candy/</loc>
+  </url>
+</urlset>

@@ -1,29 +1,252 @@
-<!doctype html><html lang=en><head><meta name=generator content="Hugo 0.155.1"><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Home - Semantastic CSS</title><link rel=stylesheet href=/css/tokens.css><link rel=stylesheet href=/css/colors.css><link rel=stylesheet href=/css/layout.css><link rel=stylesheet href=/css/components.css><link rel=stylesheet href=/css/candy.css><link rel=stylesheet href=/css/docs.css></head><body><nav class=site-nav><layout-cluster style="--space: var(--space-m); --align: center; --justify: space-between"><a href=/ class=nav-brand aria-current=page>Semantastic
-</a><layout-cluster class=nav-desktop style="--space: var(--space-s)"><a href=/tokens/>Tokens
-</a><a href=/colors/>Colors
-</a><a href=/layouts/>Layouts
-</a><a href=/components/>Components
-</a><a href=/candy/>Candy
-</a></layout-cluster><button class=nav-toggle popovertarget=mobile-nav aria-label="Open navigation menu">
-☰</button></layout-cluster></nav><ui-flyout id=mobile-nav popover data-direction=right style="--flyout-width: 280px; --flyout-bg: var(--color-surface)"><layout-stack style="--space: var(--space-m); padding: var(--space-l)"><layout-stack style="--space: var(--space-2xs)"><a href=/ class=mobile-nav-link aria-current=page>Home
-</a><a href=/tokens/ class=mobile-nav-link>Tokens
-</a><a href=/colors/ class=mobile-nav-link>Colors
-</a><a href=/layouts/ class=mobile-nav-link>Layouts
-</a><a href=/components/ class=mobile-nav-link>Components
-</a><a href=/candy/ class=mobile-nav-link>Candy
-</a></layout-stack><button class=mobile-nav-close popovertarget=mobile-nav>
-Close Menu
-</button>
-</layout-stack></ui-flyout><layout-cover class=pattern-hero><div data-centered><layout-center style="--measure: 54ch"><layout-stack style="--space: var(--space-m)"><h1>Semantastic</h1><p class=hero-lead>Modern CSS without the complexity. OKLCH colors, semantic HTML custom
-elements, zero JavaScript required.</p><layout-cluster style="--space: var(--space-xs)"><ui-badge data-variant=pill><code>tokens.css</code></ui-badge>
-<ui-badge data-variant=pill><code>colors.css</code></ui-badge>
-<ui-badge data-variant=pill><code>base.css</code></ui-badge>
-<ui-badge data-variant=pill><code>layout.css</code></ui-badge>
-<ui-badge data-variant=pill><code>components.css</code></ui-badge>
-<ui-badge data-variant=pill><code>candy.css</code></ui-badge></layout-cluster></layout-stack></layout-center></div></layout-cover><layout-center style="--measure: 80ch; --gutter: var(--space-l)"><layout-stack style="--space: var(--space-3xl); padding-block: var(--space-3xl)"><layout-stack style="--space: var(--space-l)"><p>Semantastic gives you a focused toolkit — each file is independent so
-you include exactly what your project needs. No utility soup, no
-framework lock-in.</p><layout-grid class=feature-grid style="--min-width: 15rem; --gutter: var(--space-m)"><a href=/tokens/><ui-card data-variant=interactive><layout-stack style="--space: var(--space-s)"><ui-label data-intent=primary>tokens.css</ui-label><h3>Design Tokens</h3><p>Spacing scale, type scale, shadows, border radius, timing, and measure — all as <code>:root</code>
-custom properties.</p></layout-stack></ui-card></a><a href=/colors/><ui-card data-variant=interactive><layout-stack style="--space: var(--space-s)"><ui-label data-intent=secondary>colors.css</ui-label><h3>Color System</h3><p>OKLCH semantic aliases with automatic dark mode. One variable override to retheme the whole site.</p></layout-stack></ui-card></a><a href=/layouts/><ui-card data-variant=interactive><layout-stack style="--space: var(--space-s)"><ui-label>layouts.css</ui-label><h3>Layout Primitives</h3><p>12 composable custom elements — stack, grid, sidebar, cover, reel, and more. No media queries.</p></layout-stack></ui-card></a><a href=/components/><ui-card data-variant=interactive><layout-stack style="--space: var(--space-s)"><ui-label>components.css</ui-label><h3>Pure CSS Components</h3><p>Tabs, flyout drawers, and tooltips built with native HTML features. Zero JavaScript.</p></layout-stack></ui-card></a><a href=/candy/><ui-card data-variant=interactive><layout-stack style="--space: var(--space-s)"><ui-label>candy.css</ui-label><h3>Candy</h3><p>Cards, badges, notices, pattern backgrounds, and a colorize mixin for on-the-fly theming.</p></layout-stack></ui-card></a></layout-grid></layout-stack><layout-stack style="--space: var(--space-m)"><h2>Usage</h2><ui-notice>There is no CDN, no minified bundle. If you would like to use Semantastic I recommend you copy the files
-yourself and start tweaking to meet your needs. I don't intend for anyone to take a hard dependence on
-Semantastic. I wanted to make a easy starting point for me to copy down thing I know I want to use often.<br>If you can use this as is great. If I've inspired you to do some of your own CSS, even better. Go forth and make
-standards compliant UI!</ui-notice></layout-stack></layout-stack></layout-center></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.155.1">
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Home - Semantastic CSS</title>
+
+
+<link rel="stylesheet" href="/semantastic/css/tokens.css" />
+<link rel="stylesheet" href="/semantastic/css/colors.css" />
+<link rel="stylesheet" href="/semantastic/css/layout.css" />
+<link rel="stylesheet" href="/semantastic/css/components.css" />
+<link rel="stylesheet" href="/semantastic/css/candy.css" />
+
+
+<link rel="stylesheet" href="/semantastic/css/docs.css" />
+
+
+
+  </head>
+  <body>
+    <nav class="site-nav">
+  <layout-cluster style="--space: var(--space-m); --align: center; --justify: space-between">
+    <a href="/" class="nav-brand" aria-current="page">
+      Semantastic
+    </a>
+
+    
+    <layout-cluster class="nav-desktop" style="--space: var(--space-s)">
+      
+      
+        
+          <a href="/semantastic/tokens/" >
+            Tokens
+          </a>
+        
+      
+        
+          <a href="/semantastic/colors/" >
+            Colors
+          </a>
+        
+      
+        
+          <a href="/semantastic/layouts/" >
+            Layouts
+          </a>
+        
+      
+        
+          <a href="/semantastic/components/" >
+            Components
+          </a>
+        
+      
+        
+          <a href="/semantastic/candy/" >
+            Candy
+          </a>
+        
+      
+    </layout-cluster>
+
+    
+    <button class="nav-toggle" popovertarget="mobile-nav" aria-label="Open navigation menu">
+      ☰
+    </button>
+  </layout-cluster>
+</nav>
+
+
+<ui-flyout
+  id="mobile-nav"
+  popover
+  data-direction="right"
+  style="--flyout-width: 280px; --flyout-bg: var(--color-surface)"
+>
+  <layout-stack style="--space: var(--space-m); padding: var(--space-l)">
+    <layout-stack style="--space: var(--space-2xs)">
+      <a href="/" class="mobile-nav-link" aria-current="page">
+        Home
+      </a>
+      
+      
+        
+          <a
+            href="/semantastic/tokens/"
+            class="mobile-nav-link"
+            
+          >
+            Tokens
+          </a>
+        
+      
+        
+          <a
+            href="/semantastic/colors/"
+            class="mobile-nav-link"
+            
+          >
+            Colors
+          </a>
+        
+      
+        
+          <a
+            href="/semantastic/layouts/"
+            class="mobile-nav-link"
+            
+          >
+            Layouts
+          </a>
+        
+      
+        
+          <a
+            href="/semantastic/components/"
+            class="mobile-nav-link"
+            
+          >
+            Components
+          </a>
+        
+      
+        
+          <a
+            href="/semantastic/candy/"
+            class="mobile-nav-link"
+            
+          >
+            Candy
+          </a>
+        
+      
+    </layout-stack>
+
+    <button class="mobile-nav-close" popovertarget="mobile-nav">
+      Close Menu
+    </button>
+  </layout-stack>
+</ui-flyout>
+
+
+    
+
+<layout-cover class="pattern-hero">
+<div data-centered>
+  <layout-center style="--measure: 54ch">
+    <layout-stack style="--space: var(--space-m)">
+      <h1>Semantastic</h1>
+      <p class="hero-lead">
+        Modern CSS without the complexity. OKLCH colors, semantic HTML custom
+        elements, zero JavaScript required.
+      </p>
+      <layout-cluster style="--space: var(--space-xs)">
+        <ui-badge data-variant="pill"><code>tokens.css</code></ui-badge>
+        <ui-badge data-variant="pill"><code>colors.css</code></ui-badge>
+        <ui-badge data-variant="pill"><code>base.css</code></ui-badge>
+        <ui-badge data-variant="pill"><code>layout.css</code></ui-badge>
+        <ui-badge data-variant="pill"><code>components.css</code></ui-badge>
+        <ui-badge data-variant="pill"><code>candy.css</code></ui-badge>
+      </layout-cluster>
+    </layout-stack>
+  </layout-center>
+</div>
+</layout-cover>
+
+<layout-center style="--measure: 80ch; --gutter: var(--space-l)">
+  <layout-stack style="--space: var(--space-3xl); padding-block: var(--space-3xl)">
+
+    <layout-stack style="--space: var(--space-l)">
+      <p>
+        Semantastic gives you a focused toolkit — each file is independent so
+        you include exactly what your project needs. No utility soup, no
+        framework lock-in.
+      </p>
+
+      
+      <layout-grid class="feature-grid" style="--min-width: 15rem; --gutter: var(--space-m)">
+
+        <a href="/tokens/">
+          <ui-card data-variant="interactive">
+            <layout-stack style="--space: var(--space-s)">
+              <ui-label data-intent="primary">tokens.css</ui-label>
+              <h3>Design Tokens</h3>
+              <p>Spacing scale, type scale, shadows, border radius, timing, and measure — all as <code>:root</code>
+                custom properties.</p>
+            </layout-stack>
+          </ui-card>
+        </a>
+
+        <a href="/colors/">
+          <ui-card data-variant="interactive">
+            <layout-stack style="--space: var(--space-s)">
+              <ui-label data-intent="secondary">colors.css</ui-label>
+              <h3>Color System</h3>
+              <p>OKLCH semantic aliases with automatic dark mode. One variable override to retheme the whole site.</p>
+            </layout-stack>
+          </ui-card>
+        </a>
+
+        <a href="/layouts/">
+          <ui-card data-variant="interactive">
+            <layout-stack style="--space: var(--space-s)">
+              <ui-label>layouts.css</ui-label>
+              <h3>Layout Primitives</h3>
+              <p>12 composable custom elements — stack, grid, sidebar, cover, reel, and more. No media queries.</p>
+            </layout-stack>
+          </ui-card>
+        </a>
+
+        <a href="/components/">
+          <ui-card data-variant="interactive">
+            <layout-stack style="--space: var(--space-s)">
+              <ui-label>components.css</ui-label>
+              <h3>Pure CSS Components</h3>
+              <p>Tabs, flyout drawers, and tooltips built with native HTML features. Zero JavaScript.</p>
+            </layout-stack>
+          </ui-card>
+        </a>
+
+        <a href="/candy/">
+          <ui-card data-variant="interactive">
+            <layout-stack style="--space: var(--space-s)">
+              <ui-label>candy.css</ui-label>
+              <h3>Candy</h3>
+              <p>Cards, badges, notices, pattern backgrounds, and a colorize mixin for on-the-fly theming.</p>
+            </layout-stack>
+          </ui-card>
+        </a>
+
+      </layout-grid>
+    </layout-stack>
+
+    <layout-stack style="--space: var(--space-m)">
+      <h2>Usage</h2>
+      <ui-notice>
+        There is no CDN, no minified bundle. If you would like to use Semantastic I recommend you copy the files
+        yourself and start tweaking to meet your needs. I don't intend for anyone to take a hard dependence on
+        Semantastic. I wanted to make a easy starting point for me to copy down thing I know I want to use often.
+        <br />
+        If you can use this as is great. If I've inspired you to do some of your own CSS, even better. Go forth and make
+        standards compliant UI!
+      </ui-notice>
+    </layout-stack>
+
+  </layout-stack>
+</layout-center>
+
+  </body>
+</html>

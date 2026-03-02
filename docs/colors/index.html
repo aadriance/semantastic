@@ -1,33 +1,389 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Colors - Semantastic CSS</title><link rel=stylesheet href=/css/tokens.css><link rel=stylesheet href=/css/colors.css><link rel=stylesheet href=/css/layout.css><link rel=stylesheet href=/css/components.css><link rel=stylesheet href=/css/candy.css><link rel=stylesheet href=/css/docs.css></head><body><nav class=site-nav><layout-cluster style="--space: var(--space-m); --align: center; --justify: space-between"><a href=/ class=nav-brand>Semantastic
-</a><layout-cluster class=nav-desktop style="--space: var(--space-s)"><a href=/tokens/>Tokens
-</a><a href=/colors/ aria-current=page>Colors
-</a><a href=/layouts/>Layouts
-</a><a href=/components/>Components
-</a><a href=/candy/>Candy
-</a></layout-cluster><button class=nav-toggle popovertarget=mobile-nav aria-label="Open navigation menu">
-☰</button></layout-cluster></nav><ui-flyout id=mobile-nav popover data-direction=right style="--flyout-width: 280px; --flyout-bg: var(--color-surface)"><layout-stack style="--space: var(--space-m); padding: var(--space-l)"><layout-stack style="--space: var(--space-2xs)"><a href=/ class=mobile-nav-link>Home
-</a><a href=/tokens/ class=mobile-nav-link>Tokens
-</a><a href=/colors/ class=mobile-nav-link aria-current=page>Colors
-</a><a href=/layouts/ class=mobile-nav-link>Layouts
-</a><a href=/components/ class=mobile-nav-link>Components
-</a><a href=/candy/ class=mobile-nav-link>Candy
-</a></layout-stack><button class=mobile-nav-close popovertarget=mobile-nav>
-Close Menu
-</button>
-</layout-stack></ui-flyout><layout-center style="--measure: 72ch; --gutter: var(--space-l)"><layout-stack style="--space: var(--space-3xl); padding-block: var(--space-3xl)"><layout-stack><div><ui-label data-intent=secondary>Make It pretty</ui-label><h1>Colors</h1><p style=font-size:1.25rem;color:var(--color-text-muted)>we want to be semantic, doesn't me we can't look good.</p><p>Modern CSS has delightful tools for working with color. <code>colors.css</code> leverages OKLCH and <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/color-mix>color-mix</a> to
-make good and consistent colors that only need a small handful swapped out to theme the site. Dark mode included.</p><ui-notice data-intent=secondary><code>colors.css </code>has many colors defined. But less than a dozen core colors need to be defined to totally
-customize the looks.</ui-notice></div><style>.color-swatch{padding:var(--space-l);border-radius:8px;display:flex;flex-direction:column;gap:var(--space-xs);border:1px solid var(--color-border)}.color-label{font-weight:600;font-size:.9rem}.color-value{font-family:ui-monospace,monospace;font-size:.75rem;opacity:.7}</style><layout-stack style="--space: var(--space-m)"><h2>Why OKLCH?</h2><p>Traditional HSL is <strong>not perceptually uniform</strong>. Colors with
-the same lightness value can appear dramatically different in brightness:</p><layout-grid style="--min-width: 12rem; --gutter: var(--space-s)"><div><ui-label>HSL Blue</ui-label>
-<ui-card style="background: hsl(240, 100%, 50%);"><code style=color:#fff>hsl(240, 100%, 50%)</code></ui-card></div><div><ui-label>HSL Yellow</ui-label>
-<ui-card style="background: hsl(60, 100%, 50%);"><div><code>hsl(60, 100%, 50%)</code>
-much brighter!</div></ui-card></div></layout-grid><p><strong>OKLCH fixes this.</strong> When you set lightness to 50%, all hues
-appear equally bright:</p><layout-grid style="--min-width: 12rem; --gutter: var(--space-s)"><div><ui-label>OKLCH Blue</ui-label>
-<ui-card style="background: oklch(85% 0.2 240)"><code>oklch(85% 0.2 240)</code></ui-card></div><div><ui-label>OKLCH Yellow</ui-label>
-<ui-card style="background: oklch(85% 0.2 100);"><div><code>oklch(85% 0.2 100)</code>
-Better!</div></ui-card></div></layout-grid></layout-stack><layout-stack style="--space: var(--space-m)"><h2>Color Tokens</h2><p>Pre-defined color tokens for common UI needs. Change these basics and everything will update via color-mix.</p><layout-grid style="--min-width: 20ch; --gutter: var(--space-s)"><div class=color-swatch style=background:var(--color-primary);color:var(--color-canvas)><div class=color-label>Primary</div><div class=color-value>--color-primary</div><div class=color-value>oklch(44% 0.095 250)</div></div><div class=color-swatch style=background:var(--color-secondary);color:var(--color-ink)><div class=color-label>Secondary</div><div class=color-value>--color-secondary</div><div class=color-value>oklch(75% 0.08 220)</div></div><div class=color-swatch style=background:var(--color-success);color:var(--color-canvas)><div class=color-label>Success</div><div class=color-value>--color-success</div><div class=color-value>oklch(65% 0.23 142)</div></div><div class=color-swatch style=background:var(--color-warning);color:var(--color-ink)><div class=color-label>Warning</div><div class=color-value>--color-warning</div><div class=color-value>oklch(75% 0.17 90)</div></div><div class=color-swatch style=background:var(--color-error);color:var(--color-canvas)><div class=color-label>Error</div><div class=color-value>--color-error</div><div class=color-value>oklch(51% 0.2 31)</div></div></layout-grid></layout-stack><layout-stack><div><h2>Derived Colors with color-mix()</h2><p>Generate harmonious tints and shades from a base color using
-<code>color-mix()</code>. No need to manually define every variant.</p></div><div><h3>Primary Variations</h3><layout-grid style="--min-width: 10rem; --gutter: var(--space-s)"><div class=color-swatch style=background:var(--color-primary-subtle)><div class=color-label>Subtle</div><div class=color-value>--color-primary-subtle</div><div class=color-value>8% primary + canvas</div></div><div class=color-swatch style=background:var(--color-primary-muted)><div class=color-label>Muted</div><div class=color-value>--color-primary-muted</div><div class=color-value>20% primary + canvas</div></div><div class=color-swatch style=background:var(--color-primary);color:var(--color-canvas)><div class=color-label>Base</div><div class=color-value>--color-primary</div></div><div class=color-swatch style=background:var(--color-primary-emphasis);color:var(--color-canvas)><div class=color-label>Emphasis</div><div class=color-value>--color-primary-emphasis</div><div class=color-value>80% primary + ink</div></div></layout-grid></div><h3>Alert Color Backgrounds</h3><layout-stack style="--space: var(--space-s)"><layout-stack style="--space: var(--space-s)"><ui-notice data-intent=success><strong>Success:</strong> <code>--color-success </code></ui-notice><ui-notice data-intent=warning><strong>Warning:</strong> <code>--color-warning </code></ui-notice><ui-notice data-intent=error><strong>Error:</strong> <code>--color-error</code></ui-notice></layout-stack></layout-stack></layout-stack><div><h2>Easy Theming</h2><p>Is Rebecca Purple your favorite CSS color? No problem. Set <code>--color-primary: rebeccapurple</code> and
-you're
-off to the races.</p></div><layout-stack style="--space: var(--space-s)"><layout-grid class=rebecca style="--min-width: 10rem; --gutter: var(--space-s)"><style>.rebecca{--color-primary:rebeccapurple;--color-primary-subtle:color-mix(in srgb, var(--color-primary) 8%, var(--color-canvas));--color-primary-muted:color-mix(in srgb, var(--color-primary) 20%, var(--color-canvas));--color-primary-emphasis:color-mix(in srgb, var(--color-primary) 80%, var(--color-ink))}</style><div class=color-swatch style=background:var(--color-primary-subtle)><div class=color-label>Subtle</div><div class=color-value>--color-primary-subtle</div></div><div class=color-swatch style=background:var(--color-primary-muted)><div class=color-label>Muted</div><div class=color-value>--color-primary-muted</div></div><div class=color-swatch style=background:var(--color-primary);color:var(--color-canvas)><div class=color-label>Base</div></div><div class=color-swatch style=background:var(--color-primary-emphasis);color:var(--color-canvas)><div class=color-label>Emphasis</div><div class=color-value>--color-primary-emphasis</div></div></layout-grid><ui-notice>If you look at the markup you'll notice I had to redefine all the color levels to make them
-apply. You can't change just --color-primary on a div and have all inner values change. The other colors would
-still be using the initial --color-primary. If you do want ad-hoc colorization check out the colorize utility in
-<a href=/candy>candy </a>.</ui-notice></layout-stack></layout-stack></layout-stack></layout-center></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Colors - Semantastic CSS</title>
+
+
+<link rel="stylesheet" href="/semantastic/css/tokens.css" />
+<link rel="stylesheet" href="/semantastic/css/colors.css" />
+<link rel="stylesheet" href="/semantastic/css/layout.css" />
+<link rel="stylesheet" href="/semantastic/css/components.css" />
+<link rel="stylesheet" href="/semantastic/css/candy.css" />
+
+
+<link rel="stylesheet" href="/semantastic/css/docs.css" />
+
+
+
+  </head>
+  <body>
+    <nav class="site-nav">
+  <layout-cluster style="--space: var(--space-m); --align: center; --justify: space-between">
+    <a href="/" class="nav-brand" >
+      Semantastic
+    </a>
+
+    
+    <layout-cluster class="nav-desktop" style="--space: var(--space-s)">
+      
+      
+        
+          <a href="/semantastic/tokens/" >
+            Tokens
+          </a>
+        
+      
+        
+          <a href="/semantastic/colors/" aria-current="page">
+            Colors
+          </a>
+        
+      
+        
+          <a href="/semantastic/layouts/" >
+            Layouts
+          </a>
+        
+      
+        
+          <a href="/semantastic/components/" >
+            Components
+          </a>
+        
+      
+        
+          <a href="/semantastic/candy/" >
+            Candy
+          </a>
+        
+      
+    </layout-cluster>
+
+    
+    <button class="nav-toggle" popovertarget="mobile-nav" aria-label="Open navigation menu">
+      ☰
+    </button>
+  </layout-cluster>
+</nav>
+
+
+<ui-flyout
+  id="mobile-nav"
+  popover
+  data-direction="right"
+  style="--flyout-width: 280px; --flyout-bg: var(--color-surface)"
+>
+  <layout-stack style="--space: var(--space-m); padding: var(--space-l)">
+    <layout-stack style="--space: var(--space-2xs)">
+      <a href="/" class="mobile-nav-link" >
+        Home
+      </a>
+      
+      
+        
+          <a
+            href="/semantastic/tokens/"
+            class="mobile-nav-link"
+            
+          >
+            Tokens
+          </a>
+        
+      
+        
+          <a
+            href="/semantastic/colors/"
+            class="mobile-nav-link"
+            aria-current="page"
+          >
+            Colors
+          </a>
+        
+      
+        
+          <a
+            href="/semantastic/layouts/"
+            class="mobile-nav-link"
+            
+          >
+            Layouts
+          </a>
+        
+      
+        
+          <a
+            href="/semantastic/components/"
+            class="mobile-nav-link"
+            
+          >
+            Components
+          </a>
+        
+      
+        
+          <a
+            href="/semantastic/candy/"
+            class="mobile-nav-link"
+            
+          >
+            Candy
+          </a>
+        
+      
+    </layout-stack>
+
+    <button class="mobile-nav-close" popovertarget="mobile-nav">
+      Close Menu
+    </button>
+  </layout-stack>
+</ui-flyout>
+
+
+    
+<layout-center style="--measure: 72ch; --gutter: var(--space-l)">
+  <layout-stack style="--space: var(--space-3xl); padding-block: var(--space-3xl)">
+    <layout-stack>
+  <div>
+    <ui-label data-intent="secondary">Make It pretty</ui-label>
+    <h1>Colors</h1>
+    <p style="font-size: 1.25rem; color: var(--color-text-muted);">
+      we want to be semantic, doesn't me we can't look good.
+    </p>
+    <p>
+      Modern CSS has delightful tools for working with color. <code>colors.css</code> leverages OKLCH and <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/color-mix">color-mix</a> to
+      make good and consistent colors that only need a small handful swapped out to theme the site. Dark mode included.
+    </p>
+    <ui-notice data-intent="secondary">
+      <code> colors.css </code> has many colors defined. But less than a dozen core colors need to be defined to totally
+      customize the looks.
+    </ui-notice>
+  </div>
+
+  <style>
+    .color-swatch {
+      padding: var(--space-l);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      border: 1px solid var(--color-border);
+    }
+
+    .color-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .color-value {
+      font-family: ui-monospace, monospace;
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+  </style>
+  <layout-stack style="--space: var(--space-m)">
+    <h2>Why OKLCH?</h2>
+    <p>
+      Traditional HSL is <strong>not perceptually uniform</strong>. Colors with
+      the same lightness value can appear dramatically different in brightness:
+    </p>
+
+    <layout-grid style="--min-width: 12rem; --gutter: var(--space-s)">
+      <div>
+        <ui-label>HSL Blue</ui-label>
+        <ui-card style="background: hsl(240, 100%, 50%);">
+          <code style="color: white;">hsl(240, 100%, 50%)</code>
+        </ui-card>
+      </div>
+      <div>
+        <ui-label>HSL Yellow</ui-label>
+        <ui-card style="background: hsl(60, 100%, 50%);">
+          <div>
+            <code>hsl(60, 100%, 50%)</code>
+            much brighter!
+          </div>
+        </ui-card>
+      </div>
+    </layout-grid>
+
+    <p>
+      <strong>OKLCH fixes this.</strong> When you set lightness to 50%, all hues
+      appear equally bright:
+    </p>
+
+    <layout-grid style="--min-width: 12rem; --gutter: var(--space-s)">
+      <div>
+        <ui-label>OKLCH Blue</ui-label>
+        <ui-card style="background: oklch(85% 0.2 240)">
+          <code>oklch(85% 0.2 240)</code>
+        </ui-card>
+      </div>
+      <div>
+        <ui-label>OKLCH Yellow</ui-label>
+        <ui-card style="background: oklch(85% 0.2 100);">
+          <div>
+            <code>oklch(85% 0.2 100)</code>
+            Better!
+          </div>
+        </ui-card>
+      </div>
+    </layout-grid>
+  </layout-stack>
+
+  <layout-stack style="--space: var(--space-m)">
+    <h2>Color Tokens</h2>
+    <p>
+      Pre-defined color tokens for common UI needs. Change these basics and everything will update via color-mix.
+    </p>
+
+    <layout-grid style="--min-width: 20ch; --gutter: var(--space-s)">
+      <div class="color-swatch" style="background: var(--color-primary); color: var(--color-canvas)">
+        <div class="color-label">Primary</div>
+        <div class="color-value">--color-primary</div>
+        <div class="color-value">oklch(44% 0.095 250)</div>
+      </div>
+
+      <div class="color-swatch" style="background: var(--color-secondary); color: var(--color-ink)">
+        <div class="color-label">Secondary</div>
+        <div class="color-value">--color-secondary</div>
+        <div class="color-value">oklch(75% 0.08 220)</div>
+      </div>
+
+      <div class="color-swatch" style="background: var(--color-success); color: var(--color-canvas)">
+        <div class="color-label">Success</div>
+        <div class="color-value">--color-success</div>
+        <div class="color-value">oklch(65% 0.23 142)</div>
+      </div>
+
+      <div class="color-swatch" style="background: var(--color-warning); color: var(--color-ink)">
+        <div class="color-label">Warning</div>
+        <div class="color-value">--color-warning</div>
+        <div class="color-value">oklch(75% 0.17 90)</div>
+      </div>
+
+      <div class="color-swatch" style="background: var(--color-error); color: var(--color-canvas)">
+        <div class="color-label">Error</div>
+        <div class="color-value">--color-error</div>
+        <div class="color-value">oklch(51% 0.2 31)</div>
+      </div>
+    </layout-grid>
+  </layout-stack>
+
+  <layout-stack>
+    <div>
+      <h2>Derived Colors with color-mix()</h2>
+      <p>
+        Generate harmonious tints and shades from a base color using
+        <code>color-mix()</code>. No need to manually define every variant.
+      </p>
+    </div>
+
+    <div>
+      <h3>Primary Variations</h3>
+      <layout-grid style="--min-width: 10rem; --gutter: var(--space-s)">
+        <div class="color-swatch" style="background: var(--color-primary-subtle)">
+          <div class="color-label">Subtle</div>
+          <div class="color-value">--color-primary-subtle</div>
+          <div class="color-value">
+            8% primary + canvas
+          </div>
+        </div>
+
+        <div class="color-swatch" style="background: var(--color-primary-muted)">
+          <div class="color-label">Muted</div>
+          <div class="color-value">--color-primary-muted</div>
+          <div class="color-value">
+            20% primary + canvas
+          </div>
+        </div>
+
+        <div class="color-swatch" style="background: var(--color-primary); color: var(--color-canvas)">
+          <div class="color-label">Base</div>
+          <div class="color-value">--color-primary</div>
+        </div>
+
+        <div class="color-swatch" style="
+          background: var(--color-primary-emphasis);
+          color: var(--color-canvas);
+        ">
+          <div class="color-label">Emphasis</div>
+          <div class="color-value">--color-primary-emphasis</div>
+          <div class="color-value">
+            80% primary + ink
+          </div>
+        </div>
+      </layout-grid>
+    </div>
+
+    <h3>Alert Color Backgrounds</h3>
+    <layout-stack style="--space: var(--space-s)">
+      <layout-stack style="--space: var(--space-s)">
+        <ui-notice data-intent="success">
+          <strong>Success:</strong> <code>--color-success </code>
+        </ui-notice>
+        <ui-notice data-intent="warning">
+          <strong>Warning:</strong> <code>--color-warning </code>
+        </ui-notice>
+        <ui-notice data-intent="error">
+          <strong>Error:</strong> <code>--color-error </code>
+        </ui-notice>
+      </layout-stack>
+    </layout-stack>
+  </layout-stack>
+
+  <div>
+    <h2>Easy Theming</h2>
+    <p>
+      Is Rebecca Purple your favorite CSS color? No problem. Set <code>--color-primary: rebeccapurple</code> and
+      you're
+      off to the races.
+    </p>
+  </div>
+  <layout-stack style="--space: var(--space-s)">
+    <layout-grid class="rebecca" style="--min-width: 10rem; --gutter: var(--space-s)">
+      <style>
+        .rebecca {
+          --color-primary: rebeccapurple;
+          --color-primary-subtle: color-mix(in srgb, var(--color-primary) 8%, var(--color-canvas));
+          --color-primary-muted: color-mix(in srgb, var(--color-primary) 20%, var(--color-canvas));
+          --color-primary-emphasis: color-mix(in srgb, var(--color-primary) 80%, var(--color-ink));
+        }
+      </style>
+      <div class="color-swatch" style="background: var(--color-primary-subtle)">
+        <div class="color-label">Subtle</div>
+        <div class="color-value">--color-primary-subtle</div>
+      </div>
+
+      <div class="color-swatch" style="background: var(--color-primary-muted)">
+        <div class="color-label">Muted</div>
+        <div class="color-value">--color-primary-muted</div>
+      </div>
+
+      <div class="color-swatch" style="background: var(--color-primary); color: var(--color-canvas)">
+        <div class="color-label">Base</div>
+      </div>
+
+      <div class="color-swatch" style="
+          background: var(--color-primary-emphasis);
+          color: var(--color-canvas);
+        ">
+        <div class="color-label">Emphasis</div>
+        <div class="color-value">--color-primary-emphasis</div>
+      </div>
+    </layout-grid>
+    <ui-notice>
+      If you look at the markup you'll notice I had to redefine all the color levels to make them
+      apply. You can't change just --color-primary on a div and have all inner values change. The other colors would
+      still be using the initial --color-primary. If you do want ad-hoc colorization check out the colorize utility in
+      <a href="/candy"> candy </a>.
+    </ui-notice>
+  </layout-stack>
+
+</layout-stack>
+  </layout-stack>
+</layout-center>
+
+  </body>
+</html>

@@ -1,172 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Semantastic CSS</title><link>/</link><description>Recent content in Home on Semantastic CSS</description><generator>Hugo</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Tokens</title><link>/tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tokens/</guid><description>&lt;layout-stack&gt;
- &lt;div&gt;
- &lt;ui-label data-intent="secondary"&gt;Foundation Layer&lt;/ui-label&gt;
- &lt;h1&gt;Design Tokens&lt;/h1&gt;
- &lt;p style="font-size: 1.25rem; color: var(--color-text-muted);"&gt;
- The foundational design values that power the entire Semantastic system.
- &lt;/p&gt;
- &lt;p&gt;
- Every system should have tokens. Tokens are units of common values to make sure there is a sense of conisetency to
- the site. Large text is the same size across the site, spacing is consistent. Make your users brain happy by
- allowing them to understand where they should expect content to be sitting in relation to one another.
- &lt;/p&gt;</description></item><item><title>Colors</title><link>/colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/colors/</guid><description>&lt;layout-stack&gt;
- &lt;div&gt;
- &lt;ui-label data-intent="secondary"&gt;Make It pretty&lt;/ui-label&gt;
- &lt;h1&gt;Colors&lt;/h1&gt;
- &lt;p style="font-size: 1.25rem; color: var(--color-text-muted);"&gt;
- we want to be semantic, doesn't me we can't look good.
- &lt;/p&gt;
- &lt;p&gt;
- Modern CSS has delightful tools for working with color. &lt;code&gt;colors.css&lt;/code&gt; leverages OKLCH and &lt;a
- href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/color-mix"&gt;color-mix&lt;/a&gt; to
- make good and consistent colors that only need a small handful swapped out to theme the site. Dark mode included.
- &lt;/p&gt;
- &lt;ui-notice data-intent="secondary"&gt;
- &lt;code&gt; colors.css &lt;/code&gt; has many colors defined. But less than a dozen core colors need to be defined to totally
- customize the looks.
- &lt;/ui-notice&gt;
- &lt;/div&gt;
-
- &lt;style&gt;
- .color-swatch {
- padding: var(--space-l);
- border-radius: 8px;
- display: flex;
- flex-direction: column;
- gap: var(--space-xs);
- border: 1px solid var(--color-border);
- }
-
- .color-label {
- font-weight: 600;
- font-size: 0.9rem;
- }
-
- .color-value {
- font-family: ui-monospace, monospace;
- font-size: 0.75rem;
- opacity: 0.7;
- }
- &lt;/style&gt;
- &lt;layout-stack style="--space: var(--space-m)"&gt;
- &lt;h2&gt;Why OKLCH?&lt;/h2&gt;
- &lt;p&gt;
- Traditional HSL is &lt;strong&gt;not perceptually uniform&lt;/strong&gt;. Colors with
- the same lightness value can appear dramatically different in brightness:
- &lt;/p&gt;</description></item><item><title>Layouts</title><link>/layouts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/layouts/</guid><description>&lt;layout-stack&gt;
-
- &lt;div&gt;
- &lt;ui-label data-intent="secondary"&gt;Every Thing in The Right Place&lt;/ui-label&gt;
- &lt;h1&gt;Layout Primatives&lt;/h1&gt;
- &lt;p style="font-size: 1.25rem; color: var(--color-text-muted);"&gt;
- Custom tags inspired by &lt;em&gt;Every Layout&lt;/em&gt;.
- &lt;/p&gt;
- &lt;p&gt;
- A collection of custom tags for layout elements to control the flow of your page. Based on &lt;a
- href="https://every-layout.dev/"&gt;Every Layout&lt;/a&gt; the goal is to accept that your website is not a poster and
- instead build primitives that make sure your sites content flows correctly regardless of device size.
- &lt;/p&gt;
- &lt;p&gt;
- Custom tags are used because div soup is bad. HTML allows you to name your own tags, so why not leverage it? often
- you'll see &lt;code&gt;class="foo"&lt;/code&gt; instead. But what if Bar is a class as well? &lt;code&gt;class="foo bar"&lt;/code&gt; may
- indeed be nonsensical. As such enforcing the layouts as distinct elements creates the nicest experience in my
- opinion.
- &lt;/p&gt;</description></item><item><title>Components</title><link>/components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/components/</guid><description>&lt;layout-stack&gt;
-
- &lt;div&gt;
- &lt;ui-label data-intent="secondary"&gt;Pure CSS&lt;/ui-label&gt;
- &lt;h1&gt;Components&lt;/h1&gt;
- &lt;p style="font-size: 1.25rem; color: var(--color-text-muted);"&gt;
- Interactive components built with CSS only — no JavaScript required.
- &lt;/p&gt;
- &lt;p&gt;
- Accessible, keyboard-navigable, and configurable with custom properties.
- &lt;/p&gt;
- &lt;/div&gt;
-
- &lt;hr&gt;
-
- &lt;!-- TABS --&gt;
- &lt;section&gt;
- &lt;layout-stack style="--space: var(--space-m)"&gt;
- &lt;h2&gt;&lt;code&gt;&amp;lt;ui-tabs&amp;gt;&lt;/code&gt; — Tab Navigation&lt;/h2&gt;
- &lt;p&gt;
- Pure CSS tabs using radio inputs and labels. Three variants: default
- (bordered), pills, and underline. Implemented as a custom element for cleaner markup.
- &lt;/p&gt;
-
- &lt;h3&gt;Structure&lt;/h3&gt;
- &lt;layout-box&gt;
- &lt;pre
-
- &gt;&lt;code&gt;&amp;lt;ui-tabs&amp;gt;
- &amp;lt;input type="radio" name="demo" id="tab1" checked&amp;gt;
- &amp;lt;label for="tab1"&amp;gt;Tab 1&amp;lt;/label&amp;gt;
- &amp;lt;div data-content&amp;gt;Content 1&amp;lt;/div&amp;gt;
-
- &amp;lt;input type="radio" name="demo" id="tab2"&amp;gt;
- &amp;lt;label for="tab2"&amp;gt;Tab 2&amp;lt;/label&amp;gt;
- &amp;lt;div data-content&amp;gt;Content 2&amp;lt;/div&amp;gt;
-&amp;lt;/ui-tabs&amp;gt;&lt;/code&gt;&lt;/pre&gt;
- &lt;/layout-box&gt;
-
- &lt;ui-label&gt;Properties&lt;/ui-label&gt;
- &lt;layout-cluster style="--space: var(--space-xs)"&gt;
- &lt;ui-badge&gt;--tab-bg &lt;span&gt;transparent&lt;/span&gt;&lt;/ui-badge&gt;
- &lt;ui-badge&gt;--tab-bg-active &lt;span&gt;var(--color-primary)&lt;/span&gt;&lt;/ui-badge&gt;
- &lt;ui-badge&gt;--tab-color &lt;span&gt;#666&lt;/span&gt;&lt;/ui-badge&gt;
- &lt;ui-badge&gt;--tab-color-active &lt;span&gt;var(--color-canvas)&lt;/span&gt;&lt;/ui-badge&gt;
- &lt;ui-badge&gt;--tab-border-color &lt;span&gt;var(--color-border)&lt;/span&gt;&lt;/ui-badge&gt;
- &lt;ui-badge&gt;--tab-border-width &lt;span&gt;2px&lt;/span&gt;&lt;/ui-badge&gt;
- &lt;ui-badge&gt;--tab-padding &lt;span&gt;0.75rem 1.5rem&lt;/span&gt;&lt;/ui-badge&gt;
- &lt;ui-badge&gt;--tab-radius &lt;span&gt;6px 6px 0 0&lt;/span&gt;&lt;/ui-badge&gt;
- &lt;/layout-cluster&gt;
-
- &lt;h3&gt;Default Tabs&lt;/h3&gt;
- &lt;ui-tabs data-variant="underline"&gt;
- &lt;input type="radio" name="tabs-default-example" id="tabs-default-preview" checked&gt;
- &lt;label for="tabs-default-preview"&gt;Preview&lt;/label&gt;
- &lt;div data-content&gt;
- &lt;layout-box style="--padding: var(--space-m); --border-width: 0;"&gt;
- 
-&lt;ui-tabs&gt;
- &lt;input type="radio" name="demo-default" id="default-tab1" checked /&gt;
- &lt;label for="default-tab1"&gt;Overview&lt;/label&gt;
- &lt;div data-content&gt;
- &lt;layout-stack style="--space: var(--space-s)"&gt;
- &lt;h4&gt;Overview&lt;/h4&gt;
- &lt;p&gt;
- This is the overview panel. Tabs use radio inputs under the hood,
- so only one can be active at a time.
- &lt;/p&gt;</description></item><item><title>Candy</title><link>/candy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/candy/</guid><description>&lt;layout-center style="--measure: 72ch; --gutter: var(--space-l)"&gt;
- &lt;layout-stack&gt;
-
- &lt;!-- Introduction --&gt;
- &lt;div&gt;
- &lt;ui-label data-intent="secondary"&gt;Optional CSS&lt;/ui-label&gt;
- &lt;h1&gt;Candy Components&lt;/h1&gt;
- &lt;p style="font-size: 1.25rem; color: var(--color-text-muted);"&gt;
- Production-ready components built on Semantastic design system primitives.
- &lt;/p&gt;
- &lt;p&gt;
- &lt;strong&gt;candy.css&lt;/strong&gt; is an optional, higher-level CSS layer that provides 15
- components implemented as custom elements — replacing verbose inline styles with
- clean, semantic markup.
- &lt;/p&gt;
- &lt;ui-notice data-intent="secondary"&gt;
- &lt;strong&gt;Note:&lt;/strong&gt; This file is &lt;em&gt;completely optional&lt;/em&gt;. The Semantastic system works perfectly without
- it. Candy.css is the &lt;strong&gt;only&lt;/strong&gt; CSS file in the system that imports dependencies.
- &lt;/ui-notice&gt;
- &lt;/div&gt;
-
- &lt;hr&gt;
-
- &lt;!-- SECTION 1: CARDS &amp; CONTAINERS --&gt;
- &lt;section&gt;
- &lt;layout-stack style="--space: var(--space-xl)"&gt;
- &lt;h2&gt;Cards &amp; Containers&lt;/h2&gt;
-
- &lt;!-- 1. Card --&gt;
- &lt;layout-stack style="--space: var(--space-s)"&gt;
- &lt;h3&gt;Base Card&lt;/h3&gt;
- &lt;p&gt;Simple card with rounded corners, border, and padding. Implemented as a custom element.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Semantastic CSS</title>
+    <link>https://aadriance.github.io/semantastic/</link>
+    <description>Recent content in Home on Semantastic CSS</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://aadriance.github.io/semantastic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tokens</title>
+      <link>https://aadriance.github.io/semantastic/tokens/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://aadriance.github.io/semantastic/tokens/</guid>
+      <description>&lt;layout-stack&gt;&#xA;  &lt;div&gt;&#xA;    &lt;ui-label data-intent=&#34;secondary&#34;&gt;Foundation Layer&lt;/ui-label&gt;&#xA;    &lt;h1&gt;Design Tokens&lt;/h1&gt;&#xA;    &lt;p style=&#34;font-size: 1.25rem; color: var(--color-text-muted);&#34;&gt;&#xA;      The foundational design values that power the entire Semantastic system.&#xA;    &lt;/p&gt;&#xA;    &lt;p&gt;&#xA;      Every system should have tokens. Tokens are units of common values to make sure there is a sense of conisetency to&#xA;      the site. Large text is the same size across the site, spacing is consistent. Make your users brain happy by&#xA;      allowing them to understand where they should expect content to be sitting in relation to one another.&#xA;    &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Colors</title>
+      <link>https://aadriance.github.io/semantastic/colors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://aadriance.github.io/semantastic/colors/</guid>
+      <description>&lt;layout-stack&gt;&#xA;  &lt;div&gt;&#xA;    &lt;ui-label data-intent=&#34;secondary&#34;&gt;Make It pretty&lt;/ui-label&gt;&#xA;    &lt;h1&gt;Colors&lt;/h1&gt;&#xA;    &lt;p style=&#34;font-size: 1.25rem; color: var(--color-text-muted);&#34;&gt;&#xA;      we want to be semantic, doesn&#39;t me we can&#39;t look good.&#xA;    &lt;/p&gt;&#xA;    &lt;p&gt;&#xA;      Modern CSS has delightful tools for working with color. &lt;code&gt;colors.css&lt;/code&gt; leverages OKLCH and &lt;a&#xA;        href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/color-mix&#34;&gt;color-mix&lt;/a&gt; to&#xA;      make good and consistent colors that only need a small handful swapped out to theme the site. Dark mode included.&#xA;    &lt;/p&gt;&#xA;    &lt;ui-notice data-intent=&#34;secondary&#34;&gt;&#xA;      &lt;code&gt; colors.css &lt;/code&gt; has many colors defined. But less than a dozen core colors need to be defined to totally&#xA;      customize the looks.&#xA;    &lt;/ui-notice&gt;&#xA;  &lt;/div&gt;&#xA;&#xA;  &lt;style&gt;&#xA;    .color-swatch {&#xA;      padding: var(--space-l);&#xA;      border-radius: 8px;&#xA;      display: flex;&#xA;      flex-direction: column;&#xA;      gap: var(--space-xs);&#xA;      border: 1px solid var(--color-border);&#xA;    }&#xA;&#xA;    .color-label {&#xA;      font-weight: 600;&#xA;      font-size: 0.9rem;&#xA;    }&#xA;&#xA;    .color-value {&#xA;      font-family: ui-monospace, monospace;&#xA;      font-size: 0.75rem;&#xA;      opacity: 0.7;&#xA;    }&#xA;  &lt;/style&gt;&#xA;  &lt;layout-stack style=&#34;--space: var(--space-m)&#34;&gt;&#xA;    &lt;h2&gt;Why OKLCH?&lt;/h2&gt;&#xA;    &lt;p&gt;&#xA;      Traditional HSL is &lt;strong&gt;not perceptually uniform&lt;/strong&gt;. Colors with&#xA;      the same lightness value can appear dramatically different in brightness:&#xA;    &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Layouts</title>
+      <link>https://aadriance.github.io/semantastic/layouts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://aadriance.github.io/semantastic/layouts/</guid>
+      <description>&lt;layout-stack&gt;&#xA;&#xA;  &lt;div&gt;&#xA;    &lt;ui-label data-intent=&#34;secondary&#34;&gt;Every Thing in The Right Place&lt;/ui-label&gt;&#xA;    &lt;h1&gt;Layout Primatives&lt;/h1&gt;&#xA;    &lt;p style=&#34;font-size: 1.25rem; color: var(--color-text-muted);&#34;&gt;&#xA;      Custom tags inspired by &lt;em&gt;Every Layout&lt;/em&gt;.&#xA;    &lt;/p&gt;&#xA;    &lt;p&gt;&#xA;      A collection of custom tags for layout elements to control the flow of your page. Based on &lt;a&#xA;        href=&#34;https://every-layout.dev/&#34;&gt;Every Layout&lt;/a&gt; the goal is to accept that your website is not a poster and&#xA;      instead build primitives that make sure your sites content flows correctly regardless of device size.&#xA;    &lt;/p&gt;&#xA;    &lt;p&gt;&#xA;      Custom tags are used because div soup is bad. HTML allows you to name your own tags, so why not leverage it? often&#xA;      you&#39;ll see &lt;code&gt;class=&#34;foo&#34;&lt;/code&gt; instead. But what if Bar is a class as well? &lt;code&gt;class=&#34;foo bar&#34;&lt;/code&gt; may&#xA;      indeed be nonsensical. As such enforcing the layouts as distinct elements creates the nicest experience in my&#xA;      opinion.&#xA;    &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Components</title>
+      <link>https://aadriance.github.io/semantastic/components/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://aadriance.github.io/semantastic/components/</guid>
+      <description>&lt;layout-stack&gt;&#xA;&#xA;  &lt;div&gt;&#xA;    &lt;ui-label data-intent=&#34;secondary&#34;&gt;Pure CSS&lt;/ui-label&gt;&#xA;    &lt;h1&gt;Components&lt;/h1&gt;&#xA;    &lt;p style=&#34;font-size: 1.25rem; color: var(--color-text-muted);&#34;&gt;&#xA;      Interactive components built with CSS only — no JavaScript required.&#xA;    &lt;/p&gt;&#xA;    &lt;p&gt;&#xA;      Accessible, keyboard-navigable, and configurable with custom properties.&#xA;    &lt;/p&gt;&#xA;  &lt;/div&gt;&#xA;&#xA;  &lt;hr&gt;&#xA;&#xA;  &lt;!-- TABS --&gt;&#xA;  &lt;section&gt;&#xA;    &lt;layout-stack style=&#34;--space: var(--space-m)&#34;&gt;&#xA;      &lt;h2&gt;&lt;code&gt;&amp;lt;ui-tabs&amp;gt;&lt;/code&gt; — Tab Navigation&lt;/h2&gt;&#xA;      &lt;p&gt;&#xA;        Pure CSS tabs using radio inputs and labels. Three variants: default&#xA;        (bordered), pills, and underline. Implemented as a custom element for cleaner markup.&#xA;      &lt;/p&gt;&#xA;&#xA;      &lt;h3&gt;Structure&lt;/h3&gt;&#xA;      &lt;layout-box&gt;&#xA;        &lt;pre&#xA;&#xA;        &gt;&lt;code&gt;&amp;lt;ui-tabs&amp;gt;&#xA;  &amp;lt;input type=&#34;radio&#34; name=&#34;demo&#34; id=&#34;tab1&#34; checked&amp;gt;&#xA;  &amp;lt;label for=&#34;tab1&#34;&amp;gt;Tab 1&amp;lt;/label&amp;gt;&#xA;  &amp;lt;div data-content&amp;gt;Content 1&amp;lt;/div&amp;gt;&#xA;&#xA;  &amp;lt;input type=&#34;radio&#34; name=&#34;demo&#34; id=&#34;tab2&#34;&amp;gt;&#xA;  &amp;lt;label for=&#34;tab2&#34;&amp;gt;Tab 2&amp;lt;/label&amp;gt;&#xA;  &amp;lt;div data-content&amp;gt;Content 2&amp;lt;/div&amp;gt;&#xA;&amp;lt;/ui-tabs&amp;gt;&lt;/code&gt;&lt;/pre&gt;&#xA;      &lt;/layout-box&gt;&#xA;&#xA;      &lt;ui-label&gt;Properties&lt;/ui-label&gt;&#xA;      &lt;layout-cluster style=&#34;--space: var(--space-xs)&#34;&gt;&#xA;        &lt;ui-badge&gt;--tab-bg &lt;span&gt;transparent&lt;/span&gt;&lt;/ui-badge&gt;&#xA;        &lt;ui-badge&gt;--tab-bg-active &lt;span&gt;var(--color-primary)&lt;/span&gt;&lt;/ui-badge&gt;&#xA;        &lt;ui-badge&gt;--tab-color &lt;span&gt;#666&lt;/span&gt;&lt;/ui-badge&gt;&#xA;        &lt;ui-badge&gt;--tab-color-active &lt;span&gt;var(--color-canvas)&lt;/span&gt;&lt;/ui-badge&gt;&#xA;        &lt;ui-badge&gt;--tab-border-color &lt;span&gt;var(--color-border)&lt;/span&gt;&lt;/ui-badge&gt;&#xA;        &lt;ui-badge&gt;--tab-border-width &lt;span&gt;2px&lt;/span&gt;&lt;/ui-badge&gt;&#xA;        &lt;ui-badge&gt;--tab-padding &lt;span&gt;0.75rem 1.5rem&lt;/span&gt;&lt;/ui-badge&gt;&#xA;        &lt;ui-badge&gt;--tab-radius &lt;span&gt;6px 6px 0 0&lt;/span&gt;&lt;/ui-badge&gt;&#xA;      &lt;/layout-cluster&gt;&#xA;&#xA;      &lt;h3&gt;Default Tabs&lt;/h3&gt;&#xA;      &lt;ui-tabs data-variant=&#34;underline&#34;&gt;&#xA;  &lt;input type=&#34;radio&#34; name=&#34;tabs-default-example&#34; id=&#34;tabs-default-preview&#34; checked&gt;&#xA;  &lt;label for=&#34;tabs-default-preview&#34;&gt;Preview&lt;/label&gt;&#xA;  &lt;div data-content&gt;&#xA;    &lt;layout-box style=&#34;--padding: var(--space-m); --border-width: 0;&#34;&gt;&#xA;      &#xA;&lt;ui-tabs&gt;&#xA;  &lt;input type=&#34;radio&#34; name=&#34;demo-default&#34; id=&#34;default-tab1&#34; checked /&gt;&#xA;  &lt;label for=&#34;default-tab1&#34;&gt;Overview&lt;/label&gt;&#xA;  &lt;div data-content&gt;&#xA;    &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;&#xA;      &lt;h4&gt;Overview&lt;/h4&gt;&#xA;      &lt;p&gt;&#xA;        This is the overview panel. Tabs use radio inputs under the hood,&#xA;        so only one can be active at a time.&#xA;      &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Candy</title>
+      <link>https://aadriance.github.io/semantastic/candy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://aadriance.github.io/semantastic/candy/</guid>
+      <description>&lt;layout-center style=&#34;--measure: 72ch; --gutter: var(--space-l)&#34;&gt;&#xA;  &lt;layout-stack&gt;&#xA;&#xA;    &lt;!-- Introduction --&gt;&#xA;    &lt;div&gt;&#xA;      &lt;ui-label data-intent=&#34;secondary&#34;&gt;Optional CSS&lt;/ui-label&gt;&#xA;      &lt;h1&gt;Candy Components&lt;/h1&gt;&#xA;      &lt;p style=&#34;font-size: 1.25rem; color: var(--color-text-muted);&#34;&gt;&#xA;        Production-ready components built on Semantastic design system primitives.&#xA;      &lt;/p&gt;&#xA;      &lt;p&gt;&#xA;        &lt;strong&gt;candy.css&lt;/strong&gt; is an optional, higher-level CSS layer that provides 15&#xA;        components implemented as custom elements — replacing verbose inline styles with&#xA;        clean, semantic markup.&#xA;      &lt;/p&gt;&#xA;      &lt;ui-notice data-intent=&#34;secondary&#34;&gt;&#xA;        &lt;strong&gt;Note:&lt;/strong&gt; This file is &lt;em&gt;completely optional&lt;/em&gt;. The Semantastic system works perfectly without&#xA;        it. Candy.css is the &lt;strong&gt;only&lt;/strong&gt; CSS file in the system that imports dependencies.&#xA;      &lt;/ui-notice&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;    &lt;hr&gt;&#xA;&#xA;    &lt;!-- SECTION 1: CARDS &amp; CONTAINERS --&gt;&#xA;    &lt;section&gt;&#xA;      &lt;layout-stack style=&#34;--space: var(--space-xl)&#34;&gt;&#xA;        &lt;h2&gt;Cards &amp; Containers&lt;/h2&gt;&#xA;&#xA;        &lt;!-- 1. Card --&gt;&#xA;        &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;&#xA;          &lt;h3&gt;Base Card&lt;/h3&gt;&#xA;          &lt;p&gt;Simple card with rounded corners, border, and padding. Implemented as a custom element.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

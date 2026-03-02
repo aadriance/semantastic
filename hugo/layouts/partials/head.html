@@ -3,14 +3,14 @@
 <title>{{ .Title }} - Semantastic CSS</title>
 
 <!-- Core CSS - always included -->
-<link rel="stylesheet" href="/css/tokens.css" />
-<link rel="stylesheet" href="/css/colors.css" />
-<link rel="stylesheet" href="/css/layout.css" />
-<link rel="stylesheet" href="/css/components.css" />
-<link rel="stylesheet" href="/css/candy.css" />
+<link rel="stylesheet" href="{{ "css/tokens.css" | relURL }}" />
+<link rel="stylesheet" href="{{ "css/colors.css" | relURL }}" />
+<link rel="stylesheet" href="{{ "css/layout.css" | relURL }}" />
+<link rel="stylesheet" href="{{ "css/components.css" | relURL }}" />
+<link rel="stylesheet" href="{{ "css/candy.css" | relURL }}" />
 
 <!-- Docs CSS - always included -->
-<link rel="stylesheet" href="/css/docs.css" />
+<link rel="stylesheet" href="{{ "css/docs.css" | relURL }}" />
 
 <!-- Page-specific inline styles -->
 {{ if .Params.inlineStyles }}
