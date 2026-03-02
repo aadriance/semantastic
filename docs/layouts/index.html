@@ -1,211 +1,32 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Layouts - Semantastic CSS</title>
-
-
-<link rel="stylesheet" href="/semantastic/css/tokens.css" />
-<link rel="stylesheet" href="/semantastic/css/colors.css" />
-<link rel="stylesheet" href="/semantastic/css/layout.css" />
-<link rel="stylesheet" href="/semantastic/css/components.css" />
-<link rel="stylesheet" href="/semantastic/css/candy.css" />
-
-
-<link rel="stylesheet" href="/semantastic/css/docs.css" />
-
-
-
-  </head>
-  <body>
-    <nav class="site-nav">
-  <layout-cluster style="--space: var(--space-m); --align: center; --justify: space-between">
-    <a href="/" class="nav-brand" >
-      Semantastic
-    </a>
-
-    
-    <layout-cluster class="nav-desktop" style="--space: var(--space-s)">
-      
-      
-        
-          <a href="/semantastic/tokens/" >
-            Tokens
-          </a>
-        
-      
-        
-          <a href="/semantastic/colors/" >
-            Colors
-          </a>
-        
-      
-        
-          <a href="/semantastic/layouts/" aria-current="page">
-            Layouts
-          </a>
-        
-      
-        
-          <a href="/semantastic/components/" >
-            Components
-          </a>
-        
-      
-        
-          <a href="/semantastic/candy/" >
-            Candy
-          </a>
-        
-      
-    </layout-cluster>
-
-    
-    <button class="nav-toggle" popovertarget="mobile-nav" aria-label="Open navigation menu">
-      ☰
-    </button>
-  </layout-cluster>
-</nav>
-
-
-<ui-flyout
-  id="mobile-nav"
-  popover
-  data-direction="right"
-  style="--flyout-width: 280px; --flyout-bg: var(--color-surface)"
->
-  <layout-stack style="--space: var(--space-m); padding: var(--space-l)">
-    <layout-stack style="--space: var(--space-2xs)">
-      <a href="/" class="mobile-nav-link" >
-        Home
-      </a>
-      
-      
-        
-          <a
-            href="/semantastic/tokens/"
-            class="mobile-nav-link"
-            
-          >
-            Tokens
-          </a>
-        
-      
-        
-          <a
-            href="/semantastic/colors/"
-            class="mobile-nav-link"
-            
-          >
-            Colors
-          </a>
-        
-      
-        
-          <a
-            href="/semantastic/layouts/"
-            class="mobile-nav-link"
-            aria-current="page"
-          >
-            Layouts
-          </a>
-        
-      
-        
-          <a
-            href="/semantastic/components/"
-            class="mobile-nav-link"
-            
-          >
-            Components
-          </a>
-        
-      
-        
-          <a
-            href="/semantastic/candy/"
-            class="mobile-nav-link"
-            
-          >
-            Candy
-          </a>
-        
-      
-    </layout-stack>
-
-    <button class="mobile-nav-close" popovertarget="mobile-nav">
-      Close Menu
-    </button>
-  </layout-stack>
-</ui-flyout>
-
-
-    
-<layout-center style="--measure: 72ch; --gutter: var(--space-l)">
-  <layout-stack style="--space: var(--space-3xl); padding-block: var(--space-3xl)">
-    
-<layout-stack>
-
-  <div>
-    <ui-label data-intent="secondary">Every Thing in The Right Place</ui-label>
-    <h1>Layout Primatives</h1>
-    <p style="font-size: 1.25rem; color: var(--color-text-muted);">
-      Custom tags inspired by <em>Every Layout</em>.
-    </p>
-    <p>
-      A collection of custom tags for layout elements to control the flow of your page. Based on <a
-        href="https://every-layout.dev/">Every Layout</a> the goal is to accept that your website is not a poster and
-      instead build primitives that make sure your sites content flows correctly regardless of device size.
-    </p>
-    <p>
-      Custom tags are used because div soup is bad. HTML allows you to name your own tags, so why not leverage it? often
-      you'll see <code>class="foo"</code> instead. But what if Bar is a class as well? <code>class="foo bar"</code> may
-      indeed be nonsensical. As such enforcing the layouts as distinct elements creates the nicest experience in my
-      opinion.
-    </p>
-
-    <ui-notice data-intent="secondary">
-      <p>
-        I won't reiterate all the content of Every Layout. So go get <a href="https://every-layout.dev/">Every
-          Layout</a> for real. Totally worth it.
-      </p>
-    </ui-notice>
-  </div>
-
-  <section>
-    <h2> Stack </h2>
-    <p>
-      Applies consistent spacing between sibling elements using the owl selector <code>&gt; * + *</code> to make sure
-      there isn't dead spacing at the end.
-    </p>
-    <ui-label>Properties</ui-label>
-    <layout-cluster style="--space: var(--space-xs)">
-      <ui-badge><code class="has-tooltip" data-tooltip="room between stacked items">--space</code></ui-badge>
-    </layout-cluster>
-    <br />
-    <h3>Basic Example</h3>
-    <ui-tabs data-variant="underline">
-  <input type="radio" name="stack-basic-example" id="stack-basic-preview" checked>
-  <label for="stack-basic-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-      <layout-stack style="--space: var(--space-s);">
-        <ui-card>First item — no top margin</ui-card>
-        <ui-card>Second item</ui-card>
-        <ui-card>Third item</ui-card>
-        <ui-card>Fourth item</ui-card>
-      </layout-stack>
-      
-    </layout-box>
-  </div>
-
-  <input type="radio" name="stack-basic-example" id="stack-basic-code">
-  <label for="stack-basic-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Layouts - Semantastic CSS</title><link rel=icon href=/semantastic/favicon.ico><link rel=stylesheet href=/semantastic/css/tokens.css><link rel=stylesheet href=/semantastic/css/colors.css><link rel=stylesheet href=/semantastic/css/layout.css><link rel=stylesheet href=/semantastic/css/components.css><link rel=stylesheet href=/semantastic/css/candy.css><link rel=stylesheet href=/semantastic/css/docs.css></head><body><nav class=site-nav><layout-cluster style="--space: var(--space-m); --align: center; --justify: space-between"><a href=/semantastic/ class=nav-brand>Semantastic
+</a><layout-cluster class=nav-desktop style="--space: var(--space-s)"><a href=/semantastic/tokens/>Tokens
+</a><a href=/semantastic/colors/>Colors
+</a><a href=/semantastic/layouts/ aria-current=page>Layouts
+</a><a href=/semantastic/components/>Components
+</a><a href=/semantastic/candy/>Candy
+</a></layout-cluster><button class=nav-toggle popovertarget=mobile-nav aria-label="Open navigation menu">
+☰</button></layout-cluster></nav><ui-flyout id=mobile-nav popover data-direction=right style="--flyout-width: 280px; --flyout-bg: var(--color-surface)"><layout-stack style="--space: var(--space-m); padding: var(--space-l)"><layout-stack style="--space: var(--space-2xs)"><a href=/semantastic/ class=mobile-nav-link>Home
+</a><a href=/semantastic/tokens/ class=mobile-nav-link>Tokens
+</a><a href=/semantastic/colors/ class=mobile-nav-link>Colors
+</a><a href=/semantastic/layouts/ class=mobile-nav-link aria-current=page>Layouts
+</a><a href=/semantastic/components/ class=mobile-nav-link>Components
+</a><a href=/semantastic/candy/ class=mobile-nav-link>Candy
+</a></layout-stack><button class=mobile-nav-close popovertarget=mobile-nav>
+Close Menu
+</button>
+</layout-stack></ui-flyout><layout-center style="--measure: 72ch; --gutter: var(--space-l)"><layout-stack style="--space: var(--space-3xl); padding-block: var(--space-3xl)"><layout-stack><div><ui-label data-intent=secondary>Every Thing in The Right Place</ui-label><h1>Layout Primatives</h1><p style=font-size:1.25rem;color:var(--color-text-muted)>Custom tags inspired by <em>Every Layout</em>.</p><p>A collection of custom tags for layout elements to control the flow of your page. Based on <a href=https://every-layout.dev/>Every Layout</a> the goal is to accept that your website is not a poster and
+instead build primitives that make sure your sites content flows correctly regardless of device size.</p><p>Custom tags are used because div soup is bad. HTML allows you to name your own tags, so why not leverage it? often
+you'll see <code>class="foo"</code> instead. But what if Bar is a class as well? <code>class="foo bar"</code> may
+indeed be nonsensical. As such enforcing the layouts as distinct elements creates the nicest experience in my
+opinion.</p><ui-notice data-intent=secondary><p>I won't reiterate all the content of Every Layout. So go get <a href=https://every-layout.dev/>Every
+Layout</a> for real. Totally worth it.</p></ui-notice></div><section><h2>Stack</h2><p>Applies consistent spacing between sibling elements using the owl selector <code>> * + *</code> to make sure
+there isn't dead spacing at the end.</p><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge><code class=has-tooltip data-tooltip="room between stacked items">--space</code></ui-badge></layout-cluster><br><h3>Basic Example</h3><ui-tabs data-variant=underline><input type=radio name=stack-basic-example id=stack-basic-preview checked>
+<label for=stack-basic-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-stack style="--space: var(--space-s);"><ui-card>First item — no top margin</ui-card>
+<ui-card>Second item</ui-card>
+<ui-card>Third item</ui-card>
+<ui-card>Fourth item</ui-card></layout-stack></layout-box></div><input type=radio name=stack-basic-example id=stack-basic-code>
+<label for=stack-basic-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
       &lt;layout-stack style=&#34;--space: var(--space-s);&#34;&gt;
         &lt;ui-card&gt;First item — no top margin&lt;/ui-card&gt;
         &lt;ui-card&gt;Second item&lt;/ui-card&gt;
@@ -213,39 +34,12 @@
         &lt;ui-card&gt;Fourth item&lt;/ui-card&gt;
       &lt;/layout-stack&gt;
       </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-
-        <h3>Nested stacks with different spacing</h3>
-        <ui-tabs data-variant="underline">
-  <input type="radio" name="stack-nested-example" id="stack-nested-preview" checked>
-  <label for="stack-nested-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-          <layout-stack style="--space: var(--space-xl);">
-            <layout-stack
-              style="--space: var(--space-2xs); background: var(--color-surface-hover); padding: var(--space-s); border-radius: 6px;">
-              <ui-card>Tight group A.1</ui-card>
-              <ui-card>Tight group A.2</ui-card>
-            </layout-stack>
-            <layout-stack
-              style="--space: var(--space-2xs); background: var(--color-surface-hover); padding: var(--space-s); border-radius: 6px;">
-              <ui-card>Tight group B.1</ui-card>
-              <ui-card>Tight group B.2</ui-card>
-            </layout-stack>
-          </layout-stack>
-          
-    </layout-box>
-  </div>
-
-  <input type="radio" name="stack-nested-example" id="stack-nested-code">
-  <label for="stack-nested-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+      </pre></layout-box></div></ui-tabs><h3>Nested stacks with different spacing</h3><ui-tabs data-variant=underline><input type=radio name=stack-nested-example id=stack-nested-preview checked>
+<label for=stack-nested-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-stack style="--space: var(--space-xl);"><layout-stack style="--space: var(--space-2xs); background: var(--color-surface-hover); padding: var(--space-s); border-radius: 6px;"><ui-card>Tight group A.1</ui-card>
+<ui-card>Tight group A.2</ui-card>
+</layout-stack><layout-stack style="--space: var(--space-2xs); background: var(--color-surface-hover); padding: var(--space-s); border-radius: 6px;"><ui-card>Tight group B.1</ui-card>
+<ui-card>Tight group B.2</ui-card></layout-stack></layout-stack></layout-box></div><input type=radio name=stack-nested-example id=stack-nested-code>
+<label for=stack-nested-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
           &lt;layout-stack style=&#34;--space: var(--space-xl);&#34;&gt;
             &lt;layout-stack
               style=&#34;--space: var(--space-2xs); background: var(--color-surface-hover); padding: var(--space-s); border-radius: 6px;&#34;&gt;
@@ -259,51 +53,14 @@
             &lt;/layout-stack&gt;
           &lt;/layout-stack&gt;
           </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-  </section>
-
-  <layout-stack style="--space: var(--space-m);">
-    <h2>Box</h2>
-    <p>Adds padding and an optional border. All children inherit color.</p>
-    <ui-label>Properties</ui-label>
-    <layout-cluster style="--space: var(--space-xs)">
-      <ui-badge class="has-tooltip" data-tooltip="Space between content and border">--padding</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Thickness of the border">--border-width</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Color of the border">--border-color</ui-badge>
-    </layout-cluster>
-
-    <ui-tabs data-variant="underline">
-  <input type="radio" name="box-example" id="box-preview" checked>
-  <label for="box-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-      <layout-stack style="--space: var(--space-s)">
-        <layout-box style="--padding: var(--space-l); --border-color: var(--color-primary); --border-width: 2px;">
-          <layout-stack style="--space: var(--space-s);">
-            <h3>A boxed section</h3>
-            <p>The box provides consistent internal spacing and a visible boundary. Useful for cards, callouts, and
-              panels.</p>
-          </layout-stack>
-        </layout-box>
-
-        <layout-box
-          style="--padding: var(--space-m); --border-width: 5px; --border-color: var(--color-warning); background: var(--color-warning-subtle);">
-          <p>A warning box with thick border and custom background.</p>
-        </layout-box>
-      </layout-stack>
-      
-    </layout-box>
-  </div>
-
-  <input type="radio" name="box-example" id="box-code">
-  <label for="box-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+      </pre></layout-box></div></ui-tabs></section><layout-stack style="--space: var(--space-m);"><h2>Box</h2><p>Adds padding and an optional border. All children inherit color.</p><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge class=has-tooltip data-tooltip="Space between content and border">--padding</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Thickness of the border">--border-width</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Color of the border">--border-color</ui-badge>
+</layout-cluster><ui-tabs data-variant=underline><input type=radio name=box-example id=box-preview checked>
+<label for=box-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-stack style="--space: var(--space-s)"><layout-box style="--padding: var(--space-l); --border-color: var(--color-primary); --border-width: 2px;"><layout-stack style="--space: var(--space-s);"><h3>A boxed section</h3><p>The box provides consistent internal spacing and a visible boundary. Useful for cards, callouts, and
+panels.</p></layout-stack></layout-box><layout-box style="--padding: var(--space-m); --border-width: 5px; --border-color: var(--color-warning); background: var(--color-warning-subtle);"><p>A warning box with thick border and custom background.</p></layout-box></layout-stack></layout-box></div><input type=radio name=box-example id=box-code>
+<label for=box-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
       &lt;layout-stack style=&#34;--space: var(--space-s)&#34;&gt;
         &lt;layout-box style=&#34;--padding: var(--space-l); --border-color: var(--color-primary); --border-width: 2px;&#34;&gt;
           &lt;layout-stack style=&#34;--space: var(--space-s);&#34;&gt;
@@ -319,45 +76,12 @@
         &lt;/layout-box&gt;
       &lt;/layout-stack&gt;
       </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-  </layout-stack>
-
-  <hr>
-
-  <!-- CENTER -->
-  <layout-stack style="--space: var(--space-m);">
-    <h2>Center</h2>
-    <p>Centers content with a max inline-size and gutter padding on small screens.</p>
-    <ui-label>Properties</ui-label>
-    <layout-cluster style="--space: var(--space-xs)">
-      <ui-badge class="has-tooltip" data-tooltip="Maximum width of centered content">--measure</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Minimum padding on small screens">--gutter</ui-badge>
-    </layout-cluster>
-
-    <ui-tabs data-variant="underline">
-  <input type="radio" name="center-example" id="center-preview" checked>
-  <label for="center-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-      <div style="background: var(--color-surface); padding: var(--space-m); border-radius: 6px;">
-        <layout-center
-          style="--measure: 35ch; background: var(--color-canvas); padding-block: var(--space-s); border-radius: 4px;">
-          <p style="text-align: center;">Narrow centered block (35ch measure)</p>
-        </layout-center>
-      </div>
-      
-    </layout-box>
-  </div>
-
-  <input type="radio" name="center-example" id="center-code">
-  <label for="center-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+      </pre></layout-box></div></ui-tabs></layout-stack><hr><layout-stack style="--space: var(--space-m);"><h2>Center</h2><p>Centers content with a max inline-size and gutter padding on small screens.</p><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge class=has-tooltip data-tooltip="Maximum width of centered content">--measure</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Minimum padding on small screens">--gutter</ui-badge>
+</layout-cluster><ui-tabs data-variant=underline><input type=radio name=center-example id=center-preview checked>
+<label for=center-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><div style=background:var(--color-surface);padding:var(--space-m);border-radius:6px><layout-center style="--measure: 35ch; background: var(--color-canvas); padding-block: var(--space-s); border-radius: 4px;"><p style=text-align:center>Narrow centered block (35ch measure)</p></layout-center></div></layout-box></div><input type=radio name=center-example id=center-code>
+<label for=center-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
       &lt;div style=&#34;background: var(--color-surface); padding: var(--space-m); border-radius: 6px;&#34;&gt;
         &lt;layout-center
           style=&#34;--measure: 35ch; background: var(--color-canvas); padding-block: var(--space-s); border-radius: 4px;&#34;&gt;
@@ -365,50 +89,18 @@
         &lt;/layout-center&gt;
       &lt;/div&gt;
       </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-  </layout-stack>
-
-  <hr>
-
-  <!-- CLUSTER -->
-  <layout-stack style="--space: var(--space-m);">
-    <h2>Cluster</h2>
-    <p>Wrapping horizontal group with configurable gap and alignment.</p>
-    <ui-label>Properties</ui-label>
-    <layout-cluster style="--space: var(--space-xs)">
-      <ui-badge class="has-tooltip" data-tooltip="Gap between items">--space</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Horizontal alignment of items">--justify</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Vertical alignment of items">--align</ui-badge>
-    </layout-cluster>
-
-    <h3>Tags</h3>
-    <ui-tabs data-variant="underline">
-  <input type="radio" name="cluster-tags-example" id="cluster-tags-preview" checked>
-  <label for="cluster-tags-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-      <layout-cluster style="--space: var(--space-xs);">
-        <span class="swatch">CSS</span>
-        <span class="swatch">Layout</span>
-        <span class="swatch">Custom Elements</span>
-        <span class="swatch">Flexbox</span>
-        <span class="swatch">Grid</span>
-        <span class="swatch">Responsive</span>
-        <span class="swatch">No JS</span>
-      </layout-cluster>
-      
-    </layout-box>
-  </div>
-
-  <input type="radio" name="cluster-tags-example" id="cluster-tags-code">
-  <label for="cluster-tags-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+      </pre></layout-box></div></ui-tabs></layout-stack><hr><layout-stack style="--space: var(--space-m);"><h2>Cluster</h2><p>Wrapping horizontal group with configurable gap and alignment.</p><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge class=has-tooltip data-tooltip="Gap between items">--space</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Horizontal alignment of items">--justify</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Vertical alignment of items">--align</ui-badge></layout-cluster><h3>Tags</h3><ui-tabs data-variant=underline><input type=radio name=cluster-tags-example id=cluster-tags-preview checked>
+<label for=cluster-tags-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-cluster style="--space: var(--space-xs);"><span class=swatch>CSS</span>
+<span class=swatch>Layout</span>
+<span class=swatch>Custom Elements</span>
+<span class=swatch>Flexbox</span>
+<span class=swatch>Grid</span>
+<span class=swatch>Responsive</span>
+<span class=swatch>No JS</span></layout-cluster></layout-box></div><input type=radio name=cluster-tags-example id=cluster-tags-code>
+<label for=cluster-tags-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
       &lt;layout-cluster style=&#34;--space: var(--space-xs);&#34;&gt;
         &lt;span class=&#34;swatch&#34;&gt;CSS&lt;/span&gt;
         &lt;span class=&#34;swatch&#34;&gt;Layout&lt;/span&gt;
@@ -419,86 +111,22 @@
         &lt;span class=&#34;swatch&#34;&gt;No JS&lt;/span&gt;
       &lt;/layout-cluster&gt;
       </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-
-        <h3>Right-aligned actions</h3>
-        <ui-tabs data-variant="underline">
-  <input type="radio" name="cluster-actions-example" id="cluster-actions-preview" checked>
-  <label for="cluster-actions-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-          <layout-cluster style="--space: var(--space-s); --justify: flex-end;">
-            <span class="swatch--dark swatch">Cancel</span>
-            <span class="swatch--warm swatch">Save</span>
-          </layout-cluster>
-          
-    </layout-box>
-  </div>
-
-  <input type="radio" name="cluster-actions-example" id="cluster-actions-code">
-  <label for="cluster-actions-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+      </pre></layout-box></div></ui-tabs><h3>Right-aligned actions</h3><ui-tabs data-variant=underline><input type=radio name=cluster-actions-example id=cluster-actions-preview checked>
+<label for=cluster-actions-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-cluster style="--space: var(--space-s); --justify: flex-end;"><span class="swatch--dark swatch">Cancel</span>
+<span class="swatch--warm swatch">Save</span></layout-cluster></layout-box></div><input type=radio name=cluster-actions-example id=cluster-actions-code>
+<label for=cluster-actions-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
           &lt;layout-cluster style=&#34;--space: var(--space-s); --justify: flex-end;&#34;&gt;
             &lt;span class=&#34;swatch--dark swatch&#34;&gt;Cancel&lt;/span&gt;
             &lt;span class=&#34;swatch--warm swatch&#34;&gt;Save&lt;/span&gt;
           &lt;/layout-cluster&gt;
           </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-  </layout-stack>
-
-  <hr>
-
-  <!-- SIDEBAR -->
-  <layout-stack style="--space: var(--space-m);">
-    <h2>Sidebar</h2>
-    <p>Two-column layout that stacks on narrow containers. The first child is the sidebar, the second grows to fill.</p>
-    <ui-label>Properties</ui-label>
-    <layout-cluster style="--space: var(--space-xs)">
-      <ui-badge class="has-tooltip" data-tooltip="Preferred width of the sidebar">--sidebar-width</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Minimum main content width before stacking">--min-width</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Gap between sidebar and main content">--gutter</ui-badge>
-    </layout-cluster>
-
-    <ui-tabs data-variant="underline">
-  <input type="radio" name="sidebar-example" id="sidebar-preview" checked>
-  <label for="sidebar-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-      <layout-sidebar style="--sidebar-width: 14rem; --gutter: var(--space-m);">
-        <layout-box style="--border-color: var(--color-primary);">
-          <layout-stack style="--space: var(--space-xs);">
-            <h3>Sidebar</h3>
-            <p>Navigation, filters, or supplementary content.</p>
-          </layout-stack>
-        </layout-box>
-        <layout-box style="--border-color: var(--color-secondary);">
-          <layout-stack style="--space: var(--space-xs);">
-            <h3>Main Content</h3>
-            <p>This area grows to fill available space. When the container becomes too narrow, the sidebar stacks above.
-            </p>
-            <p>Resize the browser window to see the intrinsic switching behavior — no media queries involved.</p>
-          </layout-stack>
-        </layout-box>
-      </layout-sidebar>
-      
-    </layout-box>
-  </div>
-
-  <input type="radio" name="sidebar-example" id="sidebar-code">
-  <label for="sidebar-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+      </pre></layout-box></div></ui-tabs></layout-stack><hr><layout-stack style="--space: var(--space-m);"><h2>Sidebar</h2><p>Two-column layout that stacks on narrow containers. The first child is the sidebar, the second grows to fill.</p><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge class=has-tooltip data-tooltip="Preferred width of the sidebar">--sidebar-width</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Minimum main content width before stacking">--min-width</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Gap between sidebar and main content">--gutter</ui-badge>
+</layout-cluster><ui-tabs data-variant=underline><input type=radio name=sidebar-example id=sidebar-preview checked>
+<label for=sidebar-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-sidebar style="--sidebar-width: 14rem; --gutter: var(--space-m);"><layout-box style="--border-color: var(--color-primary);"><layout-stack style="--space: var(--space-xs);"><h3>Sidebar</h3><p>Navigation, filters, or supplementary content.</p></layout-stack></layout-box><layout-box style="--border-color: var(--color-secondary);"><layout-stack style="--space: var(--space-xs);"><h3>Main Content</h3><p>This area grows to fill available space. When the container becomes too narrow, the sidebar stacks above.</p><p>Resize the browser window to see the intrinsic switching behavior — no media queries involved.</p></layout-stack></layout-box></layout-sidebar></layout-box></div><input type=radio name=sidebar-example id=sidebar-code>
+<label for=sidebar-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
       &lt;layout-sidebar style=&#34;--sidebar-width: 14rem; --gutter: var(--space-m);&#34;&gt;
         &lt;layout-box style=&#34;--border-color: var(--color-primary);&#34;&gt;
           &lt;layout-stack style=&#34;--space: var(--space-xs);&#34;&gt;
@@ -516,97 +144,27 @@
         &lt;/layout-box&gt;
       &lt;/layout-sidebar&gt;
       </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-  </layout-stack>
-
-  <hr>
-
-  <!-- SWITCHER -->
-  <layout-stack style="--space: var(--space-m);">
-    <h2>Switcher</h2>
-    <p>Equal-width columns that switch to a vertical stack when the container is narrower than <code>--threshold</code>.
-    </p>
-    <ui-label>Properties</ui-label>
-    <layout-cluster style="--space: var(--space-xs)">
-      <ui-badge class="has-tooltip" data-tooltip="Container width to switch from row to column">--threshold</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Gap between items">--gutter</ui-badge>
-    </layout-cluster>
-
-    <ui-tabs data-variant="underline">
-  <input type="radio" name="switcher-example" id="switcher-preview" checked>
-  <label for="switcher-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-      <layout-switcher style="--threshold: 30rem; --gutter: var(--space-s);">
-        <div class="swatch--dark swatch">Plan A</div>
-        <div class="swatch--mid swatch">Plan B</div>
-        <div class="swatch--warm swatch">Plan C</div>
-      </layout-switcher>
-      
-    </layout-box>
-  </div>
-
-  <input type="radio" name="switcher-example" id="switcher-code">
-  <label for="switcher-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+      </pre></layout-box></div></ui-tabs></layout-stack><hr><layout-stack style="--space: var(--space-m);"><h2>Switcher</h2><p>Equal-width columns that switch to a vertical stack when the container is narrower than <code>--threshold</code>.</p><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge class=has-tooltip data-tooltip="Container width to switch from row to column">--threshold</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Gap between items">--gutter</ui-badge>
+</layout-cluster><ui-tabs data-variant=underline><input type=radio name=switcher-example id=switcher-preview checked>
+<label for=switcher-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-switcher style="--threshold: 30rem; --gutter: var(--space-s);"><div class="swatch--dark swatch">Plan A</div><div class="swatch--mid swatch">Plan B</div><div class="swatch--warm swatch">Plan C</div></layout-switcher></layout-box></div><input type=radio name=switcher-example id=switcher-code>
+<label for=switcher-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
       &lt;layout-switcher style=&#34;--threshold: 30rem; --gutter: var(--space-s);&#34;&gt;
         &lt;div class=&#34;swatch--dark swatch&#34;&gt;Plan A&lt;/div&gt;
         &lt;div class=&#34;swatch--mid swatch&#34;&gt;Plan B&lt;/div&gt;
         &lt;div class=&#34;swatch--warm swatch&#34;&gt;Plan C&lt;/div&gt;
       &lt;/layout-switcher&gt;
       </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-  </layout-stack>
-
-  <hr>
-
-  <!-- COVER -->
-  <layout-stack style="--space: var(--space-m);">
-    <h2>Cover</h2>
-    <p>A flexbox column that vertically centers the <code>[data-centered]</code> child between optional header and
-      footer.</p>
-    <ui-label>Properties</ui-label>
-    <layout-cluster style="--space: var(--space-xs)">
-      <ui-badge class="has-tooltip" data-tooltip="Minimum height of the cover">--min-height</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Internal padding">--padding</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Gap between children">--space</ui-badge>
-    </layout-cluster>
-
-    <ui-tabs data-variant="underline">
-  <input type="radio" name="cover-example" id="cover-preview" checked>
-  <label for="cover-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-      <layout-cover style="--min-height: 40vh; --padding: var(--space-l); background: #1a1a2e; border-radius: 8px;">
-        <header style="color: #98c1d9;">Header</header>
-        <div data-centered>
-          <layout-stack style="--space: var(--space-xs);">
-            <h3 style="color: #fff; text-align: center; font-size: 1.5rem;">Hero Section</h3>
-            <p style="color: #98c1d9; text-align: center;">This content is vertically centered between header and
-              footer.</p>
-          </layout-stack>
-        </div>
-        <footer style="color: #98c1d9; text-align: end;">Footer</footer>
-      </layout-cover>
-      
-    </layout-box>
-  </div>
-
-  <input type="radio" name="cover-example" id="cover-code">
-  <label for="cover-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+      </pre></layout-box></div></ui-tabs></layout-stack><hr><layout-stack style="--space: var(--space-m);"><h2>Cover</h2><p>A flexbox column that vertically centers the <code>[data-centered]</code> child between optional header and
+footer.</p><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge class=has-tooltip data-tooltip="Minimum height of the cover">--min-height</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Internal padding">--padding</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Gap between children">--space</ui-badge>
+</layout-cluster><ui-tabs data-variant=underline><input type=radio name=cover-example id=cover-preview checked>
+<label for=cover-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-cover style="--min-height: 40vh; --padding: var(--space-l); background: #1a1a2e; border-radius: 8px;"><header style=color:#98c1d9>Header</header><div data-centered><layout-stack style="--space: var(--space-xs);"><h3 style=color:#fff;text-align:center;font-size:1.5rem>Hero Section</h3><p style=color:#98c1d9;text-align:center>This content is vertically centered between header and
+footer.</p></layout-stack></div><footer style=color:#98c1d9;text-align:end>Footer</footer></layout-cover></layout-box></div><input type=radio name=cover-example id=cover-code>
+<label for=cover-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
       &lt;layout-cover style=&#34;--min-height: 40vh; --padding: var(--space-l); background: #1a1a2e; border-radius: 8px;&#34;&gt;
         &lt;header style=&#34;color: #98c1d9;&#34;&gt;Header&lt;/header&gt;
         &lt;div data-centered&gt;
@@ -619,78 +177,12 @@
         &lt;footer style=&#34;color: #98c1d9; text-align: end;&#34;&gt;Footer&lt;/footer&gt;
       &lt;/layout-cover&gt;
       </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-  </layout-stack>
-
-  <hr>
-
-  <!-- GRID -->
-  <layout-stack style="--space: var(--space-m);">
-    <h2>Grid</h2>
-    <p>CSS Grid with <code>auto-fit</code> and <code>minmax</code>. Columns wrap automatically — no breakpoints needed.
-    </p>
-    <ui-label>Properties</ui-label>
-    <layout-cluster style="--space: var(--space-xs)">
-      <ui-badge class="has-tooltip" data-tooltip="Minimum column width before wrapping">--min-width</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Gap between grid items">--gutter</ui-badge>
-    </layout-cluster>
-
-    <ui-tabs data-variant="underline">
-  <input type="radio" name="grid-example" id="grid-preview" checked>
-  <label for="grid-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-      <layout-grid style="--min-width: 12rem; --gutter: var(--space-s);">
-        <layout-box style="--border-color: var(--color-primary);">
-          <layout-stack style="--space: var(--space-2xs);">
-            <h3>Card 1</h3>
-            <p>Grid items size themselves.</p>
-          </layout-stack>
-        </layout-box>
-        <layout-box style="--border-color: var(--color-primary);">
-          <layout-stack style="--space: var(--space-2xs);">
-            <h3>Card 2</h3>
-            <p>Equal column widths.</p>
-          </layout-stack>
-        </layout-box>
-        <layout-box style="--border-color: var(--color-primary);">
-          <layout-stack style="--space: var(--space-2xs);">
-            <h3>Card 3</h3>
-            <p>Wraps when needed.</p>
-          </layout-stack>
-        </layout-box>
-        <layout-box style="--border-color: var(--color-primary);">
-          <layout-stack style="--space: var(--space-2xs);">
-            <h3>Card 4</h3>
-            <p>No media queries.</p>
-          </layout-stack>
-        </layout-box>
-        <layout-box style="--border-color: var(--color-primary);">
-          <layout-stack style="--space: var(--space-2xs);">
-            <h3>Card 5</h3>
-            <p>Intrinsically responsive.</p>
-          </layout-stack>
-        </layout-box>
-        <layout-box style="--border-color: var(--color-primary);">
-          <layout-stack style="--space: var(--space-2xs);">
-            <h3>Card 6</h3>
-            <p>Just works.</p>
-          </layout-stack>
-        </layout-box>
-      </layout-grid>
-      
-    </layout-box>
-  </div>
-
-  <input type="radio" name="grid-example" id="grid-code">
-  <label for="grid-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+      </pre></layout-box></div></ui-tabs></layout-stack><hr><layout-stack style="--space: var(--space-m);"><h2>Grid</h2><p>CSS Grid with <code>auto-fit</code> and <code>minmax</code>. Columns wrap automatically — no breakpoints needed.</p><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge class=has-tooltip data-tooltip="Minimum column width before wrapping">--min-width</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Gap between grid items">--gutter</ui-badge>
+</layout-cluster><ui-tabs data-variant=underline><input type=radio name=grid-example id=grid-preview checked>
+<label for=grid-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-grid style="--min-width: 12rem; --gutter: var(--space-s);"><layout-box style="--border-color: var(--color-primary);"><layout-stack style="--space: var(--space-2xs);"><h3>Card 1</h3><p>Grid items size themselves.</p></layout-stack></layout-box><layout-box style="--border-color: var(--color-primary);"><layout-stack style="--space: var(--space-2xs);"><h3>Card 2</h3><p>Equal column widths.</p></layout-stack></layout-box><layout-box style="--border-color: var(--color-primary);"><layout-stack style="--space: var(--space-2xs);"><h3>Card 3</h3><p>Wraps when needed.</p></layout-stack></layout-box><layout-box style="--border-color: var(--color-primary);"><layout-stack style="--space: var(--space-2xs);"><h3>Card 4</h3><p>No media queries.</p></layout-stack></layout-box><layout-box style="--border-color: var(--color-primary);"><layout-stack style="--space: var(--space-2xs);"><h3>Card 5</h3><p>Intrinsically responsive.</p></layout-stack></layout-box><layout-box style="--border-color: var(--color-primary);"><layout-stack style="--space: var(--space-2xs);"><h3>Card 6</h3><p>Just works.</p></layout-stack></layout-box></layout-grid></layout-box></div><input type=radio name=grid-example id=grid-code>
+<label for=grid-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
       &lt;layout-grid style=&#34;--min-width: 12rem; --gutter: var(--space-s);&#34;&gt;
         &lt;layout-box style=&#34;--border-color: var(--color-primary);&#34;&gt;
           &lt;layout-stack style=&#34;--space: var(--space-2xs);&#34;&gt;
@@ -730,62 +222,11 @@
         &lt;/layout-box&gt;
       &lt;/layout-grid&gt;
       </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-  </layout-stack>
-
-  <hr>
-
-  <!-- FRAME -->
-  <layout-stack style="--space: var(--space-m);">
-    <h2>Frame</h2>
-    <p>Maintains a fixed aspect ratio and crops overflow content with <code>object-fit: cover</code>.</p>
-    <ui-label>Properties</ui-label>
-    <layout-cluster style="--space: var(--space-xs)">
-      <ui-badge class="has-tooltip" data-tooltip="Aspect ratio of the frame">--ratio</ui-badge>
-    </layout-cluster>
-
-    <ui-tabs data-variant="underline">
-  <input type="radio" name="frame-example" id="frame-preview" checked>
-  <label for="frame-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-      <layout-grid style="--min-width: 14rem; --gutter: var(--space-s);">
-        <layout-stack style="--space: var(--space-2xs);">
-          <layout-frame style="--ratio: 16/9; border-radius: 6px;">
-            <div class="pattern-tile" data-pattern-type="dots"
-              style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-primary);">
-            </div>
-          </layout-frame>
-          <p style="text-align: center; font-size: 0.85rem; color: #666;">16 : 9</p>
-        </layout-stack>
-        <layout-stack style="--space: var(--space-2xs);">
-          <layout-frame style="--ratio: 1/1; border-radius: 6px;">
-            <div class="pattern-tile" data-pattern-type="checkerboard"
-              style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-success);"></div>
-          </layout-frame>
-          <p style="text-align: center; font-size: 0.85rem; color: #666;">1 : 1</p>
-        </layout-stack>
-        <layout-stack style="--space: var(--space-2xs);">
-          <layout-frame style="--ratio: 4/3; border-radius: 6px;">
-            <div class="pattern-tile" data-pattern-type="diagonal-lines"
-              style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-secondary);"></div>
-          </layout-frame>
-          <p style="text-align: center; font-size: 0.85rem; color: #666;">4 : 3</p>
-        </layout-stack>
-      </layout-grid>
-      
-    </layout-box>
-  </div>
-
-  <input type="radio" name="frame-example" id="frame-code">
-  <label for="frame-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+      </pre></layout-box></div></ui-tabs></layout-stack><hr><layout-stack style="--space: var(--space-m);"><h2>Frame</h2><p>Maintains a fixed aspect ratio and crops overflow content with <code>object-fit: cover</code>.</p><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge class=has-tooltip data-tooltip="Aspect ratio of the frame">--ratio</ui-badge>
+</layout-cluster><ui-tabs data-variant=underline><input type=radio name=frame-example id=frame-preview checked>
+<label for=frame-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-grid style="--min-width: 14rem; --gutter: var(--space-s);"><layout-stack style="--space: var(--space-2xs);"><layout-frame style="--ratio: 16/9; border-radius: 6px;"><div class=pattern-tile data-pattern-type=dots style=inline-size:100%;block-size:100%;--pattern-fill:var(--color-primary)></div></layout-frame><p style=text-align:center;font-size:.85rem;color:#666>16 : 9</p></layout-stack><layout-stack style="--space: var(--space-2xs);"><layout-frame style="--ratio: 1/1; border-radius: 6px;"><div class=pattern-tile data-pattern-type=checkerboard style=inline-size:100%;block-size:100%;--pattern-fill:var(--color-success)></div></layout-frame><p style=text-align:center;font-size:.85rem;color:#666>1 : 1</p></layout-stack><layout-stack style="--space: var(--space-2xs);"><layout-frame style="--ratio: 4/3; border-radius: 6px;"><div class=pattern-tile data-pattern-type=diagonal-lines style=inline-size:100%;block-size:100%;--pattern-fill:var(--color-secondary)></div></layout-frame><p style=text-align:center;font-size:.85rem;color:#666>4 : 3</p></layout-stack></layout-grid></layout-box></div><input type=radio name=frame-example id=frame-code>
+<label for=frame-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
       &lt;layout-grid style=&#34;--min-width: 14rem; --gutter: var(--space-s);&#34;&gt;
         &lt;layout-stack style=&#34;--space: var(--space-2xs);&#34;&gt;
           &lt;layout-frame style=&#34;--ratio: 16/9; border-radius: 6px;&#34;&gt;
@@ -811,69 +252,14 @@
         &lt;/layout-stack&gt;
       &lt;/layout-grid&gt;
       </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-  </layout-stack>
-
-  <hr>
-
-  <!-- REEL -->
-  <layout-stack style="--space: var(--space-m);">
-    <h2>Reel</h2>
-    <p>A horizontal scrolling track with optional scroll-snap via <code>data-snap</code>.</p>
-    <ui-label>Properties</ui-label>
-    <layout-cluster style="--space: var(--space-xs)">
-      <ui-badge class="has-tooltip" data-tooltip="Width of each item">--item-width</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Gap between items">--space</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Height of the reel">--height</ui-badge>
-      <ui-badge class="has-tooltip" data-tooltip="Padding at the edges">--gutter</ui-badge>
-    </layout-cluster>
-
-    <ui-tabs data-variant="underline">
-  <input type="radio" name="reel-example" id="reel-preview" checked>
-  <label for="reel-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-      <layout-reel style="--item-width: 16rem; --space: var(--space-s);" data-snap>
-        <layout-frame style="--ratio: 3/2; border-radius: 6px;">
-          <div class="pattern-tile" data-pattern-type="checkerboard"
-            style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-primary);">
-          </div>
-        </layout-frame>
-        <layout-frame style="--ratio: 3/2; border-radius: 6px;">
-          <div class="pattern-tile" data-pattern-type="dots"
-            style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-warning);"></div>
-        </layout-frame>
-        <layout-frame style="--ratio: 3/2; border-radius: 6px;">
-          <div class="pattern-tile" data-pattern-type="grid"
-            style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-success);">
-          </div>
-        </layout-frame>
-        <layout-frame style="--ratio: 3/2; border-radius: 6px;">
-          <div class="pattern-tile" data-pattern-type="cross-hatch"
-            style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-secondary);"></div>
-        </layout-frame>
-        <layout-frame style="--ratio: 3/2; border-radius: 6px;">
-          <div class="pattern-tile" data-pattern-type="vertical-lines"
-            style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-error);"></div>
-        </layout-frame>
-        <layout-frame style="--ratio: 3/2; border-radius: 6px;">
-          <div class="pattern-tile" data-pattern-type="horizontal-lines"
-            style="inline-size: 100%; block-size: 100%; --pattern-fill: #98c1d9;"></div>
-        </layout-frame>
-      </layout-reel>
-      
-    </layout-box>
-  </div>
-
-  <input type="radio" name="reel-example" id="reel-code">
-  <label for="reel-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+      </pre></layout-box></div></ui-tabs></layout-stack><hr><layout-stack style="--space: var(--space-m);"><h2>Reel</h2><p>A horizontal scrolling track with optional scroll-snap via <code>data-snap</code>.</p><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge class=has-tooltip data-tooltip="Width of each item">--item-width</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Gap between items">--space</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Height of the reel">--height</ui-badge>
+<ui-badge class=has-tooltip data-tooltip="Padding at the edges">--gutter</ui-badge>
+</layout-cluster><ui-tabs data-variant=underline><input type=radio name=reel-example id=reel-preview checked>
+<label for=reel-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-reel style="--item-width: 16rem; --space: var(--space-s);" data-snap><layout-frame style="--ratio: 3/2; border-radius: 6px;"><div class=pattern-tile data-pattern-type=checkerboard style=inline-size:100%;block-size:100%;--pattern-fill:var(--color-primary)></div></layout-frame><layout-frame style="--ratio: 3/2; border-radius: 6px;"><div class=pattern-tile data-pattern-type=dots style=inline-size:100%;block-size:100%;--pattern-fill:var(--color-warning)></div></layout-frame><layout-frame style="--ratio: 3/2; border-radius: 6px;"><div class=pattern-tile data-pattern-type=grid style=inline-size:100%;block-size:100%;--pattern-fill:var(--color-success)></div></layout-frame><layout-frame style="--ratio: 3/2; border-radius: 6px;"><div class=pattern-tile data-pattern-type=cross-hatch style=inline-size:100%;block-size:100%;--pattern-fill:var(--color-secondary)></div></layout-frame><layout-frame style="--ratio: 3/2; border-radius: 6px;"><div class=pattern-tile data-pattern-type=vertical-lines style=inline-size:100%;block-size:100%;--pattern-fill:var(--color-error)></div></layout-frame><layout-frame style="--ratio: 3/2; border-radius: 6px;"><div class=pattern-tile data-pattern-type=horizontal-lines style=inline-size:100%;block-size:100%;--pattern-fill:#98c1d9></div></layout-frame></layout-reel></layout-box></div><input type=radio name=reel-example id=reel-code>
+<label for=reel-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
       &lt;layout-reel style=&#34;--item-width: 16rem; --space: var(--space-s);&#34; data-snap&gt;
         &lt;layout-frame style=&#34;--ratio: 3/2; border-radius: 6px;&#34;&gt;
           &lt;div class=&#34;pattern-tile&#34; data-pattern-type=&#34;checkerboard&#34;
@@ -903,50 +289,12 @@
         &lt;/layout-frame&gt;
       &lt;/layout-reel&gt;
       </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-  </layout-stack>
-
-  <hr>
-
-  <!-- IMPOSTER -->
-  <layout-stack style="--space: var(--space-m);">
-    <h2>Imposter</h2>
-    <p>Absolutely centers an element within a positioned parent. Add <code>data-fixed</code> for viewport-fixed
-      positioning.</p>
-    <ui-label>Properties</ui-label>
-    <layout-cluster style="--space: var(--space-xs)">
-      <ui-badge class="has-tooltip" data-tooltip="Positioning scheme (absolute or fixed)">--position</ui-badge>
-    </layout-cluster>
-
-    <ui-tabs data-variant="underline">
-  <input type="radio" name="imposter-example" id="imposter-preview" checked>
-  <label for="imposter-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-      <div style="position: relative; block-size: 16rem; background: #1a1a2e; border-radius: 8px; overflow: hidden;">
-        <layout-imposter>
-          <layout-box
-            style="--padding: var(--space-l); --border-color: #98c1d9; background: var(--color-canvas); border-radius: 8px; text-align: center;">
-            <layout-stack style="--space: var(--space-xs);">
-              <h3>Modal Dialog</h3>
-              <p>Centered in the container using <code>translate(-50%, -50%)</code>.</p>
-            </layout-stack>
-          </layout-box>
-        </layout-imposter>
-      </div>
-      
-    </layout-box>
-  </div>
-
-  <input type="radio" name="imposter-example" id="imposter-code">
-  <label for="imposter-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+      </pre></layout-box></div></ui-tabs></layout-stack><hr><layout-stack style="--space: var(--space-m);"><h2>Imposter</h2><p>Absolutely centers an element within a positioned parent. Add <code>data-fixed</code> for viewport-fixed
+positioning.</p><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge class=has-tooltip data-tooltip="Positioning scheme (absolute or fixed)">--position</ui-badge>
+</layout-cluster><ui-tabs data-variant=underline><input type=radio name=imposter-example id=imposter-preview checked>
+<label for=imposter-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><div style=position:relative;block-size:16rem;background:#1a1a2e;border-radius:8px;overflow:hidden><layout-imposter><layout-box style="--padding: var(--space-l); --border-color: #98c1d9; background: var(--color-canvas); border-radius: 8px; text-align: center;"><layout-stack style="--space: var(--space-xs);"><h3>Modal Dialog</h3><p>Centered in the container using <code>translate(-50%, -50%)</code>.</p></layout-stack></layout-box></layout-imposter></div></layout-box></div><input type=radio name=imposter-example id=imposter-code>
+<label for=imposter-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
       &lt;div style=&#34;position: relative; block-size: 16rem; background: #1a1a2e; border-radius: 8px; overflow: hidden;&#34;&gt;
         &lt;layout-imposter&gt;
           &lt;layout-box
@@ -959,61 +307,14 @@
         &lt;/layout-imposter&gt;
       &lt;/div&gt;
       </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-  </layout-stack>
-
-  <hr>
-
-  <!-- ICON -->
-  <layout-stack style="--space: var(--space-m);">
-    <h2>Icon</h2>
-    <p>Sizes to <code>1em</code> so the icon scales with the surrounding text.</p>
-    <ui-label>Properties</ui-label>
-    <layout-cluster style="--space: var(--space-xs)">
-      <ui-badge><em>none — scales with font-size</em></ui-badge>
-    </layout-cluster>
-
-    <ui-tabs data-variant="underline">
-  <input type="radio" name="icon-example" id="icon-preview" checked>
-  <label for="icon-preview">Preview</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      
-      <layout-stack style="--space: var(--space-s);">
-        <p style="font-size: 1rem;">
-          <layout-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 8v4l3 3" />
-            </svg></layout-icon>
-          Normal text with clock icon
-        </p>
-        <p style="font-size: 1.5rem;">
-          <layout-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
-            </svg></layout-icon>
-          Larger text — icon scales automatically
-        </p>
-        <p style="font-size: 2rem;">
-          <layout-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-            </svg></layout-icon>
-          Even larger — still aligned
-        </p>
-      </layout-stack>
-      
-    </layout-box>
-  </div>
-
-  <input type="radio" name="icon-example" id="icon-code">
-  <label for="icon-code">Code</label>
-  <div data-content>
-    <layout-box style="--padding: var(--space-m); --border-width: 0;">
-      <pre style="margin: 0; font-size: 0.85rem; overflow-x: auto"><code>
+      </pre></layout-box></div></ui-tabs></layout-stack><hr><layout-stack style="--space: var(--space-m);"><h2>Icon</h2><p>Sizes to <code>1em</code> so the icon scales with the surrounding text.</p><ui-label>Properties</ui-label>
+<layout-cluster style="--space: var(--space-xs)"><ui-badge><em>none — scales with font-size</em></ui-badge>
+</layout-cluster><ui-tabs data-variant=underline><input type=radio name=icon-example id=icon-preview checked>
+<label for=icon-preview>Preview</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><layout-stack style="--space: var(--space-s);"><p style=font-size:1rem><layout-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></layout-icon>
+Normal text with clock icon</p><p style=font-size:1.5rem><layout-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5.0 00-7.78.0L12 5.67l-1.06-1.06a5.5 5.5.0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5.0 000-7.78z"/></svg></layout-icon>
+Larger text — icon scales automatically</p><p style=font-size:2rem><layout-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></layout-icon>
+Even larger — still aligned</p></layout-stack></layout-box></div><input type=radio name=icon-example id=icon-code>
+<label for=icon-code>Code</label><div data-content><layout-box style="--padding: var(--space-m); --border-width: 0;"><pre style=margin:0;font-size:.85rem;overflow-x:auto><code>
       &lt;layout-stack style=&#34;--space: var(--space-s);&#34;&gt;
         &lt;p style=&#34;font-size: 1rem;&#34;&gt;
           &lt;layout-icon&gt;&lt;svg viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&gt;
@@ -1038,87 +339,10 @@
         &lt;/p&gt;
       &lt;/layout-stack&gt;
       </code>
-      </pre>
-    </layout-box>
-  </div>
-</ui-tabs>
-  </layout-stack>
-
-  <hr>
-
-  <!-- COMPOSITION -->
-  <layout-stack style="--space: var(--space-m);">
-    <ui-label data-intent="secondary">Composition</ui-label>
-    <h2>Primitives Compose Together</h2>
-    <p>The real power is nesting these elements. Here is a page-like layout using most primitives together:</p>
-
-    <layout-sidebar style="--sidebar-width: 16rem; --gutter: var(--space-m);">
-      <layout-stack style="--space: var(--space-s);">
-        <layout-box style="--border-color: var(--color-primary);">
-          <h3>Navigation</h3>
-        </layout-box>
-        <layout-stack style="--space: var(--space-2xs);">
-          <div class="swatch">Dashboard</div>
-          <div class="swatch--mid swatch">Projects</div>
-          <div class="swatch">Settings</div>
-          <div class="swatch">Help</div>
-        </layout-stack>
-      </layout-stack>
-      <layout-stack style="--space: var(--space-m);">
-        <layout-cluster style="--space: var(--space-xs); --justify: space-between; --align: center;">
-          <h3>Projects</h3>
-          <span class="swatch--warm swatch">+ New</span>
-        </layout-cluster>
-        <layout-grid style="--min-width: 12rem; --gutter: var(--space-s);">
-          <layout-box style="--border-color: var(--color-border);">
-            <layout-stack style="--space: var(--space-2xs);">
-              <layout-frame style="--ratio: 2/1; border-radius: 4px;">
-                <div data-pattern-type="checkerboard"
-                  style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-primary); --pattern-size: 20px;">
-                </div>
-              </layout-frame>
-              <h3>Project Alpha</h3>
-              <layout-cluster style="--space: var(--space-3xs);">
-                <span class="swatch">CSS</span>
-                <span class="swatch">Layout</span>
-              </layout-cluster>
-            </layout-stack>
-          </layout-box>
-          <layout-box style="--border-color: var(--color-border);">
-            <layout-stack style="--space: var(--space-2xs);">
-              <layout-frame style="--ratio: 2/1; border-radius: 4px;">
-                <div data-pattern-type="vertical-lines"
-                  style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-success);"></div>
-              </layout-frame>
-              <h3>Project Beta</h3>
-              <layout-cluster style="--space: var(--space-3xs);">
-                <span class="swatch">HTML</span>
-                <span class="swatch">Custom Elements</span>
-              </layout-cluster>
-            </layout-stack>
-          </layout-box>
-          <layout-box style="--border-color: var(--color-border);">
-            <layout-stack style="--space: var(--space-2xs);">
-              <layout-frame style="--ratio: 2/1; border-radius: 4px;">
-                <div data-pattern-type="dots"
-                  style="inline-size: 100%; block-size: 100%; --pattern-fill: var(--color-warning); --pattern-size: 15px;">
-                </div>
-              </layout-frame>
-              <h3>Project Gamma</h3>
-              <layout-cluster style="--space: var(--space-3xs);">
-                <span class="swatch">Design</span>
-                <span class="swatch">Tokens</span>
-              </layout-cluster>
-            </layout-stack>
-          </layout-box>
-        </layout-grid>
-      </layout-stack>
-    </layout-sidebar>
-  </layout-stack>
-
-</layout-stack>
-  </layout-stack>
-</layout-center>
-
-  </body>
-</html>
+      </pre></layout-box></div></ui-tabs></layout-stack><hr><layout-stack style="--space: var(--space-m);"><ui-label data-intent=secondary>Composition</ui-label><h2>Primitives Compose Together</h2><p>The real power is nesting these elements. Here is a page-like layout using most primitives together:</p><layout-sidebar style="--sidebar-width: 16rem; --gutter: var(--space-m);"><layout-stack style="--space: var(--space-s);"><layout-box style="--border-color: var(--color-primary);"><h3>Navigation</h3></layout-box><layout-stack style="--space: var(--space-2xs);"><div class=swatch>Dashboard</div><div class="swatch--mid swatch">Projects</div><div class=swatch>Settings</div><div class=swatch>Help</div></layout-stack></layout-stack><layout-stack style="--space: var(--space-m);"><layout-cluster style="--space: var(--space-xs); --justify: space-between; --align: center;"><h3>Projects</h3><span class="swatch--warm swatch">+ New</span>
+</layout-cluster><layout-grid style="--min-width: 12rem; --gutter: var(--space-s);"><layout-box style="--border-color: var(--color-border);"><layout-stack style="--space: var(--space-2xs);"><layout-frame style="--ratio: 2/1; border-radius: 4px;"><div data-pattern-type=checkerboard style=inline-size:100%;block-size:100%;--pattern-fill:var(--color-primary);--pattern-size:20px></div></layout-frame><h3>Project Alpha</h3><layout-cluster style="--space: var(--space-3xs);"><span class=swatch>CSS</span>
+<span class=swatch>Layout</span>
+</layout-cluster></layout-stack></layout-box><layout-box style="--border-color: var(--color-border);"><layout-stack style="--space: var(--space-2xs);"><layout-frame style="--ratio: 2/1; border-radius: 4px;"><div data-pattern-type=vertical-lines style=inline-size:100%;block-size:100%;--pattern-fill:var(--color-success)></div></layout-frame><h3>Project Beta</h3><layout-cluster style="--space: var(--space-3xs);"><span class=swatch>HTML</span>
+<span class=swatch>Custom Elements</span>
+</layout-cluster></layout-stack></layout-box><layout-box style="--border-color: var(--color-border);"><layout-stack style="--space: var(--space-2xs);"><layout-frame style="--ratio: 2/1; border-radius: 4px;"><div data-pattern-type=dots style=inline-size:100%;block-size:100%;--pattern-fill:var(--color-warning);--pattern-size:15px></div></layout-frame><h3>Project Gamma</h3><layout-cluster style="--space: var(--space-3xs);"><span class=swatch>Design</span>
+<span class=swatch>Tokens</span></layout-cluster></layout-stack></layout-box></layout-grid></layout-stack></layout-sidebar></layout-stack></layout-stack></layout-stack></layout-center></body></html>
